@@ -1,0 +1,90 @@
+extends layout
+
+block content
+    header
+      .container
+        .slider-container
+          .intro-text
+            .intro-lead-in Welcome To Our Family!
+            | 						
+            .intro-heading It's Nice To Meet You
+            | 						
+            a#knowMore.page-scroll.btn.btn-xl(href="#about") Know More！
+    | 		
+    section#about.light-bg
+      .container
+        .row
+          .col-lg-12.text-center
+            .section-title
+              h2 view mode
+                //- a(href="/aboutUs") ABOUT US
+              | 							
+              p
+                | We don't make shoes, but factory porters.
+        | 				
+        .row
+
+          .col-md-6.text-center
+            a.noLine(href='/atlas')
+              .mz-module-about
+                i.fa.fa-photo.ot-circle
+                //- i.fa.fa-camera-retro.ot-circle
+                | 
+                h3 随便看看(atlas)
+            | 							
+            p 通过查看图片，了解、选择产品。
+
+          .col-md-6.text-center
+            a.noLine(href='#portfolio') 
+              .mz-module-about
+                i.fa.fa-crosshairs.ot-circle
+                |        
+                h3 有目标的查看
+            |               
+            p 看自己感兴趣的产品。
+    -if(JSON.stringify(JSON.parse(vals)) != '{}')
+      section#portfolio
+        .container
+          .row
+            .col-lg-12.text-center
+              .section-title
+                h2
+                  a(href="/products/0") Products
+                | 						
+                p
+                  | There is no perfection in the world, but we are always pursuing perfection.
+          | 	
+          .imgsList
+            .centerDiv
+              -for(var i in JSON.parse(vals))
+                -var curId = parseInt(i); 
+                   //- -if(curId % 3 == 0)           
+                    .row
+                // start portfolio item
+                a.imgcard(href="/proDesc/#{JSON.parse(vals)[i].pid}")
+                  .ot-portfolio-item
+                    figure.effect-bubba
+                      img.img-responsive.lazyload(data-original="#{JSON.parse(JSON.parse(vals)[i].imgs)[0] ? JSON.parse(JSON.parse(vals)[i].imgs)[0] : 'images/demo/portfolio-2.jpg'}" src="#{JSON.parse(JSON.parse(vals)[i].imgs)[0] ? JSON.parse(JSON.parse(vals)[i].imgs)[0] : 'images/demo/portfolio-2.jpg'}")
+                      |               
+                      figcaption
+                        h2 #{JSON.parse(vals)[i].pname}
+                        |                 
+                        p.descTxt #{JSON.parse(vals)[i].desc_txt}	
+    | 		
+    p#back-top
+      a(href="#top")
+        i.fa.fa-angle-up
+    script.
+      //- console.log(!{vals})
+      //懒加载
+      $(".lazyload").lazyload({
+          effect : "fadeIn",
+          threshold : 200
+      });
+      if('#{msg}' != '' && '#{msg}'.indexOf('成功') != -1){
+        autoAlert('#{msg}','green',1000)
+      }else if('#{msg}' != ''){
+        autoAlert('#{msg}','orange',1000)
+      }
+    script(type='text/javascript', src='/conm/page.js')
+    

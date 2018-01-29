@@ -1,0 +1,131 @@
+extends newManageLayout
+
+block content
+  #content.span10
+    ul.breadcrumb.realtive
+      li
+        i.icon-home
+        |           
+        //- a(href="index.html") Home
+        |  
+        |           
+        //- i.icon-angle-right
+        | 
+      |         
+      li
+        a.toProlist(href='/manage/proList/pageSize/prolistPageNum') 商品列表
+      li.addLi.mml
+        span.pageDesc
+          | 设置每页显示数量 : 
+        .input-group.searchGroup.inline
+          input#setPageSize.form-control.searchInput(name="key", autocomplete="on", type="text",)
+      li.addLi.ml
+        .input-group.searchGroup
+          input#inputKey.form-control.searchInput(name="key", autocomplete="on", type="text", placeholder="输入关键字回车搜索")
+      li.addLi
+        a(href="/manage/uploadImg") 添加商品
+    | 
+    .box-content.prolist
+      -if(vals == "{}")
+        p.noInfo 暂无商品信息
+      -else
+        table.table.table-striped.table-bordered.bootstrap-datatable.datatable
+          thead
+            tr
+              th ID
+              |                                   
+              th 分类
+              |                                   
+              th 商品名
+              |                                   
+              //- th 价格
+              |                                   
+              th 描述
+              |                                   
+              //- th 库存
+              |                                   
+              th 更新日期
+              |                                   
+              th 操作
+          |    
+          tbody
+            -for(var i in JSON.parse(vals))
+              -var curId = parseInt(i)+1;
+              tr 
+                td #{JSON.parse(vals)[i].pid}
+                //- td #{curId}
+                |                                 
+                td.center #{JSON.parse(sorts)[JSON.parse(vals)[i].sort]}
+                |                                 
+                td.center #{JSON.parse(vals)[i].pname}
+                |                                 
+                //- td.center ￥#{JSON.parse(vals)[i].price.toFixed(2) }
+                |                                 
+                td.center.overHid #{JSON.parse(vals)[i].desc_txt}
+                |                                 
+                //- td.center
+                  case JSON.parse(vals)[i].state
+                    when 1
+                      span.label.label-success 销 售
+                      //- span.label.label-success #{JSON.parse(vals)[i].state}
+                    when 2
+                      //- span.label.label-warning #{JSON.parse(vals)[i].state}
+                      span.label.label-warning 待 售
+                    when 3
+                      //- span.label.label-important #{JSON.parse(vals)[i].state}
+                      span.label.label-important 停 售
+                |                                 
+                td.center #{JSON.parse(vals)[i].up_date.substring(0,10)}
+                |                                 
+                td.center.opr6
+                  a.btn.btn-success(href="/manage/descPro/#{JSON.parse(vals)[i].pid}")
+                    i.halflings-icon.white.zoom-in
+                  |                                   
+                  a.btn.btn-info(href="/manage/editPro/#{JSON.parse(vals)[i].pid}")
+                    i.halflings-icon.white.edit
+                  |                                   
+                  //- a.btn.btn-danger(href="/manage/delPro/#{JSON.parse(vals)[i].pid}")
+                  .btn.btn-danger(onclick='delConfirm("/manage/delPro/pageSize/prolistPageNum/#{JSON.parse(vals)[i].pid}",0)')
+                    i.halflings-icon.white.trash
+      //- .pagination.pagination-centered.widthAll
+        ul#page
+      div#pageProlist.page-contain
+        a.goPre(href="")
+        .page-box
+          a.page-pre(href="")
+        a.goNext(href="")
+          
+    script.
+      let pageNum = #{pageNum}
+      let pageCount = #{pageCount}
+      let pageSize = localStorage.getItem('pageSize')
+      let url = '/manage/proList/'+pageSize+'/'
+      let option = {
+        box: 'pageProlist',//存放分页的容器
+        href: url,//跳转连接
+        page: pageNum,//当前页码 
+        count: pageCount,//总页数
+        num: 5,//页面展示的页码个数
+        step: 3,
+        type:0,
+        //- num:pageCount,//页面展示的页码个数
+      }
+      setPages(option,1)
+      //- setPage('#{pageCount}','#{pageNum}',$('ul#page'),0)
+      setUrl($(".toProlist"),'href',0)
+      if('#{msg}' != '' && '#{msg}'.indexOf('成功') != -1){
+        autoAlert('#{msg}','green',1000)
+      }else if('#{msg}' != '' ){
+        autoAlert('#{msg}','orange',1000)
+      }
+    script(type='text/javascript', src='/conm/newProList.js')
+        //- window.wxc.xcConfirm('#{msg}', window.wxc.xcConfirm.typeEnum.info); 
+        //- alert('#{msg}')
+      //- console.log(!{vals})
+      //- console.log('valssss:','#{vals}' == '{}')
+      //- console.log('length:',!{vals}[0].up_date.length)
+      //- for(var i in !{sorts})
+      //-   console.log('iiiiii:',i)
+      //-   console.log('iiiiii:',!{vals}[i].pid)
+      //- console.log('pageCount:',#{pageCount})
+    //- script(type='text/javascript', src='/conm/proList.js')

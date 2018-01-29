@@ -5,13 +5,13 @@ Import Google Fonts
 --------------------*/
 
 /* main font for menu. */
-// @import url(http://fonts.useso.com/css?family=Roboto:100,300,400,500,700,900);
-@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900);
+/*@import url(http://fonts.useso.com/css?family=Roboto:100,300,400,500,700,900);*/
+/*@import url('http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');*/
 /* font for headings, text, tags */
-@import url(http://fonts.useso.com/css?family=Open+Sans:300,400,500,600,700,800);
-// @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800);
-@import url(http://fonts.useso.com/css?family=Playfair+Display:400italic&subset=latin,latin-ext);
-// @import url(http://fonts.googleapis.com/css?family=Playfair+Display:400italic&subset=latin,latin-ext);
+/*@import url('http://fonts.useso.com/css?family=Open+Sans:300,400,500,600,700,800');*/
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800);*/
+/*@import url('http://fonts.useso.com/css?family=Playfair+Display:400italic&subset=latin,latin-ext');*/
+/*@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400italic&subset=latin,latin-ext);*/
 
 /*--------------------
 1. General
@@ -49,7 +49,8 @@ pre{
     margin: 0;
     padding: 0;
 }
-a:hover, a:focus, a:active, a.active {
+/*a:hover, a:focus, a:active, a.active {*/
+a:hover,a:active, a.active {
     color: #fec503 !important;
 }
 
@@ -77,7 +78,7 @@ a, a:hover, a:focus, a:active, a.active {
 }
 
 section {
-    // padding: 70px 0;
+    /*// padding: 70px 0;*/
     padding: 130px 0;
 }
 section.manageSection{
@@ -111,32 +112,34 @@ section .yumain{
 	font-family: "Montserrat",sans-serif;
     padding: 0px;
 }
-.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active {
-	color: #fec503
+/*.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active {*/
+.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active {
+	color: #fec503;
 }
 .navbar-default .navbar-collapse {
-	border-color: rgba(255,255,255,.02)
+	border-color: rgba(255,255,255,.02);
 }
 .navbar-default .navbar-toggle {
 	background-color: #fed136;
-	border-color: #fed136
+	border-color: #fed136;
 }
 .navbar-default .navbar-toggle .icon-bar {
-	background-color: #fff
+	background-color: #fff;
 }
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {
-	background-color: #fed136
+	background-color: #fed136;
 }
-.navbar-default .nav li a {
+.navbar-default .nav li a{
 	font-family: "Roboto",sans-serif;
 	text-transform: uppercase;
 	font-weight: 400;
 	letter-spacing: 1px;
-	color:#fff
+	color:#fff;
 }
-.navbar-default .nav li a:hover,.navbar-default .nav li a:focus {
+/*.navbar-default .nav li a:hover,.navbar-default .nav li a:focus {*/
+.navbar-default .nav li a:hover{
 	color: #fed136 !important;
-	outline: 0
+	outline: 0;
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
     background-color: transparent;
@@ -144,39 +147,39 @@ section .yumain{
 .navbar-default .navbar-nav>.active>a {
 	border-radius: 0;
 	color: #fff;
-	background-color: #fed136
+	background-color: #fed136;
 }
 .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
 	color: #fff;
-	background-color: #fec503
+	background-color: #fec503;
 }
 
 @media (min-width:768px) {
 	.navbar-default
 	{
-		// background-color: transparent;
-        // padding: 25px 0;
+		/*// background-color: transparent;*/
+        /*// padding: 25px 0;*/
 		padding: 0px;
 		-webkit-transition:padding .3s;
 		-moz-transition:padding .3s;
 		transition:padding .3s;
-		border:0
+		border:0;
 	}
 	.navbar-default .navbar-brand {
 		font-size: 2em;
 		-webkit-transition:all .3s;
 		-moz-transition:all .3s;
-		transition:all .3s
+		transition:all .3s;
 	}
 	.navbar-default .navbar-nav>.active>a {
-		border-radius: 3px
+		border-radius: 3px;
 	}
 	.navbar-default.navbar-shrink {
 		background-color: #222;
-		padding: 10px 0
+		padding: 10px 0;
 	}
 	.navbar-default.navbar-shrink .navbar-brand {
-		font-size: 1.5em
+		font-size: 1.5em;
 	}
 }
 
@@ -403,19 +406,19 @@ figcaption {
 
 figure.effect-bubba {
     background: rgba(0,0,0,0.8);
-	// background: #000;
+	/*// background: #000;*/
     margin:0 auto; 
     margin-bottom: 30px;
-    // max-height: 250px;
-    // min-height: 219px;
-    // max-width: 350px;
+    /*// max-height: 250px;*/
+    /*// min-height: 219px;*/
+    /*// max-width: 350px;*/
     display: flex;
     flex-direction:column;
     justify-content:center;
 }
 
 figure.effect-bubba img {
-	// opacity: 0.8;
+	/*// opacity: 0.8;*/
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
     
@@ -503,7 +506,7 @@ figure.effect-bubba:hover p {
 }
 
 .bg-img1 {
-    // background-image: url(../images/demo/office-bg.jpg);
+    /*// background-image: url(../images/demo/office-bg.jpg);*/
     background-size: cover !important;
     background-position: center center;
     background-repeat: no-repeat;
@@ -664,7 +667,9 @@ footer p a span {
     letter-spacing: 1px;
     font-weight: 700;
 }
-
+footer .container{
+    max-width: 100%;
+}
 /*--------------------
 6. Modal
 --------------------*/
@@ -804,10 +809,14 @@ and (max-width : 480px) {
 }
 }
 /* ----------导航----------- */
-a.page-scroll.active {
+a.router-link-active,a.active {
     color: #fec503 !important;
 }
-ul.nav.navbar-nav.navbar-right> li >a.page-scroll:focus,ul.nav.navbar-nav.navbar-right> li> a.page-scroll:active{
+ul.nav.navbar-nav.navbar-right> li >a.page-scroll:focus {
+    color: #fff;
+}
+/*ul.nav.navbar-nav.navbar-right> li >a.page-scroll:focus,ul.nav.navbar-nav.navbar-right> li> a.page-scroll:active{*/
+ul.nav.navbar-nav.navbar-right> li> a.page-scroll:active{
     background-color: transparent !important;
     color: #fec503;
 }
@@ -973,6 +982,24 @@ a.noLine:hover{
     text-decoration: none !important;
 }
 /* -------------products---------------- */
+
+/* #menus li.txt router-link{
+    font-family: "Roboto",sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color:#fff;
+
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    white-space: nowrap;
+}
+#menus li.txt router-link:hover{
+    cursor: pointer;
+    color: #fed136 !important;
+    outline: 0;
+} */
 .overHide{
     overflow: hidden;
 }
@@ -999,22 +1026,22 @@ h2 a:hover{
     background-image: none;
 }
 #carousel-example-generic{
-    // border: 1px solid green;
+    /*// border: 1px solid green;*/
 }
 ol.carousel-indicators{
     left:50%;
-    // border: 1px solid red;
+    /*// border: 1px solid red;*/
 }
 .carousel-inner{
     display: flex;
     flex-direction: column;
     justify-content:center;
-    // width:320px;
-    // height: 200px;
+    /*// width:320px;*/
+    /*// height: 200px;*/
     /*width: 640px;
     height: 390px;*/
     margin: 0 auto;
-    // border: 1px solid blue;
+    /*// border: 1px solid blue;*/
     margin-bottom: 20px;
 }
 .slidLi{
@@ -1031,25 +1058,25 @@ ol.carousel-indicators{
 
 }
 .carousel-inner>.item img {
-    // display: block;
+    /*// display: block;*/
     width: 100%;
     margin: 0 auto;
-    // max-width: 300px;
-    // max-height: 200px;
+    /*// max-width: 300px;*/
+    /*// max-height: 200px;*/
     max-width: 620px;
     max-height: 400px;
-    // border: 1px solid pink;
+    /*// border: 1px solid pink;*/
 }
 .carousel-indicators li {
     background-color: #000;
-    // opacity: 0.6;
+    /*// opacity: 0.6;*/
     opacity: 0.8;
     padding-left: 50px;
 }
 
 .carousel-indicators li:active {
     background-color: #fff;
-    // opacity: 0.9;
+    /*// opacity: 0.9;*/
     opacity: 1;
     padding-left: 50px;
 }
@@ -1128,10 +1155,10 @@ ol.carousel-indicators{
 
     .proDescPage{
         margin-top: 0px;
-        // position: relative;
-        // top:90px;
-        // left: 20%;
-        // padding-top:50px;
+        /*// position: relative;*/
+        /*// top:90px;*/
+        /*// left: 20%;*/
+        /*// padding-top:50px;*/
     }
     /*详情轮播*/
     .bindWidth{
@@ -1145,7 +1172,7 @@ ol.carousel-indicators{
         display: flex;
         height: 420px;
         line-height: 420px;
-        // border: 1px solid yellow;
+        /*// border: 1px solid yellow;*/
         flex-direction: column;
         justify-content:center;
     }
@@ -1154,12 +1181,12 @@ ol.carousel-indicators{
     }
 
     .proDescPage{
-        // margin-top: 90px;
+        /*// margin-top: 90px;*/
         padding-top: 190px;
-        // position: relative;
-        // top:90px;
-        // left: 20%;
-        // padding-top:50px;
+        /*// position: relative;*/
+        /*// top:90px;*/
+        /*// left: 20%;*/
+        /*// padding-top:50px;*/
     }
 }
 
@@ -1171,7 +1198,7 @@ ol.carousel-indicators{
         max-width: 300px;
     }*/
     .carousel-inner{
-        width: 80%
+        width: 80%;
         max-width:620px;
         min-width: 500px;
     }
@@ -1203,16 +1230,16 @@ ol.carousel-indicators{
         margin-top:60px;
     }
     #allmap {
-        // width: 100%;
-        // height: 100%;
-        // overflow: hidden;
+        /*// width: 100%;*/
+        /*// height: 100%;*/
+        /*// overflow: hidden;*/
         margin:0;
         font-family: "Open Sans", Sans-serif;
     }
 
     #address{
         position: relative;
-        width:30%
+        width:30%;
         max-width:400px;
         min-width: 300px;
         top: 180px;
@@ -1242,12 +1269,12 @@ ol.carousel-indicators{
 }
 @media only screen and (max-width : 1199px){
     .imgsList{
-        max-width: 720px
+        max-width: 720px;
     }
 }
 @media only screen and (max-width : 769px){
     .imgsList{
-        max-width: 360px
+        max-width: 360px;
     }
 }
 #searchInput{
@@ -1295,16 +1322,16 @@ ol.carousel-indicators{
 .upload-container {
     display: inline-block;
     border: 1px dashed #a7a9aa;
-    // background-image: url('../images/addBg.png');
-    // background-repeat: no-repeat;
+    /*// background-image: url('../images/addBg.png');*/
+    /*// background-repeat: no-repeat;*/
     width: 100px;
     height: 100px;
-    // margin-left: 5px;
-    // display: inline-block;
+    /*// margin-left: 5px;*/
+    /*// display: inline-block;*/
     vertical-align: middle;  
 }
 .upImgs{
-    // padding-top:5px;
+    /*// padding-top:5px;*/
     margin-bottom: 10px;
 }
 .upImg{
@@ -1318,8 +1345,8 @@ ol.carousel-indicators{
 }
 .upTex{
     display: inline-block;
-    // margin: 0 auto;
-    // vertical-align: middle;
+    /*// margin: 0 auto;*/
+    /*// vertical-align: middle;*/
     margin-top: 25px;
     margin-left: 20px;
     position: relative;
@@ -1334,21 +1361,21 @@ ol.carousel-indicators{
 }
 .fileupload {
     visibility: hidden;
-    // display: none;
+    /*// display: none;*/
     position: absolute;
     left: 15px;
     top: 98px;
-    // background-image: url('../images/addBg.png');
-    // background-repeat: no-repeat;
-    // width: 180px;
-    // height: 200px;
+    /*// background-image: url('../images/addBg.png');*/
+    /*// background-repeat: no-repeat;*/
+    /*// width: 180px;*/
+    /* // height: 200px;
     // padding-bottom: 10px;
     // display: inline-block;
     // vertical-align: middle;
     // opacity: 0;
     // filter: alpha(opacity=0);
     // width: 200px;
-    // height: 200px;
+    // height: 200px; */
 }
 
 
@@ -1371,7 +1398,7 @@ ol.carousel-indicators{
 
 }
 .upBtns .cancelBtn:hover,.upBtns .cancelBtn:active,.upBtns .cancelBtn:focus{
-    // background-color: #9a9c9d;
+    /*// background-color: #9a9c9d;*/
     opacity: 1;
     outline: none;
 }
@@ -1410,7 +1437,7 @@ footer .copy{
 
 /*==============二级菜单=================*/
 .towLevelMenu{
-    display: none;
+    /*display: none;*/
     position: absolute;
     background-color: #eee;
     width: 100%;
@@ -1426,11 +1453,18 @@ footer .copy{
     list-style-type: none;
     display: inline-block;
 }
-.towLevelMenu .tlMenuUl li.toPage, .towLevelMenu .tlMenuUl li.toList{
+/* .towLevelMenu .tlMenuUl li.toPage, .towLevelMenu .tlMenuUl li.toList{
     display: none;
-}
+} */
 
 .towLevelMenu .tlMenuUl li.toPage:hover, .towLevelMenu .tlMenuUl li.toList:hover {
     cursor: pointer;
     color: #fed136;
 }
+
+/* 首页图标 */
+.fs-7{
+    font-size:70px;
+    /*opacity: 0.8;*/
+}
+

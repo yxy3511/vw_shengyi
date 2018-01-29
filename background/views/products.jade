@@ -1,0 +1,77 @@
+extends layout
+
+block content
+  section.light-bg.content
+    -if(JSON.parse(vals).length != 0)
+        .container.yumain
+          .row(id='product')
+            .col-lg-12.text-center
+              .section-title
+                h2 Products
+                | 						
+                p
+                  | There is no perfection in the world, but we are always pursuing perfection.
+                  
+                //- .col-lg-3#searchForm
+                  //- form.form-horizontal(action="", method="get")
+                  //- span#searchIcon.glyphicon.glyphicon-search
+              #searchInput.input-group.search-input-group
+                    input#searchIn.form-control(name="key", autocomplete="on", type="text")
+                    span#closeIcon.input-group-addon
+                      button.bnt
+                        //- span.glyphicon.glyphicon-remove
+                        span.glyphicon.glyphicon-search
+          .imgsList
+            .centerDiv
+              -for(var i in JSON.parse(vals))
+                // -console.log(JSON.parse(JSON.parse(vals)[i].imgs)[0])
+                -var curId = parseInt(i); 
+                    //- -if(curId % 3 == 0)           
+                     .row
+                    // start portfolio item
+                    //- a.col-md-4(href="/proDesc/#{JSON.parse(vals)[i].pid}")
+                    a.imgcard(href="/proDesc/#{JSON.parse(vals)[i].pid}")
+                      .ot-portfolio-item
+                        figure.effect-bubba
+                          //- onload='resizePic(this)'
+                          img.img-responsive(class="lazyload" onload='resizePic(this)' data-original="#{JSON.parse(JSON.parse(vals)[i].imgs)[0] ? JSON.parse(JSON.parse(vals)[i].imgs)[0] : '/images/addBg.png'}" src="#{JSON.parse(JSON.parse(vals)[i].imgs)[0] ? JSON.parse(JSON.parse(vals)[i].imgs)[0] : '/images/addBg.png'}")
+                          | 							
+                          figcaption
+                            h2 #{JSON.parse(vals)[i].pname}
+                            | 								
+                            p.descTxt #{JSON.parse(vals)[i].desc_txt}
+                    // end portfolio item
+                    // start portfolio item
+          .row#d1
+            div.page-contain
+              a.goPre(href="")
+              .page-box
+                a.page-pre(href="")
+              a.goNext(href="")
+
+    -else
+      .center
+        h1.noContent 暂无商品
+  script.
+    let pageNum = #{pageNum}
+    let pageCount = #{pageCount}
+    let pageSize = 9
+    let url = '/products/0/?pageSize='+pageSize+'&pageNum='
+    let option = {
+      box: 'd1',//存放分页的容器
+      href: url,//跳转连接
+      page: pageNum,//当前页码 
+      count: pageCount,//总页数
+      num: 5,//页面展示的页码个数
+      step: 3,
+      //- num:pageCount,//页面展示的页码个数
+    }
+    setPages(option,1)
+
+    
+    if('#{msg}' != '' && '#{msg}' != '暂无商品' && '#{msg}'.indexOf('成功') != -1){
+      autoAlert('#{msg}','green',1000)
+    }else if('#{msg}' != ''  && '#{msg}' != '暂无商品'){
+      autoAlert('#{msg}','orange',1000)
+    }
+  script(type='text/javascript', src="/conm/products.js")

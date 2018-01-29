@@ -2,7 +2,7 @@
 	display: inline-block;
 }
 .page-contain{
-	display: none;
+	/*display: none;*/
 	text-align: center;
 	font-size: 0px;	
 	clear: both;

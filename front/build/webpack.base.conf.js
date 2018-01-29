@@ -46,6 +46,9 @@ module.exports = {
         test: /\.sass$/,
         loader: 'sass-loader',
       },{
+        test: /\.less$/,
+        loader: 'less-loader',
+      },{
         test: /\.css$/,
         loader: "style-loader!css-loader",
         include: [] 

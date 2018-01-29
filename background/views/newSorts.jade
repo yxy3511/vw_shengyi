@@ -1,0 +1,106 @@
+extends newManageLayout
+
+block content   
+  #content.span10
+    ul.breadcrumb.realtive
+      li
+        i.icon-home
+        |           
+        //- a(href="index.html") Home
+        |  
+        |           
+        //- i.icon-angle-right
+        | 
+      |         
+      li
+        | 分类列表
+      li.addLi.txtAddSort
+        | 添加分类
+    | 
+    .box-content.prolist
+          -if(sorts == "[]")
+            p.noInfo 暂无商品分类
+            table.table.table-striped.table-bordered.bootstrap-datatable.datatable.newTab
+              thead
+                tr
+                  th ID
+                  |                                   
+                  th 类型名
+                  th 操作
+
+              |    
+              tbody
+                tr
+                  td.newId 1
+                  |                                 
+                  td.center
+                    input.addSortName(type='text' value='' ) 
+                  td.center
+                    .btn.btn-info.addSort
+                      i.halflings-icon.white.edit
+          -else
+            table.table.table-striped.table-bordered.bootstrap-datatable.datatable
+              thead
+                tr
+                  th ID
+                  |                                   
+                  th 类型名
+                  th 操作
+
+              |    
+              tbody
+                tr.newSort
+                  td.newId #{JSON.parse(sorts)[0]["id"] + 1}
+                  |                                 
+                  td.center.tc
+                    input.addSortName(type='text' value='' placeholder='点击输入类别名称' ) 
+                  td.center
+                    .btn.btn-info.addSort
+                      i.halflings-icon.white.edit
+                      | 添加
+                -var cnt = 0;
+                -for(var i in JSON.parse(sorts))
+                  //- -cnt += 1;
+                  tr.sortTr
+                    td #{JSON.parse(sorts)[i]["id"]}
+                    |                                 
+                    td.center
+                      input.sortName(type='text' value='#{JSON.parse(sorts)[i]["name"]}' disabled) 
+                    td.center
+                      //- .btn.btn-info.sortEdit
+                        i.halflings-icon.white.edit
+                      //- a.btn.btn-danger(href="/manage/delSort/#{i}")
+                        i.halflings-icon.white.trash
+                      .btn.btn-danger(onclick='delConfirm("/manage/delSort/pageSize/sortsPageNum/#{JSON.parse(sorts)[i]["id"]}",2)')
+                        i.halflings-icon.white.trash
+          //- .pagination.pagination-centered.widthAll
+            ul#page
+          div#pageSortlist.page-contain
+            a.goPre(href="")
+            .page-box
+              a.page-pre(href="")
+            a.goNext(href="")
+    script.
+      let pageNum = #{pageNum}
+      let pageCount = #{pageCount}
+      let pageSize = localStorage.getItem('pageSize')
+      let url = '/manage/editSorts/'+pageSize+'/'
+      let option = {
+        box: 'pageSortlist',//存放分页的容器
+        href: url,//跳转连接
+        page: pageNum,//当前页码 
+        count: pageCount,//总页数
+        num: 5,//页面展示的页码个数
+        step: 3,
+        type:2,
+        //- num:pageCount,//页面展示的页码个数
+      }
+      setPages(option,1)
+      //- setPage('#{pageCount}','#{pageNum}',$('ul#page'),2)
+      if('#{msg}' != '' && '#{msg}'.indexOf('成功') != -1){
+        autoAlert('#{msg}','green',1000)
+      }else if('#{msg}' != '' ){
+        autoAlert('#{msg}','orange',1000)
+      }
+        //- window.wxc.xcConfirm('#{msg}', window.wxc.xcConfirm.typeEnum.info)
+    script(type='text/javascript', src='/conm/sorts.js')

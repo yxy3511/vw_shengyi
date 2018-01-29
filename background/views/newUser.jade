@@ -1,0 +1,113 @@
+extends newManageLayout
+
+block content   
+  #content.span10
+    ul.breadcrumb.realtive
+      li
+        i.icon-home
+        |           
+        //- a(href="index.html") Home
+        |  
+        |           
+        //- i.icon-angle-right
+        | 
+      |         
+      li
+        | 用户列表
+      li.addLi
+        a(href="/manage/register") 添加用户
+    | 
+    .box-content.prolist
+          -if(users == "[]")
+            p.noInfo 暂无用户信息
+          -else
+            table.table.table-striped.table-bordered.bootstrap-datatable.datatable
+              thead
+                tr
+                  th ID
+                  |                                   
+                  th 用户名
+                  //- th 角色
+                  //-th 密码
+                  th 操作
+
+              |    
+              tbody
+               -for(var i in JSON.parse(users))
+                  -var userId = JSON.parse(users)[i].uid
+                  tr.userTr 
+                    td.userTd.userId(uid='#{JSON.parse(users)[i].uid}') #{JSON.parse(users)[i].uid}
+                    td.center #{JSON.parse(users)[i]['val'].uname}
+                    //- td.center #{JSON.parse(users)[i]['val'].role}
+                    //- td.center #{JSON.parse(users)[i].pwd}
+                    td.center
+                      //- .btn.btn-info.userEdit
+                        i.halflings-icon.white.edit
+                      //- a.btn.btn-danger(href="/manage/delUser/#{userId}")
+                        i.halflings-icon.white.trash
+                      .btn.btn-danger(onclick='delConfirm("/manage/delUser/pageSize/userPageNum/#{userId}",1)')
+                        i.halflings-icon.white.trash
+                //- tr 
+                  td.tc(colspan='5') 
+                    //- a(href='/manage/register') 添加用户
+                    a(href='/manage/register')
+                      .btn.btn-info.addSort
+                        i.halflings-icon.white.edit 
+                        | 添加用户
+                  //- form.form-inline.addUserForm
+                  //-   td #{cnt+1}
+                  //-     input.form-control(type="text", name='uid',style='visibility:hidden;width:30px;',value=0)
+                  //-   |                                 
+                  //-   td.center
+                  //-     //- input.addSortName(type='text' value='' disabled) 
+                  //-     .form-group
+                  //-       |     
+                  //-       input.form-control(type="text", name='uname', placeholder="Jane Doe")
+                  //-   td.center
+                  //-     .form-group
+                  //-       |     
+                  //-       input.form-control(type="email", name='role', placeholder="jane.doe@example.com")
+                  //-   td.center
+                  //-     .form-group
+                  //-       |     
+                  //-       input.form-control(type="email", name='pwd', placeholder="jane.doe@example.com")
+                  //-   //- td.center(style='visibility:hidden;')
+                  //-   td.center
+                  //-     .form-group
+                  //-       button.aUserBtn.btn.btn-info.userEdit(type="submit")
+                  //-         i.halflings-icon.white.edit
+          //- .pagination.pagination-centered.widthAll
+            ul#page
+          div#pageUserlist.page-contain
+            a.goPre(href="")
+            .page-box
+              a.page-pre(href="")
+            a.goNext(href="")
+    script.
+      let pageNum = #{pageNum}
+      let pageCount = #{pageCount}
+      let pageSize = localStorage.getItem('pageSize')
+      let url = '/manage/getUser/'+pageSize+'/'
+      let option = {
+        box: 'pageUserlist',//存放分页的容器
+        href: url,//跳转连接
+        page: pageNum,//当前页码 
+        count: pageCount,//总页数
+        num: 5,//页面展示的页码个数
+        step: 3,
+        type:1,
+        //- num:pageCount,//页面展示的页码个数
+      }
+      setPages(option,1)
+      console.log(!{users})
+      //- setPage('#{pageCount}','#{pageNum}',$('ul#page'),1)
+      if('#{msg}' != '' && '#{msg}'.indexOf('成功') != -1){
+        autoAlert('#{msg}','green')
+      }else if('#{msg}' != '' ){
+        autoAlert('#{msg}','orange')
+      }
+        //- window.autoAlert('#{msg}','orange')
+        //- setTimeout(window.wxc.xcConfirm('#{msg}', window.wxc.xcConfirm.typeEnum.info),8000);
+        //- alert('#{msg}')
+        //- setTimeout(alert('#{msg}'),8000)
+    //- script(type='text/javascript', src='/conm/proList.js')
