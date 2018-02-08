@@ -79,28 +79,37 @@ export function getSortsList(){
 }
 
 export function setUrlAct(path){
-    // var path = window.location.pathname;
-    // let cnt = 0
-    // var path = window.location.hash;
-    Menu.forEach((m,index)=>{
-        m.childUrl.forEach(url=>{
-            if(path.indexOf(url) != -1){
-                $('a.page-scroll').map((i,param)=>{
-                    if(i == index){
-                        $(param).addClass('active');
-                    }else{
-                        $(param).removeClass('active');
+    //子页面高亮，配合router-link自带active属性使用
+    $('ul.main-menu li a').each(function(){
+        manageMenu.forEach((menu,i)=>{
+            if($($(this))[0].href.indexOf(menu.url) != -1){
+                let isRight = false
+                menu.childUrl.forEach((url,d)=>{
+                    if(path.indexOf(url) != -1){
+                        isRight = true
                     }
                 })
+                if(!isRight){
+                    $(this).parent().removeClass('active');
+                }else{
+                    $(this).parent().addClass('active');
+                }
             }
-        })
-    })
-    /*if(cnt > 0){
-
-        getProLists(id)
-    }else{
-        cnt++ ;
-    }*/
+        })    
+    });
+    // Menu.forEach((m,index)=>{
+    //     m.childUrl.forEach(url=>{
+    //         if(path.indexOf(url) != -1){
+    //             $('a.page-scroll').map((i,param)=>{
+    //                 if(i == index){
+    //                     $(param).addClass('active');
+    //                 }else{
+    //                     $(param).removeClass('active');
+    //                 }
+    //             })
+    //         }
+    //     })
+    // })
 }
 
 export function setMap(){

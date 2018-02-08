@@ -7,42 +7,30 @@
               h2 {{info.title}}
               |               
               p {{info.desc_txt}}
-        .row(v-for='(val,index) in info.content')
-          template(v-if='index%2 == 0')
-            .col-md-3.text-center.marginB
-              .mz-module-about.aboutImg
-                //- i.fa.fa-briefcase.ot-circle
-                img.isLittleImg(:src='val.img')
-                |   
-            .col-md-9.aboutLeft         
-              h3 {{val.title}}
-              |               
-              pre {{val.value}}
-          template(v-else='index%2 != 0')
-            // about module
-            .col-md-9.aboutLeft         
-              h3 {{val.title}}
-              |               
-              p {{val.value}}
-            .col-md-3.text-center.marginB
-              .mz-module-about.aboutImg
-                //- i.fa.fa-briefcase.ot-circle
-                img.isLittleImg(:src='val.img')
-                |   
-        //- .row
-          // about module
-          .col-md-9.aboutLeft         
-            h3 Web Development
-            |               
-            p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-          .col-md-3.text-center.marginB
-            .mz-module-about.aboutImg
-              //- i.fa.fa-briefcase.ot-circle
-              img.isLittleImg(src='../assets/images/addBg.png')
-              |   
-          //- .col-md-12.aboutLeft  
-            h3
-            pre
+        .row.yu_center
+          .noWidth
+            .yu_row(v-for='(val,index) in info.content')
+              template(v-if='index%2 == 0')
+                .text-center.marginB(v-show='val.img.src')
+                  .mz-module-about.aboutImg
+                    //- i.fa.fa-briefcase.ot-circle
+                    img.isLittleImg.lazyload(:src='baseUrl+val.img.src' ,:data-original='baseUrl+val.img.src')
+                    |   
+                .aboutLeft         
+                  h3 {{val.title}}
+                  |               
+                  pre {{val.value}}
+              template(v-else='index%2 != 0')
+                // about module
+                .aboutLeft         
+                  h3 {{val.title}}
+                  |               
+                  pre {{val.value}}
+                .text-center.marginB(v-show='val.img.src')
+                  .mz-module-about.aboutImg
+                    //- i.fa.fa-briefcase.ot-circle
+                    img.isLittleImg.lazyload(:src='baseUrl+val.img.src' ,:data-original='baseUrl+val.img.src')
+
 
 </template>
 
@@ -52,11 +40,15 @@ export default {
   name: 'aboutUs',
   data(){
     return {
-      info:{}
+      info:{},
     }
   },
   mounted(){
     this.getInfo()
+  },
+  updated(){
+    this.setNaturalImg('.isLittleImg')
+    
   },
   methods:{
     getInfo(){

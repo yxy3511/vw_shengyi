@@ -57,10 +57,10 @@
         .imgsList
           .centerDiv
             // start portfolio item
-            router-link.imgcard(:to="'/proDesc/'+pro['pid']" v-for='pro in proList' )
+            router-link.imgcard(:to="'/proDesc/'+pro['pid']" v-for='pro in proList' ,:key="pro.id")
               .ot-portfolio-item
                 figure.effect-bubba
-                  img.img-responsive.lazyload(class="lazyload" ,:src='JSON.parse(pro.imgs)[0]', :data-original='JSON.parse(pro.imgs)[0]'  alt="img02")
+                  img.img-responsive.lazyload(class="lazyload" ,:src='baseUrl+JSON.parse(pro.imgs)[0]["src"]', :data-original='baseUrl+JSON.parse(pro.imgs)[0]["src"]'  alt="img02")
                   //- img.img-responsive.lazyload(src='../assets/images/addBg.png', :data-original='JSON.parse(pro.imgs)[0]'  alt="img02")
                   //- img.img-responsive.lazyload(:src='JSON.parse(pro.imgs)[0]'  alt="img02")
                   |               
@@ -108,20 +108,15 @@
     name: 'home',
     data(){
       return {
-        proList:{}
+        proList:{},
       }
     },
     mounted(){
       this.getPro()
     },
-    components: { 
-      'header-page':this.headerPage,
-      'footer-page':this.footerPage
-    },
     methods:{
       getPro(){
         getProducts().then((res)=>{
-          
           this.proList = res['vals']
         },error=>{
           this.autoAlert(error.statusText,'red')

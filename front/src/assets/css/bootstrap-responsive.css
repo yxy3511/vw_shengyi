@@ -77,7 +77,7 @@
   }
   .hidden-tablet {
     /*display: none !important;*/
-    display: inline-block; !important;
+    display: inline-block !important;
   }
 }
 

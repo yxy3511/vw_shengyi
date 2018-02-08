@@ -1,17 +1,20 @@
+// import TweenLite from "./TweenLite.min.js"
 (function() {
-
+    document.write("<script language='javascript' src='./TweenLite.min.js'></script>");
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
     // Main
-    initHeader();
-    initAnimation();
-    addListeners();
-
+    // clearTimeout(timer) 
+    var timer = setTimeout(function(){
+        initHeader();
+        initAnimation();
+        addListeners();
+    },100);
     function initHeader() {
         width = window.innerWidth;
         height = window.innerHeight;
         target = {x: width/2, y: height/2};
-
+        console.log('height:',height)
         largeHeader = document.getElementById('large-header');
         largeHeader.style.height = height+'px';
 
@@ -139,6 +142,7 @@
     }
 
     function shiftPoint(p) {
+        alert(TweenLite)
         TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
             y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
             onComplete: function() {

@@ -6,10 +6,10 @@
  *
  * Released under the GNU GPLv3 license - http://opensource.org/licenses/gpl-3.0
  */
-div,h1,h2,h3,table,ul,li,span,img{
+/*div,h1,h2,h3,table,ul,li,span,img{
     margin:0px;
     padding:0px;
-}
+}*/
 
 /* --------------小--------- */
 @media only screen and (max-width : 990px) {

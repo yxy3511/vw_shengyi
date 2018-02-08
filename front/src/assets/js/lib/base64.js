@@ -8,13 +8,12 @@
 *
 */
  
-function Base64() {
  
   // private property
-  _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+  var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
  
   // public method for encoding
-  this.encode = function (input) {
+  export function encode(input) {
     var output = "";
     var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
     var i = 0;
@@ -40,7 +39,7 @@ function Base64() {
   }
  
   // public method for decoding
-  this.decode = function (input) {
+  export function decode(input) {
     var output = "";
     var chr1, chr2, chr3;
     var enc1, enc2, enc3, enc4;
@@ -67,7 +66,7 @@ function Base64() {
   }
  
   // private method for UTF-8 encoding
-  _utf8_encode = function (string) {
+  function _utf8_encode(string) {
     string = string.replace(/\r\n/g,"\n");
     var utftext = "";
     for (var n = 0; n < string.length; n++) {
@@ -88,10 +87,12 @@ function Base64() {
   }
  
   // private method for UTF-8 decoding
-  _utf8_decode = function (utftext) {
+  function _utf8_decode(utftext) {  
     var string = "";
     var i = 0;
-    var c = c1 = c2 = 0;
+    var c2 = 0;
+    var c1 = c2;
+    var c = c1;
     while ( i < utftext.length ) {
       c = utftext.charCodeAt(i);
       if (c < 128) {
@@ -110,4 +111,5 @@ function Base64() {
     }
     return string;
   }
-}
+
+

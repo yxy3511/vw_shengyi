@@ -131,7 +131,7 @@
         this.$router.go(-1)
       },
       setPrePage(){
-        let preUrl = this.preUrl  || this.$route.path
+        let preUrl = this.preUrl  || this.$router.path
         if(preUrl.indexOf('/products') != -1){
           this.isPageShow = false
         }else{

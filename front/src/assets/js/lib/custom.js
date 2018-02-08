@@ -1,6 +1,6 @@
 /* -------------------- Check Browser --------------------- */
-// import {manageMenu} from '/conm/config.js'
-document.write("<script language=javascript src='/conm/config.js'></script>");
+import {manageMenu} from '../config.js'
+// document.write("<script language=javascript src='../config.js'></script>");
 function browser() {
 	
 	var isOpera = !!(window.opera && window.opera.version);  // Opera 8.0+
@@ -74,8 +74,10 @@ $(document).ready(function(){
 				
 	/* ---------- Add class .active to current link  ---------- */
 	// console.log(manageMenu)
-	$('ul.main-menu li a').each(function(){
+	/*$('ul.main-menu li a').each(function(){
 			manageMenu.forEach((menu,i)=>{
+				console.log('menu:',menu)
+				console.log('$($(this))[0].href:',$($(this))[0].href)
 				if($($(this))[0].href.indexOf(menu.url) != -1){
 					menu.childUrl.forEach((url,d)=>{
 						if(String(window.location).indexOf(url) != -1){
@@ -90,7 +92,7 @@ $(document).ready(function(){
 				
 			// }
 	
-	});
+	});*/
 	
 	$('ul.main-menu li ul li a').each(function(){
 		

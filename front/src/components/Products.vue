@@ -20,10 +20,10 @@
                     span.glyphicon.glyphicon-search
       .imgsList
         .centerDiv
-          router-link.imgcard(:to="'/proDesc/'+pro['pid']" v-for='pro in proList' )
+          router-link.imgcard(:to="'/proDesc/'+pro['pid']" v-for='pro in proList' ,:key="pro.id")
             .ot-portfolio-item
               figure.effect-bubba
-                img.img-responsive(class="lazyload", :src='JSON.parse(pro.imgs)[0]', :data-original='JSON.parse(pro.imgs)[0]' , alt="img02")
+                img.img-responsive(class="lazyload", :src='baseUrl+JSON.parse(pro.imgs)[0]["src"]', :data-original='baseUrl+JSON.parse(pro.imgs)[0]["src"]' , alt="商品图片")
                 |               
                 figcaption
                   h2 {{pro.pname}}
@@ -70,6 +70,7 @@
 <script>
   // require('./assets/js/products.js')
   import {searchPro} from '../assets/js/products.js'
+  import {getProLists} from '../assets/js/init.js'
   // import "../assets/js/lib/pagination.js"
   import pagination from "./common/paging.vue"
   // import pagination from "./common/page/pagination.vue"
@@ -81,7 +82,11 @@
         proList:{},
         keyVal:'',
         pageNum:1,
-        pageCount:-1 
+        pageCount:-1,
+        page:{
+          pageSize:parseInt(localStorage.getItem('usersPageSize')),
+          pageNum:this.pageNum
+        },
       }
     },
     components:{
@@ -98,10 +103,9 @@
       //这个方法名要唯一，并和app.vue中一致
       getPro(curNum){
         let id = this.$route.params.id || 0
-        let page = {}
-        page.pageNum = curNum || 1
-        page.pageSize = parseInt(localStorage.getItem('usersPageSize'))
-        this.getProLists(id,page).then((res)=>{
+        this.page.pageNum = curNum || 1
+        // this.page.pageSize = parseInt(localStorage.getItem('usersPageSize'))
+        getProLists(id,this.page).then((res)=>{
           this.pageNum = res.pageNum
           this.pageCount = res.pageCount
           if(res['vals']){
@@ -134,6 +138,8 @@
           },error=>{
             this.autoAlert(error.statusText,'red')
           })
+        }else if(event.key == 'Enter' && this.keyVal.length == 0){
+          this.getPro()
         }
        
       }

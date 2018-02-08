@@ -1,7 +1,7 @@
 <template lang='jade'>
   nav(v-show='page > 1')
     ul.pagination.yupage
-      li(:class="{'disabled': current == 1}")
+      li.goPage(:class="{'disabled': current == 1}")
         a(href="javascript:;", rel="external nofollow", @click="setCurrent(current - 1)")  « 
       |    
       li(:class="{'disabled': current == 1}")
@@ -13,7 +13,7 @@
       li(:class="{'disabled': current == page}")
         a(href="javascript:;", rel="external nofollow", @click="setCurrent(page)")  尾页 
       |    
-      li(:class="{'disabled': current == page}")
+      li.goPage(:class="{'disabled': current == page}")
         a(href="javascript:;", rel="external nofollow", @click="setCurrent(current + 1)")  »
 
 </template>
@@ -21,7 +21,7 @@
 export default{
   data(){
     return {
-      current: this.currentPage,
+      // current: this.currentPage,
       // page: this.total
     }
   },
@@ -48,6 +48,9 @@ export default{
     }
   },
   computed: {
+    current: function(){
+      return this.currentPage
+    },
     page: function () { // 总页数
       // return Math.ceil(this.total / this.display);
       // console.log(this.total)
@@ -94,9 +97,9 @@ export default{
   },
   methods: {
     setCurrent: function (idx) {
-      if (this.current != idx && idx > 0 && idx < this.page + 1) {
-       this.current = idx;
-       this.$emit('pagechange', this.current);
+      if (this.current != idx && idx > 0 && idx < this.total + 1) {
+       // this.current = idx;
+       this.$emit('pagechange', idx);
       }
     }
   }
@@ -128,7 +131,9 @@ export default{
       border-radius: 5px;
       text-decoration: none
       color: #000;   
-
+    .goPage
+      a
+        font-size: 20px;
 
   .active 
     background: #000;
