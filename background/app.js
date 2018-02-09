@@ -39,7 +39,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/manage/?',function(req, res, next) {
     var url = req.originalUrl;
     if (!req.session.isLogged) {
-        return res.render('login',{msg:'请先登录！'})
+        // return res.render('login',{msg:'请先登录！'})
+        res.send(200,{
+            code:1,
+            msg:'请先登录！'
+        })
     }else{
         next();
     }

@@ -31,7 +31,8 @@ exports.searchUser = function(key,page,callback){
     if(key && key=='all'){
         sql = "select *,(select COUNT(1) from users) as totalCount from users order by uid desc Limit "+(pageNum-1)*pageSize+','+pageSize;
     }else{
-        sql = "select * ,(select COUNT(1) from users where uname = '"+key+"') as totalCount from users where uname = '"+key+"' order by uid desc Limit "+(pageNum-1)*pageSize+','+pageSize;
+        sql = "select * ,(select COUNT(1) from users where uname = '"+key+"') as totalCount from users where uname = '"+key+"' order by uid desc";
+        // sql = "select * ,(select COUNT(1) from users where uname = '"+key+"') as totalCount from users where uname = '"+key+"' order by uid desc Limit "+(pageNum-1)*pageSize+','+pageSize;
     }
     query(sql,callback)
 }

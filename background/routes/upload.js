@@ -20,9 +20,10 @@ router.post('/uploading', function(req, res, next){
 
     //上传完成后处理 
     form.parse(req, function(err, fields, files) {
-        // console.log('useFiles:',files)
+        console.log('useFiles:',files)
         images.push(files)
-        var dstPath = {} 
+        // var dstPath = {} 
+        var imgInfo = {} 
         var imgArr = []
         if(err){
             console.log('parse error: ' + err);
@@ -38,8 +39,12 @@ router.post('/uploading', function(req, res, next){
                         continue;
                     }
                     //存数据库存这个 
-                    imgArr[index] = '/files/' + inputFile['originalFilename'];
+                    // imgArr[index] = '/files/' + inputFile['originalFilename'];
                     var renamePath = './public/files/' + inputFile['originalFilename'];
+
+                    imgInfo['src'] = '/files/' + inputFile['originalFilename'];
+                    imgInfo['name'] = inputFile['originalFilename']
+                    imgArr.push(imgInfo)
                     //重命名为真实文件名
                     fs.rename(uploadedPath, renamePath, function(err) {
                         if(err){
@@ -77,41 +82,42 @@ router.post('/uploading', function(req, res, next){
             }
             
         }
-        global.imagesArr.push(imgArr)
-        dstPath.imgs = imgArr;
-        //方法1
-        //格式必须为 binary 否则会出错
-        /*var content = fs.readFileSync(dstPath['path0'],"binary");  
-        res.writeHead(200, {'content-type': 'text/plain;charset=utf-8'});
-        res.write(content,"binary"); //格式必须为 binary，否则会出错
-        res.end();*/
-        //方法2
-        /*var stream = fs.createReadStream( dstPath['path0'] );
-        var responseData = [];//存储文件流
-        if (stream) {//判断状态
-            stream.on( 'data', function( chunk ) {
-              responseData.push( chunk );
-            });
-            stream.on( 'end', function() {
-               var finalData = Buffer.concat( responseData );
-               console.log('finalData',finalData)
-               res.write( finalData );
-               res.end();
-            });
-        }*/
-        //方法3
-        var cnt = 0;
-        var all = {}
-        for(var l in global.imagesArr){
-            for(var z in global.imagesArr[l]){
-                all[cnt] = global.imagesArr[l][z]
-                cnt += 1
-            }
-        }
-        dstPath.len = cnt;
-        dstPath.allImgs = JSON.stringify(all);
-        // res.render('uploadImg',dstPath)
-        res.send(dstPath)
+        res.send(200,imgArr)
+        // global.imagesArr.push(imgArr)
+        // dstPath.imgs = imgArr;
+        // //方法1
+        // //格式必须为 binary 否则会出错
+        // /*var content = fs.readFileSync(dstPath['path0'],"binary");  
+        // res.writeHead(200, {'content-type': 'text/plain;charset=utf-8'});
+        // res.write(content,"binary"); //格式必须为 binary，否则会出错
+        // res.end();*/
+        // //方法2
+        // // var stream = fs.createReadStream( dstPath['path0'] );
+        // // var responseData = [];//存储文件流
+        // // if (stream) {//判断状态
+        // //     stream.on( 'data', function( chunk ) {
+        // //       responseData.push( chunk );
+        // //     });
+        // //     stream.on( 'end', function() {
+        // //        var finalData = Buffer.concat( responseData );
+        // //        console.log('finalData',finalData)
+        // //        res.write( finalData );
+        // //        res.end();
+        // //     });
+        // // }
+        // //方法3
+        // var cnt = 0;
+        // var all = {}
+        // for(var l in global.imagesArr){
+        //     for(var z in global.imagesArr[l]){
+        //         all[cnt] = global.imagesArr[l][z]
+        //         cnt += 1
+        //     }
+        // }
+        // dstPath.len = cnt;
+        // dstPath.allImgs = JSON.stringify(all);
+        // // res.render('uploadImg',dstPath)
+        // res.send(dstPath)
         // res.end();
     });
 
@@ -127,16 +133,23 @@ router.get('/uploadImg', function(req, res, next) {
                 console.log(err)
             }else{
                 var sortArr = {}
+                var totalCount = 0
                 for(var j in vals){
                     sortArr[vals[j].id] = vals[j].name
+                    totalCount = vals[j]['totalCount']
                 }
                 //获取状态
                 // res.render('uploadImg',{
                 //     sorts: JSON.stringify(sortArr)
                 // }); 
-                res.render('proAdd',{
-                    sorts: JSON.stringify(sortArr)
-                }); 
+                // res.render('proAdd',{
+                //     sorts: JSON.stringify(sortArr)
+                // }); 
+                res.send(200,{
+                    code:0,
+                    sorts:sortArr,
+                    length: totalCount
+                })
             }
         })
 

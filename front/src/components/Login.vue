@@ -50,7 +50,6 @@
       data(){
         return{
           isRmb:false,
-          actionUrl:'',
           formData:{
             uname:'',
             pwd:''
@@ -58,16 +57,11 @@
         }
       },
       created(){
-        this.$http.get('/api/login')
+        this.$http.post('/api/login').then(res=>{
+          console.log('res:',res)
+        })
       },
       mounted(){
-        //设置pageSize
-        let pageSize = -1
-        if(!localStorage.getItem('pageSize')){
-          localStorage.setItem('pageSize',this.defaultPagesize)
-        }
-        pageSize = parseInt(localStorage.getItem('pageSize'))
-        this.actionUrl = '/api/logging/'+pageSize
         // var minHeight = $(document).height()
         var minHeight = $(window).height()
         $(".container-fluid-full").height(minHeight)
@@ -128,7 +122,7 @@
         submit(){
           this.saveVal()
           var formData = JSON.stringify(this.formData); // 这里才是你的表单数据
-          this.$http.post(this.actionUrl,formData).then((res) => {
+          this.$http.post('/api/logging',formData).then((res) => {
               // success callback
               let msg = JSON.parse(res.bodyText).msg
               let code = JSON.parse(res.bodyText).code

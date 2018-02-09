@@ -210,14 +210,21 @@ exports.getAboutUs = function(id,page,callback){
     var pageSize = +page.pageSize 
     var demoLength = +page.demoLength
     var offset = (pageNum-1)*pageSize
-    if(pageNum > 1){
+    if(pageNum*pageSize<demoLength || pageNum*pageSize == demoLength){
+        offset = 0
+    }else if(((pageNum-1)*pageSize+1 == demoLength || (pageNum-1)*pageSize+1 > demoLength) && pageNum*pageSize > demoLength){
+        offset = 0
+        pageSize = pageSize - (demoLength - (pageNum-1)*pageSize)
+    }else if(pageNum > 1){
         offset = (pageNum-1)*pageSize - demoLength
     }
+    
     if(id){
         sql = 'select * from aboutus where id = '+id;
     }else{
         sql = 'select * ,(select COUNT(1) from aboutus) as totalCount from aboutUs order by up_date desc Limit '+offset+','+pageSize;
     }
+    console.log('sql:',sql)
     query(sql,callback)
 }
 

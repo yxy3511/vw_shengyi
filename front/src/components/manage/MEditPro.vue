@@ -280,6 +280,7 @@
               this.$router.push({path:'/manage/MProducts'})
             }
           },err=>{
+            console.log(res)
             this.autoAlert(res.msg,'orange')
           })
         }

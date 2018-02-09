@@ -113,7 +113,7 @@
             ul.pgwSlideshow
               //- li(v-for='img in pro.imgs')
               li(v-for='img in pro.imgs') 
-                img(:src="img")
+                img(:src="baseUrl+img.src")
             div(style="text-align:center;clear:both")
         .proDesc.col-md-5
           .skills-text

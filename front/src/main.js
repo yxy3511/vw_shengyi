@@ -72,6 +72,7 @@ Vue.prototype.setCurPageSize = setCurPageSize
 
 Vue.http.interceptors.push(function(request, next) {
   next(res=>{
+    console.log('mainRes:',res)
     if(res.bodyText && JSON.parse(res.bodyText).code == 1){
       // this.$router.push({
       //   name:'login',

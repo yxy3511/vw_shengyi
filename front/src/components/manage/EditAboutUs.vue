@@ -174,6 +174,7 @@
       },
       getAbout(){
         this.$http.post('/api/manage/editAboutUs',this.params).then(res=>{
+          console.log('haha:',res)
           let code = JSON.parse(res.bodyText).code
           let vals = JSON.parse(res.bodyText).vals
           if(code == 0){
@@ -211,7 +212,7 @@
       saveImgs(formData){
         return $.ajax({
             type : 'post',
-            url : '/api/manage/uploading',
+            url : '/api/manage/upAboutUs',
             data: formData ,
             processData:false,
             async:false,

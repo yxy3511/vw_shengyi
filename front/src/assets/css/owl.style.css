@@ -369,6 +369,7 @@ header .intro-text .intro-heading {
     margin-left: 10px;
     margin-bottom: 30px;
     display:  inline-block;
+    overflow: hidden;
 }
 
 figure {
@@ -1038,7 +1039,9 @@ h2 a:hover{
    min-height: 228.6px;
 }  */
 /* ---轮播-- */
-
+ul.allImgsList{
+    padding:0px;
+}
 .carousel-control.right,.carousel-control.left {
     background-image: none;
 }

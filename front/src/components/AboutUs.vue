@@ -46,9 +46,14 @@ export default {
   mounted(){
     this.getInfo()
   },
-  updated(){
-    this.setNaturalImg('.isLittleImg')
+  // updated(){
+  //   this.setNaturalImg('.isLittleImg')
     
+  // },
+  beforeUpdate(){
+    setTimeout(()=>{
+      this.setNaturalImg('.isLittleImg')
+    },100);
   },
   methods:{
     getInfo(){

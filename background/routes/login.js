@@ -16,8 +16,12 @@ toLogin=function(req,res){
     var msg = req.session.logMsg
     req.session.logMsg = null
     req.session.destroy();
-    res.render('login',{
-        msg:msg
+    // res.render('login',{
+    //     msg:msg
+    // })
+    res.send(200,{
+        code:0,
+        msg:''
     })
 }
 toRegister=function(req,res){
@@ -94,24 +98,36 @@ newRegistering = function(req,res){
         var againpwd = req.body.againpass
 
         var page = {}
-        page.pageSize = req.params.pageSize
-        page.pageNum = req.params.pageNum
+        page.pageSize = 1
+        page.pageNum = 1
 
         if(uname == ''){
-            req.session.logMsg = '用户名不能为空！'
-            return res.redirect('/manage/register')
+            return res.send(200,{
+                code:-1,
+                msg: '用户名不能为空！'
+            })
+            // req.session.logMsg = '用户名不能为空！'
+            // return res.redirect('/manage/register')
             // return res.render('newRegister',{
             //         msg:'用户名不能为空！'
             //     });
         }else if(pwd == ''){
-            req.session.logMsg = '密码不能为空！'
-            return res.redirect('/manage/register')
+            return res.send(200,{
+                code:-1,
+                msg: '密码不能为空！'
+            })
+            // req.session.logMsg = '密码不能为空！'
+            // return res.redirect('/manage/register')
             // return res.render('newRegister',{
             //         msg:'密码不能为空！'
             //     });
         }else if(againpwd == ''){
-            req.session.logMsg = '请再次输入密码！'
-            return res.redirect('/manage/register')
+            return res.send(200,{
+                code:-1,
+                msg: '请再次输入密码！'
+            })
+            // req.session.logMsg = '请再次输入密码！'
+            // return res.redirect('/manage/register')
             // return res.render('newRegister',{
             //         msg:'请再次输入密码！'
             //     });
@@ -123,22 +139,38 @@ newRegistering = function(req,res){
         loginContent.searchUser(uname,page,function(err,vals){
             if(err){
                 console.log(err)
+                return res.send(200,{
+                    code:500,
+                    msg: err.sqlMessage
+                })
             }else if(vals.length > 0){
                 //用户名已被使用
-                req.session.logMsg = '此用户名已被注册！'
-                return res.redirect('/manage/register')
+                return res.send(200,{
+                    code:-1,
+                    msg: '此用户名已被注册！'
+                })
+                // req.session.logMsg = '此用户名已被注册！'
+                // return res.redirect('/manage/register')
                 // res.render('newRegister',{
                 //     msg:'此用户名已被注册！'
                 // });
             }else if(params.pwd != againpwd){
-                req.session.logMsg = '两次密码输入不相同！'
-                return res.redirect('/manage/register')
+                return res.send(200,{
+                    code:-1,
+                    msg: '两次密码输入不相同！'
+                })
+                // req.session.logMsg = '两次密码输入不相同！'
+                // return res.redirect('/manage/register')
                 // res.render('newRegister',{
                 //     msg:'两次密码输入不相同！'
                 // });
             }else if(vals.length == 0){
                 loginContent.addUser(params,function(err,vals){
                     if(err){
+                        return res.send(200,{
+                            code:500,
+                            msg: err.sqlMessage
+                        })
                         console.log(err)
                     }else if(vals.affectedRows > 0){
                         /*loginContent.searchUser('all',function(e,val){
@@ -172,9 +204,13 @@ newRegistering = function(req,res){
                             }
                             
                         })*/
-                        var msg = '注册成功！'
-                        req.session.manageMsg = msg
-                        return res.redirect('/manage/getUser/'+page.pageSize+'/1')
+                        return res.send(200,{
+                            code:0,
+                            msg:'注册成功！'
+                        })
+                        // var msg = '注册成功！'
+                        // req.session.manageMsg = msg
+                        // return res.redirect('/manage/getUser/'+page.pageSize+'/1')
                         // return res.redirect('/manage/getUser/'+page.pageNum+'/'+page.pageSize)
                        /* res.render('login',{
                             msg:'注册成功！'
@@ -193,13 +229,17 @@ newRegistering = function(req,res){
 loggingIn = function(req,res){
     try{
         var page = {}
-        page.pageSize = req.params.pageSize
+        page.pageSize = 1
         page.pageNum = 1
         var uname = req.body.uname
         var pwd = req.body.pwd
         if(uname.length == 0){
-            req.session.logMsg = '用户名不能为空！'
-            return res.redirect('/login')
+            return res.send(200,{
+                code:-1,
+                msg:'用户名不能为空！'
+            })
+            // req.session.logMsg = '用户名不能为空！'
+            // return res.redirect('/login')
             // return res.render('login',{
             //         msg: '用户名不能为空！'
             //     })
@@ -207,8 +247,12 @@ loggingIn = function(req,res){
             // return res.render('login',{
             //         msg: '密码不能为空！'
             //     })
-            req.session.logMsg = '密码不能为空！'
-            return res.redirect('/login')
+            // req.session.logMsg = '密码不能为空！'
+            // return res.redirect('/login')
+            return res.send(200,{
+                code:-1,
+                msg:'密码不能为空！'
+            })
         }
         var params = {}
         params.uname = uname
@@ -224,22 +268,34 @@ loggingIn = function(req,res){
                 // return res.render('login',{
                 //     msg: '密码不正确！'
                 // })        
-                req.session.logMsg = '密码不正确！'
-                return res.redirect('/login')
+                // req.session.logMsg = '密码不正确！'
+                // return res.redirect('/login')
+                return res.send(200,{
+                    code:-1,
+                    msg:'密码不正确！'
+                })
             }else if(vals.length == 0){
+
                 // delete req.session.isLogged;
                 // return res.render('login',{
                 //     msg: '用户名不存在！'
                 // })
-                req.session.logMsg = '用户名不存在！'
-                return res.redirect('/login')
-
+                // req.session.logMsg = '用户名不存在！'
+                // return res.redirect('/login')
+                return res.send(200,{
+                    code:-1,
+                    msg:'用户名不存在！'
+                })
             }else{
                 //登录成功
                 //操作session
                 req.session.isLogged = true;
                 // 操作location
-                return res.redirect('/manage/proList/'+page.pageSize+'/'+page.pageNum+'/?uname='+uname)
+                // return res.redirect('/manage/proList/'+page.pageSize+'/'+page.pageNum+'/?uname='+uname)
+                return res.send(200,{
+                    code:0,
+                    msg:'登录成功！'
+                })
             }   
 
         })
@@ -248,11 +304,11 @@ loggingIn = function(req,res){
         console.log(e)
     }
 }
-router.get('/login',toLogin);
+router.post('/login',toLogin);
 router.get('/manage/register',toRegister);
-router.post('/registering/:pageSize/:pageNum',newRegistering);
+router.post('/manage/registering',newRegistering);
 // router.post('/registering',registering);
-router.post('/logging/:pageSize',loggingIn);
+router.post('/logging',loggingIn);
 
 module.exports = router
 

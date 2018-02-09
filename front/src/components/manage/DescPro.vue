@@ -47,7 +47,7 @@
           desc_txt:'',
         },
         imgs:[],
-        baseUrl:'http://localhost:3000',
+        // baseUrl:'http://localhost:3000',
         pid:-1,
       }
     },

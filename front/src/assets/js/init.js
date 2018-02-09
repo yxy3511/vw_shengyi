@@ -97,19 +97,19 @@ export function setUrlAct(path){
             }
         })    
     });
-    // Menu.forEach((m,index)=>{
-    //     m.childUrl.forEach(url=>{
-    //         if(path.indexOf(url) != -1){
-    //             $('a.page-scroll').map((i,param)=>{
-    //                 if(i == index){
-    //                     $(param).addClass('active');
-    //                 }else{
-    //                     $(param).removeClass('active');
-    //                 }
-    //             })
-    //         }
-    //     })
-    // })
+    Menu.forEach((m,index)=>{
+        m.childUrl.forEach(url=>{
+            if(path.indexOf(url) != -1){
+                $('a.page-scroll').map((i,param)=>{
+                    if(i == index){
+                        $(param).addClass('active');
+                    }else{
+                        $(param).removeClass('active');
+                    }
+                })
+            }
+        })
+    })
 }
 
 export function setMap(){

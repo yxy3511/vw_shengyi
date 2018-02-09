@@ -21,6 +21,7 @@ router.post('/upAboutUs', function(req, res, next){
     form.parse(req, function(err, fields, files) {
         images.push(files)
         var dstPath = {} 
+        var imgInfo = {} 
         var imgArr = []
         if(err){
             console.log('parse error: ' + err);
@@ -36,8 +37,11 @@ router.post('/upAboutUs', function(req, res, next){
                         continue;
                     }
                     //存数据库存这个 
-                    imgArr[index] = '/images/aboutUs/' + inputFile['originalFilename'];
+                    // imgArr[index] = '/images/aboutUs/' + inputFile['originalFilename'];
                     var renamePath = './public/images/aboutUs/' + inputFile['originalFilename'];
+                    imgInfo['src'] = '/images/aboutUs/' + inputFile['originalFilename'];
+                    imgInfo['name'] = inputFile['originalFilename']
+                    imgArr.push(imgInfo)
                     //重命名为真实文件名
                     fs.rename(uploadedPath, renamePath, function(err) {
                         if(err){
@@ -75,10 +79,11 @@ router.post('/upAboutUs', function(req, res, next){
             }
             
         }
-        global.aboutUsImgsArr.push(imgArr)
-        dstPath.imgs = JSON.stringify(imgArr)
-        console.log('dstpath:',dstPath)
-        res.send(dstPath)
+        res.send(200,imgArr)
+        // global.aboutUsImgsArr.push(imgArr)
+        // dstPath.imgs = JSON.stringify(imgArr)
+        // console.log('dstpath:',dstPath)
+        // res.send(dstPath)
         // res.end();
     });
 });

@@ -15,21 +15,21 @@ const demos = [{
     id:-1,
     title: '少图多字模式',
     desc_txt: '图片较少，文字较多时适用。',
-    content: '[{"value":"        内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。","title":"第一段标题","img":"/images/aboutUs/yxy.JPG"},{"value":"        连接上一块，可以不添加图片和标题。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。","title":"","img":""},{"value":"       ","title":"","img":""},{"value":"        连接上一块，可以不添加图片和标题。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。","title":"第二段标题","img":"/images/aboutUs/13697618_1346997403655.jpg"},{"value":"        内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。","title":"","img":""}]',
+    content: '[{"value":"        内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。","title":"第一段标题","img":{"src":"/images/aboutUs/hua.jpg","name":"hua.jpg"}},{"value":"        连接上一块，可以不添加图片和标题。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。","title":"","img":""},{"value":"       ","title":"","img":""},{"value":"        内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。","title":"第二段标题","img":{"src":"/images/aboutUs/cao.jpg","name":"cao.jpg"}},{"value":"        连接上一块，可以不添加图片和标题。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。内容丰富，填满。","title":"","img":""}]',
     up_date: '2018-01-05T08:22:34.000Z' 
 },{
     isDemo:true,
     id: -2,
     title: '内容丰满式',
     desc_txt: '内容较多，每一块都能填满。',
-    content: '[{"value":"第一块内容，可以不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。","title":"这个第一块内容标题","img":"/images/aboutUs/yxy.JPG"},{"value":"第二块内容，可以不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。","title":"这个第二块内容标题","img":"/images/aboutUs/13697618_1346997403655.jpg"},{"value":"第三块内容，可以不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。","title":"这个第三块内容标题","img":"/images/aboutUs/yxy.JPG"}]',
+    content: '[{"value":"第一块内容，可以不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。","title":"这个第一块内容标题","img":{"src":"/images/aboutUs/hua.jpg","name":"hua.jpg"}},{"value":"第二块内容，可以不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。","title":"这个第二块内容标题","img":{"src":"/images/aboutUs/cao.jpg","name":"cao.jpg"}},{"value":"第三块内容，可以不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。不换行填满。","title":"这个第三块内容标题","img":{"src":"/images/aboutUs/hua.jpg","name":"hua.jpg"}}]',
     up_date: '2018-01-05T07:33:33.000Z' 
 },{
     isDemo:true,
     id: -3,
     title: '条理清晰式',
     desc_txt: '对于要阐述的内容有较为清晰的思路，并且分步描述。',
-    content: "[{\"value\":\"1.第一段第一点内容，内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n2.第一段第二点内容，内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n3.第一段第三点内容，内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n4.第一段第四点内容，内容简短精炼。内容简短精炼。内容简短精炼。\",\"title\":\"第一段标题\",\"img\":\"/images/aboutUs/yxy.JPG\"},{\"value\":\"1.第二段第一点内容，内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n2.第二段第二点内容，内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n3.第二段第三点内容，内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n4.第二段第四点内容，内容简短精炼。内容简短精炼。内容简短精炼。\",\"title\":\"第二段标题\",\"img\":\"/images/aboutUs/13697618_1346997403655.jpg\"}]",
+    content: "[{\"value\":\"1.第一段第一点内容，内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n2.第一段第二点内容，内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n3.第一段第三点内容，内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n4.第一段第四点内容，内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。\",\"title\":\"第一段标题\",\"img\":{\"src\":\"/images/aboutUs/hua.jpg\",\"name\":\"hua.jpg\"}},{\"value\":\"1.第二段第一点内容，内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n2.第二段第二点内容，内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n3.第二段第三点内容，内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。\\r\\n4.第二段第四点内容，内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。内容简短精炼。\",\"title\":\"第二段标题\",\"img\":{\"src\":\"/images/aboutUs/cao.jpg\",\"name\":\"cao.jpg\"}}]",
     up_date: '2018-01-05T07:37:52.000Z' 
 }]
 
@@ -50,12 +50,13 @@ toProList = function(req,res){
                 console.log(err)
             }else{
                 //頁數
-                var totalCount = -1
+                var totalCount = 0
                 var resArr = {}
                 for(var i in vals){
                     resArr[i] = vals[i]
                     totalCount = vals[i]['totalCount']
                 }
+                var pageCount = 1
                 if(parseInt(totalCount/page.pageSize) == 0){
                     pageCount = 1
                 }else if(totalCount%page.pageSize > 0 && totalCount%page.pageSize < page.pageSize){
@@ -63,36 +64,43 @@ toProList = function(req,res){
                 }else{
                     pageCount = parseInt(totalCount/page.pageSize)
                 }
-                //获取sorts
-                proListContent.getSorts('all',function(e,val){
-                    if(e){
-                        console.log(e)
-                    }else{
-                        var sortArr = {}
-                        for(var j in val){
-                            sortArr[val[j].id] = val[j].name
-                        }
-                        /*var msg = null
-                        if(mid == 0){
-                            msg= '保存失败，商品名不能为空！'
-                        }else if(mid == 1){
-                            msg= '保存失败，商品价格不能为空！'
-                        }else if(mid == 2){
-                            msg= '保存失败，商品描述不能为空！'
-                        }else if(mid == 3){
-                            msg= '保存失败，商品图片不能为空！'
-                        }*/
-                        res.render('proList',{
-                            // res.render('tbodyPro',{
-                            vals: JSON.stringify(resArr),
-                            sorts: JSON.stringify(sortArr),
-                            msg: msg,
-                            pageNum: page.pageNum,
-                            pageCount: pageCount,
-                        })
-                    }
-                    
+                res.send(200,{
+                    code:0,
+                    length:totalCount,
+                    vals: resArr,
+                    pageNum: page.pageNum,
+                    pageCount: pageCount,
                 })
+                //获取sorts
+                // proListContent.getSorts('all',function(e,val){
+                //     if(e){
+                //         console.log(e)
+                //     }else{
+                //         var sortArr = {}
+                //         for(var j in val){
+                //             sortArr[val[j].id] = val[j].name
+                //         }
+                //         // var msg = null
+                //         // if(mid == 0){
+                //         //     msg= '保存失败，商品名不能为空！'
+                //         // }else if(mid == 1){
+                //         //     msg= '保存失败，商品价格不能为空！'
+                //         // }else if(mid == 2){
+                //         //     msg= '保存失败，商品描述不能为空！'
+                //         // }else if(mid == 3){
+                //         //     msg= '保存失败，商品图片不能为空！'
+                //         // }
+                //         res.render('proList',{
+                //             // res.render('tbodyPro',{
+                //             vals: JSON.stringify(resArr),
+                //             sorts: JSON.stringify(sortArr),
+                //             msg: msg,
+                //             pageNum: page.pageNum,
+                //             pageCount: pageCount,
+                //         })
+                //     }
+                    
+                // })
                     
                 
             }
@@ -119,7 +127,7 @@ getProList = function(req,res,next){
                 console.log(err)
             }else{
                 //頁數
-                let totalCount = -1
+                let totalCount = 0
                 var resArr = {}
                 for(var i in vals){
                     resArr[i] = vals[i]
@@ -128,6 +136,7 @@ getProList = function(req,res,next){
                 // var totalCount = vals.length
                 // var pageLine = 10
                 // var pageCount = -1
+                var pageCount = 1
                 if(parseInt(totalCount/page.pageSize) == 0){
                     pageCount = 1
                 }else if(totalCount%page.pageSize > 0 && totalCount%page.pageSize < page.pageSize){
@@ -137,34 +146,45 @@ getProList = function(req,res,next){
                 }
                 if(page.pageNum > pageCount){
                     page.pageNum = page.pageNum - 1
-                    return res.redirect('/manage/proList/'+page.pageSize+'/'+page.pageNum)
+                    // return res.redirect('/manage/proList/'+page.pageSize+'/'+page.pageNum)
+                    res.send(200,{
+                        code: -2,
+                        pageNum: page.pageNum
+                    })
                 }
                 // console.log('rrrreessArr:',resArr)
+                res.send(200,{
+                    code:0,
+                    vals: resArr,
+                    length:totalCount,
+                    pageNum: page.pageNum,
+                    pageCount: pageCount,
+                })
                 //获取sorts
-                proListContent.getSorts('all',{pageSize:0,pageNum:0},function(e,val){
-                    if(e){
-                        console.log(e)
-                    }else{
-                        var sortArr = {}
-                        for(var j in val){
-                            sortArr[val[j].id] = val[j].name
-                        }
-                        res.render('newProlist',{
-                            vals: JSON.stringify(resArr),
-                            sorts: JSON.stringify(sortArr),
-                            pageNum: page.pageNum,
-                            pageCount: pageCount,
-                            msg: msg
-                        })
-                        /*res.render('proList',{
-                            vals: JSON.stringify(resArr),
-                            sorts: JSON.stringify(sortArr),
-                            pageCount: pageCount,
-                            totalCount: totalCount,
-                            msg: msg
-                        })*/
-                    }
-                })                
+                // proListContent.getSorts('all',{pageSize:0,pageNum:0},function(e,val){
+                //     if(e){
+                //         console.log(e)
+                //     }else{
+                //         var sortArr = {}
+                //         for(var j in val){
+                //             sortArr[val[j].id] = val[j].name
+                //         }
+                //         res.render('newProlist',{
+                //             vals: JSON.stringify(resArr),
+                //             sorts: JSON.stringify(sortArr),
+                //             pageNum: page.pageNum,
+                //             pageCount: pageCount,
+                //             msg: msg
+                //         })
+                //         // res.render('proList',{
+                //         //     vals: JSON.stringify(resArr),
+                //         //     sorts: JSON.stringify(sortArr),
+                //         //     pageCount: pageCount,
+                //         //     totalCount: totalCount,
+                //         //     msg: msg
+                //         // })
+                //     }
+                // })                
             }
             
         })
@@ -174,8 +194,10 @@ getProList = function(req,res,next){
     }
 }
 savePro = function(req,res,next){
-    // console.log('enter savepro')
-    global.imagesArr = []
+    // console.log('enter savepro',req.body)
+    // console.log('enter params',req.params)
+    // console.log('enter query',req.query)
+    // global.imagesArr = []
     try{
         var pageNum = req.params.pageNum
         var pageSize = req.params.pageSize
@@ -183,8 +205,8 @@ savePro = function(req,res,next){
         var pname = req.body.pname 
         var price = req.body.price 
         var state = req.body.state
-        var desc = req.body.desc
-        var imgs = req.body.allImg 
+        var desc = req.body.desc_txt
+        var imgs = JSON.stringify(req.body.imgs) 
         var sort = req.body.sort 
 
         var params = {}
@@ -244,13 +266,21 @@ savePro = function(req,res,next){
             proListContent.addPro(params,function(err,vals){
                 // global.imagesArr = []
                 if(err){
-                    res.render('error',{
-                        message: 'Error',
-                        errMsg: err.sqlMessage
+                    // res.render('error',{
+                    //     message: 'Error',
+                    //     errMsg: err.sqlMessage
+                    // })
+                    return res.send(200,{
+                        code: 500,
+                        msg:err.sqlMessage
                     })
                 }else if(vals.affectedRows > 0){
-                    req.session.manageMsg = '添加商品成功！'
-                    res.redirect('/manage/proList/'+pageSize+'/1')
+                    return res.send(200,{
+                        code: 0,
+                        msg:'添加商品成功！'
+                    })
+                    // req.session.manageMsg = '添加商品成功！'
+                    // res.redirect('/manage/proList/'+pageSize+'/1')
                     // res.render('proList',{
                     //     msg: '添加商品成功！'
                     // })
@@ -261,9 +291,17 @@ savePro = function(req,res,next){
                 // global.imagesArr = []
                 if(err){
                     console.log(err)
+                    res.send(200,{
+                        code: 500,
+                        msg: err.sqlMessage
+                    })
                 }else if(vals.affectedRows > 0){
-                    req.session.manageMsg = '编辑商品成功！'
-                    res.redirect('/manage/proList/'+pageSize+'/'+pageNum)
+                    return res.send(200,{
+                        code: 0,
+                        msg:'编辑商品成功！'
+                    })
+                    // req.session.manageMsg = '编辑商品成功！'
+                    // res.redirect('/manage/proList/'+pageSize+'/'+pageNum)
                 }
             })
         }
@@ -281,12 +319,20 @@ delPro = function(req,res,next){
         var id = req.params.id
         proListContent.delPro(id,function(error,vals){
             if(error){
-                console.log(error)
+                // console.log(error)
+                return res.send(200,{
+                    code: 500,
+                    msg:error.sqlMessage
+                })
             }else if(vals.affectedRows > 0){
                 //删除成功
-                req.session.manageMsg = '删除商品成功！'
-                res.redirect('/manage/proList/'+pageSize+'/'+pageNum)
+                // req.session.manageMsg = '删除商品成功！'
+                // res.redirect('/manage/proList/'+pageSize+'/'+pageNum)
                 // res.render('proList')
+                return res.send(200,{
+                    code: 0,
+                    msg: '删除商品成功！'
+                })
             }
         })
     }catch(e){
@@ -299,11 +345,20 @@ descPro = function(req,res,next){
         var id = req.params.id
         proListContent.descPro(id,function(err,vals){
             if(err){
-                console.log(err)
+                // console.log(err)
+                return res.send(200,{
+                    code:500,
+                    msg:err.sqlMessage
+                })
             }else if(vals.length > 0){
                 //vals是数组
                 // res.render("proDesc",vals[0])
-                res.render("newProdesc",vals[0])
+                // res.render("newProdesc",vals[0])
+                return res.send(200,{
+                    code: 0,
+                    vals: vals[0],
+                    length: 1,
+                })
             }
         })
     }catch(e){
@@ -314,17 +369,25 @@ descPro = function(req,res,next){
 editPro = function(req,res,next){
     try{
         var id = req.params.id || null
-        global.imagesArr = []
+        // global.imagesArr = []
         if(id != null){
             proListContent.descPro(id,function(err,vals){
                 if(err){
                     console.log(err)
+                    return res.send(200,{
+                        code:500,
+                        msg:err.sqlMessage
+                    })
                 }else if(vals.length > 0){
                     //把图片取出来复制给global.imagesArr
-                    global.imagesArr.push(JSON.parse(vals[0].imgs));
+                    // global.imagesArr.push(JSON.parse(vals[0].imgs));
                     proListContent.getSorts('all',{pageNum:0,pageSize:0},function(e,val){
                         if(e){
                             console.log(e)
+                            return res.send(200,{
+                                code: 500,
+                                msg: e.sqlMessage
+                            })
                         }else{
                             var sortArr = {}
                             for(var j in val){
@@ -333,14 +396,23 @@ editPro = function(req,res,next){
                             vals[0].sorts = JSON.stringify(sortArr)
                             //vals是数组
                             // res.render("uploadImg",vals[0])
-                            res.render("newProedit",vals[0])
+                            // res.render("newProedit",vals[0])
+                            return res.send(200,{
+                                code: 0,
+                                vals: vals[0],
+                                length: 1
+                            })
                         }
                     })
                 }
             })
             
         }else{
-            res.render("newProedit")
+            // res.render("newProedit")
+            return res.send(200,{
+                code: -1,
+                msg: 'ID错误！'
+            })
         }
         
         
@@ -356,15 +428,18 @@ searchPro = function(req,res,next){
         page.pageSize = +req.params.pageSize
 
         var key = req.query.key
-        console.log('keykey:',key)
         if(key != null || key == 0){
             proListContent.searchPro(key,page,function(err,vals){
                 if(err){
                     console.log(err)
+                    return res.send(200,{
+                        code:500,
+                        msg:err.sqlMessage
+                    })
                 }else if(vals.length > 0){
 
                     //頁數
-                    let totalCount = -1
+                    let totalCount = 0
                     var resArr = {}
                     for(var i in vals){
                         resArr[i] = vals[i]
@@ -372,7 +447,7 @@ searchPro = function(req,res,next){
                     }
                     // var totalCount = vals.length
                     // var pageLine = 10
-                    // var pageCount = -1
+                    var pageCount = 1
                     if(parseInt(totalCount/page.pageSize) == 0){
                         pageCount = 1
                     }else if(totalCount%page.pageSize > 0 && totalCount%page.pageSize < page.pageSize){
@@ -380,32 +455,42 @@ searchPro = function(req,res,next){
                     }else{
                         pageCount = parseInt(totalCount/page.pageSize)
                     }
-
-                    //获取sorts
-                    proListContent.getSorts('all',{pageNum:0,pageSize:0},function(e,val){
-                        if(e){
-                            console.log(e)
-                        }else{
-                            var sortArr = {}
-                            for(var j in val){
-                                sortArr[val[j].id] = val[j].name
-                            }
-                            // res.render('proList',{
-                            //     vals: JSON.stringify(resArr),
-                            //     sorts: JSON.stringify(sortArr)
-                            // })
-                            res.render('newProList',{
-                                vals: JSON.stringify(resArr),
-                                sorts: JSON.stringify(sortArr),
-                                pageNum: page.pageNum,
-                                pageCount: pageCount,
-                            })
-                        }
+                    return res.send(200,{
+                        code: 0,
+                        vals: resArr,
+                        length: totalCount,
+                        pageNum: page.pageNum,
+                        pageCount: pageCount,
                     })
+                    //获取sorts
+                    // proListContent.getSorts('all',{pageNum:0,pageSize:0},function(e,val){
+                    //     if(e){
+                    //         console.log(e)
+                    //     }else{
+                    //         var sortArr = {}
+                    //         for(var j in val){
+                    //             sortArr[val[j].id] = val[j].name
+                    //         }
+                    //         // res.render('proList',{
+                    //         //     vals: JSON.stringify(resArr),
+                    //         //     sorts: JSON.stringify(sortArr)
+                    //         // })
+                    //         res.render('newProList',{
+                    //             vals: JSON.stringify(resArr),
+                    //             sorts: JSON.stringify(sortArr),
+                    //             pageNum: page.pageNum,
+                    //             pageCount: pageCount,
+                    //         })
+                    //     }
+                    // })
                    
                 }else{
-                    req.session.manageMsg = '查询无结果！'
-                    res.redirect('/manage/proList/'+page.pageSize+'/'+page.pageNum+'/?key='+key)
+                    return res.send(200,{
+                        code: -1,
+                        msg: '查询无结果！'
+                    })
+                    // req.session.manageMsg = '查询无结果！'
+                    // res.redirect('/manage/proList/'+page.pageSize+'/'+page.pageNum+'/?key='+key)
                     /*proListContent.getProList(0,page,function(err,vals){
                         if(err){
                             console.log(err)
@@ -460,41 +545,41 @@ searchPro = function(req,res,next){
     }
 }
 
-delImg = function(req,res,next){
-    try{
-        var imgId = parseInt(req.params.mid)
-        var cnt = 0;
-        /*var all = {}
-        for(var l in global.imagesArr){
-            for(var z in global.imagesArr[l]){
-                all[cnt] = global.imagesArr[l][z]
-                cnt += 1
-            }
-        }
-        console.log('before:',all)
-        console.log('mid:',imgId)
-        delete all[imgId];*/
-        var imgs = {}
-        for(var l in global.imagesArr){
-            for(var z in global.imagesArr[l]){
-                imgs[cnt] = global.imagesArr[l][z]
-                cnt += 1
-            }
-        }
-        delete imgs[imgId];
-        var all = {}
-        var index = 0 
-        for(var i in imgs){
-            all[index] = imgs[i]
-            index += 1
-        }
-        global.imagesArr = [];
-        global.imagesArr.push(all)
-        res.send({vals:JSON.stringify(global.imagesArr)})
-    }catch(e){
-        console.log(e)
-    }
-}
+// delImg = function(req,res,next){
+//     try{
+//         var imgId = parseInt(req.params.mid)
+//         var cnt = 0;
+//         /*var all = {}
+//         for(var l in global.imagesArr){
+//             for(var z in global.imagesArr[l]){
+//                 all[cnt] = global.imagesArr[l][z]
+//                 cnt += 1
+//             }
+//         }
+//         console.log('before:',all)
+//         console.log('mid:',imgId)
+//         delete all[imgId];*/
+//         var imgs = {}
+//         for(var l in global.imagesArr){
+//             for(var z in global.imagesArr[l]){
+//                 imgs[cnt] = global.imagesArr[l][z]
+//                 cnt += 1
+//             }
+//         }
+//         delete imgs[imgId];
+//         var all = {}
+//         var index = 0 
+//         for(var i in imgs){
+//             all[index] = imgs[i]
+//             index += 1
+//         }
+//         global.imagesArr = [];
+//         global.imagesArr.push(all)
+//         res.send({vals:JSON.stringify(global.imagesArr)})
+//     }catch(e){
+//         console.log(e)
+//     }
+// }
 
 getSortList = function(req,res,next){
     try{
@@ -508,9 +593,14 @@ getSortList = function(req,res,next){
          proListContent.getSorts('all',page,function(e,val){
             if(e){
                 console.log(e)
+                return res.send(200,{
+                    code:500,
+                    msg:err.sqlMessage
+                })
+
             }else{
                 //頁數
-                let totalCount = -1
+                let totalCount = 0
                 var resArr = []
                 // var sortArr = {}
                 for(var j in val){
@@ -520,7 +610,7 @@ getSortList = function(req,res,next){
                 }
                 // var totalCount = vals.length
                 // var pageLine = 10
-                // var pageCount = -1
+                var pageCount = 1
                 if(parseInt(totalCount/page.pageSize) == 0){
                     pageCount = 1
                 }else if(totalCount%page.pageSize > 0 && totalCount%page.pageSize < page.pageSize){
@@ -530,14 +620,25 @@ getSortList = function(req,res,next){
                 }
                 if(page.pageNum > pageCount){
                     page.pageNum = page.pageNum - 1
-                    return res.redirect('/manage/editSorts/'+page.pageSize+'/'+page.pageNum)
+                    // return res.redirect('/manage/editSorts/'+page.pageSize+'/'+page.pageNum)
+                    return res.send(200,{
+                        code: -2,
+                        pageNum: page.pageNum
+                    })
                 }
-                res.render('newSorts',{
-                    // sorts: JSON.stringify(sortArr),
-                    sorts: JSON.stringify(resArr),
+                // res.render('newSorts',{
+                //     // sorts: JSON.stringify(sortArr),
+                //     sorts: JSON.stringify(resArr),
+                //     pageNum: page.pageNum,
+                //     pageCount: pageCount,
+                //     msg: msg
+                // })
+                return res.send(200,{
+                    code: 0,
+                    sorts: resArr,
+                    length:totalCount,
                     pageNum: page.pageNum,
                     pageCount: pageCount,
-                    msg: msg
                 })
             }
             
@@ -581,22 +682,34 @@ getSortList = function(req,res,next){
 addSort = function(req,res,next){
     try{
         // var sid = req.params.sid
-        var text = req.params.text
+        var text = req.body.text
 
         var page = {}
-        page.pageNum = +req.params.pageNum
-        page.pageSize = +req.params.pageSize
+        page.pageNum = +req.body.pageNum
+        page.pageSize = +req.body.pageSize
         // console.log('pagesize:',req.params.pageSize)
         proListContent.addSorts(text,function(err,vals){
             if(err){
                 console.log(err)
+                return res.send(200,{
+                    code: 500,
+                    msg: err.sqlMessage
+                })
             }else{
                 proListContent.getSorts('all',page,function(e,val){
                     if(e){
                         console.log(e)
+                        return res.send(200,{
+                            code: 500,
+                            msg: e.sqlMessage
+                        })
                     }else{
-                        req.session.manageMsg = '添加类别成功！'
-                        res.redirect('/manage/editSorts/'+page.pageSize+'/1')
+                       return res.send(200,{
+                            code: 0,
+                            msg: '添加类别成功！'
+                        })
+                        // req.session.manageMsg = '添加类别成功！'
+                        // res.redirect('/manage/editSorts/'+page.pageSize+'/1')
                         // res.redirect('/manage/editSorts/'+page.pageNum+'/'+page.pageSize)
                         /*var sortArr = {}
                         for(var j in val){
@@ -626,17 +739,33 @@ delSort = function(req,res,next){
         proListContent.getSortPro(sid,function(err,val){
             if(err){
                 console.log(err)
+                return res.send(200,{
+                    code: 500,
+                    msg: err.sqlMessage
+                })
             }else{
                 if(val.length > 0){
-                    req.session.manageMsg = '存在此类别的商品，删除失败！'
-                    return res.redirect('/manage/editSorts/'+page.pageSize+'/'+page.pageNum)
+                    return res.send(200,{
+                        code: 2,
+                        msg: '存在此类别的商品，删除失败！'
+                    })
+                    // req.session.manageMsg = '存在此类别的商品，删除失败！'
+                    // return res.redirect('/manage/editSorts/'+page.pageSize+'/'+page.pageNum)
                 }else{
                     proListContent.delSort(sid,function(err,vals){
                         if(err){
                             console.log(err)
+                            return res.send(200,{
+                                code: 500,
+                                msg: err.sqlMessage
+                            })
                         }else{
-                            req.session.manageMsg = '删除类别成功！'
-                            res.redirect('/manage/editSorts/'+page.pageSize+'/'+page.pageNum)
+                            return res.send(200,{
+                                code:0,
+                                msg:'删除类别成功！'
+                            })
+                            // req.session.manageMsg = '删除类别成功！'
+                            // res.redirect('/manage/editSorts/'+page.pageSize+'/'+page.pageNum)
                             /*proListContent.getSorts('all',function(e,val){
                                 if(e){
                                     console.log(e)
@@ -676,11 +805,18 @@ getUserList = function(req,res,next){
 
         loginContent.searchUser('all',page,function(e,val){
             if(e){
-                console.log(e)
+                return res.send(200,{
+                    code: 500,
+                    msg: e.sqlMessage
+                })
             }else{
                 proListContent.getRoles(function(err,vals){
                     if(err){
                         console.log(err)
+                        return res.send(200,{
+                            code: 500,
+                            msg: err.sqlMessage
+                        })
                     }else{
                         var roleArr = {}
                         for(var i in vals){
@@ -688,7 +824,7 @@ getUserList = function(req,res,next){
                         }
 
                         //頁數
-                        let totalCount = -1
+                        let totalCount = 0
                         // var userArr = {}
                         var resArr = []
                         for(var j in val){
@@ -709,7 +845,7 @@ getUserList = function(req,res,next){
                             })
                             totalCount = val[j]['totalCount']
                         }
-
+                        var pageCount = 1
                         if(parseInt(totalCount/page.pageSize) == 0){
                             pageCount = 1
                         }else if(totalCount%page.pageSize > 0 && totalCount%page.pageSize < page.pageSize){
@@ -719,15 +855,30 @@ getUserList = function(req,res,next){
                         }
                         if(page.pageNum > pageCount){
                             page.pageNum = page.pageNum - 1
-                            return res.redirect('/manage/getUser/'+page.pageSize+'/'+page.pageNum)
+                            if(page.pageNum > pageCount){
+                                page.pageNum = page.pageNum - 1
+                                // return res.redirect('/manage/editSorts/'+page.pageSize+'/'+page.pageNum)
+                                return res.send(200,{
+                                    code: -2,
+                                    pageNum: page.pageNum
+                                })
+                            }
+                            // return res.redirect('/manage/getUser/'+page.pageSize+'/'+page.pageNum)
                         }
-                        res.render('newUser',{
-                            // users: JSON.stringify(userArr),
-                            users: JSON.stringify(resArr),
-                            msg: msg,
+                        return res.send(200,{
+                            code: 0,
+                            length: totalCount,
+                            users: resArr,
                             pageCount:pageCount,
                             pageNum: page.pageNum,
                         })
+                        // res.render('newUser',{
+                        //     // users: JSON.stringify(userArr),
+                        //     users: JSON.stringify(resArr),
+                        //     msg: msg,
+                        //     pageCount:pageCount,
+                        //     pageNum: page.pageNum,
+                        // })
                         // res.render('user',{
                         //     users: JSON.stringify(userArr),
                         //     msg: msg
@@ -883,6 +1034,10 @@ delUser = function(req,res,next){
         loginContent.delUser(uid,function(err,vals){
             if(err){
                 console.log(err)
+                return res.send(200,{
+                    code: 500,
+                    msg: err.sqlMessage
+                })
             }else{
                 /*loginContent.searchUser('all',function(e,val){
                     if(e){
@@ -909,9 +1064,13 @@ delUser = function(req,res,next){
                     }
                     
                 })*/
-                var msg = '删除用户成功！'
-                req.session.manageMsg = msg
-                res.redirect('/manage/getUser/'+page.pageSize+'/'+page.pageNum)
+                return res.send(200,{
+                    code: 0,
+                    msg: '删除用户成功！'
+                })
+                // var msg = '删除用户成功！'
+                // req.session.manageMsg = msg
+                // res.redirect('/manage/getUser/'+page.pageSize+'/'+page.pageNum)
             }
             
         })
@@ -923,28 +1082,49 @@ delUser = function(req,res,next){
 
 editAboutUs = function(req,res,next){
     try{
-        var id = req.query.id
+        var id = req.body.id
         if(id && id > 0){
             proListContent.getAboutUs(id,{pageNum:0,pageSize:0},function(err,vals){
                 // console.log('-------',vals)
                 if(err){
                     console.log(err)
+                    return res.send(200,{
+                        code: 500,
+                        msg: err.sqlMessage
+                    })
                 }else{
                     if(vals.length == 0){
-                        res.render('newEditAboutus',vals)
+                        // res.render('newEditAboutus',vals)
+                        return res.send(200,{
+                            code: -1,
+                            msg:'暂无介绍！'
+                        })
                     }else{
-
-                        vals[0].content = setSC(JSON.parse(vals[0].content))
-                        // res.render('editAboutUs',vals[0])
-                        res.render('newEditAboutus',vals[0])
+                        return res.send(200,{
+                            code: 0,
+                            length:1,
+                            vals: vals[0]
+                        })
+                        // vals[0].content = setSC(JSON.parse(vals[0].content))
+                        // // res.render('editAboutUs',vals[0])
+                        // res.render('newEditAboutus',vals[0])
                     }
                 }
             })
         }else if(id && id < 0){
             let demoId = Math.abs(id)
-            res.render('newEditAboutus',demos[demoId - 1])
+            // res.render('newEditAboutus',demos[demoId - 1])
+            return res.send(200,{
+                code: 0,
+                length:1,
+                vals: demos[demoId - 1]
+            })
         }else{
-            res.render('newEditAboutus',{})
+            // res.render('newEditAboutus',{})
+            return res.send(200,{
+                code:-1,
+                msg: 'ID错误！'
+            })
         }
         
             
@@ -993,22 +1173,22 @@ addAboutUs = function(req,res,next){
         var parentCnt = 3
 
         var page = {}
-        page.pageNum = +req.params.pageNum
-        page.pageSize = +req.params.pageSize
+        page.pageNum = +req.body.pageNum
+        page.pageSize = +req.body.pageSize
 
-        // console.log('-------',req.body.id)
-        params.id = +req.body.id
-        params.title = req.body.bname || ''
-        params.desc_txt = req.body.desc_txt || ''
-        params.subTitle = req.body.subTitle || ''
-        params.info = req.body.info || ''
-        params.allImg = JSON.parse(req.body.allImg) || ''
+        // console.log('-------',req.body)
+        params.id = +req.body.data.id
+        params.title = req.body.data.title || ''
+        params.desc_txt = req.body.data.desc_txt || ''
+        // params.subTitle = req.body.subTitle || ''
+        params.value = req.body.data.content || ''
+        // params.allImg = JSON.parse(req.body.allImg) || ''
 
-        item.id = params.id
-        item.title = params.title || ''
-        item.desc_txt = params.desc_txt || ''
-        item.value = []
-        if(typeof params.info == 'string'){
+        // item.id = params.id
+        // item.title = params.title || ''
+        // item.desc_txt = params.desc_txt || ''
+        // item.value = []
+        /*if(typeof params.info == 'string'){
             var obj = {}
             obj.value = RemoveSC(params.info) || ''
             obj.title = params.subTitle || ''
@@ -1019,13 +1199,13 @@ addAboutUs = function(req,res,next){
 
         }else{
             for(var i = 0;i<params.info.length; i++){
-                /*if(params.info[i] != ''){
-                    var obj = {}
-                    obj.value = params.info[i] || ''
-                    obj.title = params.subTitle[i] || ''
-                    obj.img = params.allImg[i +2] || ''
-                    item.value.push(obj)
-                }*/
+                // if(params.info[i] != ''){
+                //     var obj = {}
+                //     obj.value = params.info[i] || ''
+                //     obj.title = params.subTitle[i] || ''
+                //     obj.img = params.allImg[i +2] || ''
+                //     item.value.push(obj)
+                // }
                 var obj = {}
                 obj.value = RemoveSC(params.info[i]) || ''
                 obj.title = params.subTitle[i] || ''
@@ -1036,29 +1216,45 @@ addAboutUs = function(req,res,next){
                 item.value.push(obj)
                 
             }
-        }
-        // console.log(11111111,item.id)
+        }*/
+        // console.log(11111111,params.id)
         
-        if(item.id && item.id>0){
-            proListContent.editAboutUs(item,function(err,vals){
+        if(params.id && params.id>0){
+            proListContent.editAboutUs(params,function(err,vals){
                 if(err){
                     console.log(err)
+                    return res.send(200,{
+                        code: 500,
+                        msg: err.sqlMessage
+                    })
                 }else{
-                    req.session.manageMsg = '公司介绍修改成功！'
-                    // res.redirect('/aboutUs')
-                    // res.redirect('/manage/aboutUs')
-                    res.redirect('/manage/viewAboutus/?id='+item.id)
+                    return res.send(200,{
+                        code: 0,
+                        msg: '公司介绍修改成功！'
+                    })
+                    // req.session.manageMsg = '公司介绍修改成功！'
+                    // // res.redirect('/aboutUs')
+                    // // res.redirect('/manage/aboutUs')
+                    // res.redirect('/manage/viewAboutus/?id='+item.id)
                 }
             })
         }else{
-            proListContent.addAboutUs(item,function(err,vals){
+            proListContent.addAboutUs(params,function(err,vals){
                 if(err){
                     console.log(err)
+                    return res.send(200,{
+                        code: 500,
+                        msg: err.sqlMessage
+                    })
                 }else{
-                    req.session.manageMsg = '公司介绍添加成功！'
-                    // res.redirect('/aboutUs')
-                    // console.log('vvvals:',vals)
-                    res.redirect('/manage/aboutUs/'+page.pageSize+'/1')
+                    return res.send(200,{
+                        code: 0,
+                        msg: '公司介绍添加成功！'
+                    })
+                    // req.session.manageMsg = '公司介绍添加成功！'
+                    // // res.redirect('/aboutUs')
+                    // // console.log('vvvals:',vals)
+                    // res.redirect('/manage/aboutUs/'+page.pageSize+'/1')
                     // res.redirect('/manage/aboutUs/'+page.pageNum+'/'+page.pageSize)
                     // res.redirect('/manage/viewAboutus/?id='+vals[0]['id'])
                 }
@@ -1105,25 +1301,32 @@ addAboutUs = function(req,res,next){
 toAboutUs = function(req,res){
     var msg = req.session.manageMsg
     req.session.manageMsg = null
-
     var page = {}
-    page.pageNum = +req.params.pageNum
-    page.pageSize = page.pageNum == 1 ? +req.params.pageSize - demos.length  : +req.params.pageSize
+    page.pageNum = +req.body.pageNum
+    // page.pageSize = page.pageNum == 1 ? +req.body.pageSize - demos.length  : +req.body.pageSize
+    
+    page.pageSize = +req.body.pageSize
+    
     page.demoLength = demos.length
     try{
         proListContent.getAboutUs(null,page,function(err,val){
             if(err){
                 console.log(err)
+                return res.send(200,{
+                    code: 500,
+                    msg: err.sqlMessage
+                })
             }else{
                 //頁數
-                let totalCount = -1
+                let totalCount = 0
                 for(var j in val){
                     totalCount = val[j]['totalCount'] + demos.length 
                 }
                 // totalCount = page.pageNum == 1 ? +val[0]['totalCount'] + demos.length : +val[0]['totalCount']
                 //计算需要
-                page.pageSize = +req.params.pageSize
+                // page.pageSize = +req.params.pageSize
 
+                var pageCount = 1
                 if(parseInt(totalCount/page.pageSize) == 0){
                     pageCount = 1
                 }else if(totalCount%page.pageSize > 0 && totalCount%page.pageSize < page.pageSize){
@@ -1131,25 +1334,73 @@ toAboutUs = function(req,res){
                 }else{
                     pageCount = parseInt(totalCount/page.pageSize)
                 }
-                if(1 == page.pageNum){
-                    demos.forEach(data=>{
+                // if(1 == page.pageNum){
+                //     demos.forEach(data=>{
+                //         if(data['isDemo']){
+                //             // console.log('data:',data)
+                //             val.unshift(data)
+                //         }
+                //     })
+                // }
+                if(page.pageNum > pageCount){
+                    page.pageNum = page.pageNum - 1
+                    // return res.redirect('/manage/aboutUs/'+page.pageSize+'/'+page.pageNum)
+                    return res.send({
+                        code: -2,
+                        pageNum: page.pageNum
+                    })
+                }
+
+                if(page.pageNum*page.pageSize<demos.length || page.pageNum*page.pageSize == demos.length){
+                    //全demos
+                    let demoData = demos.slice((page.pageNum-1)*page.pageSize,page.pageNum*page.pageSize)
+                    return res.send(200,{
+                        code:0,
+                        length:page.pageSize,
+                        vals: demoData,
+                        pageCount: pageCount,
+                        pageNum: page.pageNum
+                    })
+                }else if(((page.pageNum-1)*page.pageSize+1 == demos.length || (page.pageNum-1)*page.pageSize+1 > demos.length) && page.pageNum*page.pageSize > demos.length){
+                    //一半demo一半数据
+                    let demoData = demos.slice((page.pageNum-1)*page.pageSize,page.pageNum*page.pageSize)
+                    demoData.forEach(data=>{
                         if(data['isDemo']){
                             // console.log('data:',data)
                             val.unshift(data)
                         }
                     })
-                }
-                if(page.pageNum > pageCount){
-                    page.pageNum = page.pageNum - 1
-                    return res.redirect('/manage/aboutUs/'+page.pageSize+'/'+page.pageNum)
+                    return  res.send(200,{
+                        code:0,
+                        vals: val,
+                        length: totalCount,
+                        pageCount: pageCount,
+                        pageNum: page.pageNum
+                    })
+                }else{
+                    if(1 == page.pageNum){
+                        demos.forEach(data=>{
+                            if(data['isDemo']){
+                                // console.log('data:',data)
+                                val.unshift(data)
+                            }
+                        })
+                    }
+                    return  res.send(200,{
+                        code:0,
+                        vals: val,
+                        length: totalCount,
+                        pageCount: pageCount,
+                        pageNum: page.pageNum
+                    })
                 }
                 // console.log('val:',val)
-                res.render('newAboutus',{
-                    msg: msg,
-                    vals: JSON.stringify(val),
-                    pageCount: pageCount,
-                    pageNum: page.pageNum
-                })
+                // res.render('newAboutus',{
+                //     msg: msg,
+                //     vals: JSON.stringify(val),
+                //     pageCount: pageCount,
+                //     pageNum: page.pageNum
+                // })
             }/*else{
                 if(1 == page.pageNum){
                     demos.forEach(data=>{
@@ -1173,30 +1424,46 @@ toAboutUs = function(req,res){
     }
     
 }
-delAboutUs = function(req,res){
-    var page = {}
-    page.pageNum = +req.params.pageNum
-    page.pageSize = +req.params.pageSize
-    proListContent.delAboutUs(function(err,val){
-        if(err){
-            console.log(err)
-        }else{
-            req.session.manageMsg = '公司介绍清空成功！'
-            res.redirect('/manage/aboutUs/'+page.pageSize+'/'+page.pageNum)
-        }
-    })
-}
+// delAboutUs = function(req,res){
+//     var page = {}
+//     page.pageNum = +req.params.pageNum
+//     page.pageSize = +req.params.pageSize
+//     proListContent.delAboutUs(function(err,val){
+//         if(err){
+//             console.log(err)
+//             return res.send(200,{
+//                 code: 500,
+//                 msg: err.sqlMessage
+//             })
+//         }else{
+//             return res.send(200,{
+//                 code: 0,
+//                 msg : '公司介绍清空成功！'
+//             })
+//             // req.session.manageMsg = '公司介绍清空成功！'
+//             // res.redirect('/manage/aboutUs/'+page.pageSize+'/'+page.pageNum)
+//         }
+//     })
+// }
 delOneAboutus = function(req,res){
-    var id = req.query.id
+    var id = req.params.id
     var page = {}
     page.pageNum = +req.params.pageNum
     page.pageSize = +req.params.pageSize
     proListContent.delOneAboutus(id,function(err,val){
         if(err){
             console.log(err)
+            return res.send(200,{
+                code: 500,
+                msg: err.sqlMessage
+            })
         }else{
-            req.session.manageMsg = '删除介绍成功！'
-            res.redirect('/manage/aboutUs/'+page.pageSize+'/'+page.pageNum)
+            return res.send(200,{
+                code: 0,
+                msg : '删除介绍成功！'
+            })
+            // req.session.manageMsg = '删除介绍成功！'
+            // res.redirect('/manage/aboutUs/'+page.pageSize+'/'+page.pageNum)
         }
     })
 }
@@ -1238,30 +1505,50 @@ viewAboutus = function(req,res){
     try{
         var msg = req.session.manageMsg
         req.session.manageMsg = null
-        var id = +req.query.id
+        var id = +req.body.id
         if(id<0){
             let demoId = Math.abs(id)
-            res.render('newViewAboutus',{
-                vals: JSON.stringify(demos[demoId - 1]),
-                msg:msg
+            return res.send(200,{
+                code: 0,
+                length:1,
+                vals:demos[demoId - 1]
+
             })
+            // res.render('newViewAboutus',{
+            //     vals: JSON.stringify(demos[demoId - 1]),
+            //     msg:msg
+            // })
         }else{
 
             proListContent.getAboutUs(id,{pageNum:0,pageSize:0},function(err,vals){
                 if(err){
                     console.log(err)
+                    return res.send(200,{
+                        code: 500,
+                        msg: err.sqlMessage
+                    })
                 }else{
                     if(vals.length > 0){
                         vals[0].content = setSC(JSON.parse(vals[0].content))
                         // console.log('getthis:',JSON.stringify(vals[0]))
-                        res.render('newViewAboutus',{
-                            vals: JSON.stringify(vals[0]),
-                            msg:msg
+                        // res.render('newViewAboutus',{
+                        //     vals: JSON.stringify(vals[0]),
+                        //     msg:msg
+                        // })
+                        return res.send(200,{
+                            code: 0,
+                            length:1,
+                            vals:vals[0]
+
                         })
                     }else{
                         // req.session.manageMsg = '暂无介绍'
-                        res.render('newViewAboutus',{
-                            msg:'暂无介绍'
+                        // res.render('newViewAboutus',{
+                        //     msg:'暂无介绍'
+                        // })
+                        res.send(200,{
+                            code: 0,
+                            msg: '暂无介绍！'
                         })
                     }
                 }
@@ -1274,30 +1561,30 @@ viewAboutus = function(req,res){
 }
 
 
-router.get('/proList/:pageSize/:pageNum',getProList);
-router.get('/delPro/:pageSize/:pageNum/:id',delPro);
-router.post('/savePro/:pageSize/:pageNum',savePro);
+router.post('/proList/:pageSize/:pageNum',getProList);
+router.post('/delPro/:pageSize/:pageNum/:id',delPro);
+router.post('/savePro',savePro);
 // router.post('/upPro/:id',upPro);
-router.get('/descPro/:id',descPro);
-router.get('/editPro/:id',editPro);
-router.get('/searchPro/:pageNum/:pageSize',searchPro);
-router.get('/delImg/:mid',delImg);
+router.post('/descPro/:id',descPro);
+router.post('/editPro/:id',editPro);
+router.post('/searchPro/:pageNum/:pageSize',searchPro);
+// router.get('/delImg/:mid',delImg);
 // router.get('/toProList/:pageNum/:pageSize/:msg',toProList)
 
-router.get('/editSorts/:pageSize/:pageNum',getSortList)
+router.post('/editSorts/:pageSize/:pageNum',getSortList)
 // router.get('/saveSort/:sid/:text',saveSort)
-router.get('/addSort/:pageSize/:pageNum/:text',addSort)
-router.get('/delSort/:pageSize/:pageNum/:sid',delSort)
+router.post('/addSort',addSort)
+router.post('/delSort/:pageSize/:pageNum/:sid',delSort)
 
-router.get('/editAboutUs',editAboutUs)
-router.post('/addAboutUs/:pageSize/:pageNum',addAboutUs)
-router.get('/aboutUs/:pageSize/:pageNum',toAboutUs)
-router.get('/delAboutus/:pageSize/:pageNum',delAboutUs)
-router.get('/delOneAboutus/:pageSize/:pageNum',delOneAboutus)
-router.get('/viewAboutus',viewAboutus)
+router.post('/editAboutUs',editAboutUs)
+router.post('/addAboutUs',addAboutUs)
+router.post('/aboutUs',toAboutUs)
+// router.get('/delAboutus/:pageSize/:pageNum',delAboutUs)
+router.post('/delOneAboutus/:pageSize/:pageNum/:id',delOneAboutus)
+router.post('/viewAboutus',viewAboutus)
 
-router.get('/getUser/:pageSize/:pageNum',getUserList)
-router.get('/delUser/:pageSize/:pageNum/:uid',delUser)
+router.post('/getUser/:pageSize/:pageNum',getUserList)
+router.post('/delUser/:pageSize/:pageNum/:uid',delUser)
 // router.get('/editUser/:opera/:uid/:text',editUser)
 // router.post('/saveUser/:pageNum/:pageSize',saveUser)
 // router.get('/addUser/:text',addUser)

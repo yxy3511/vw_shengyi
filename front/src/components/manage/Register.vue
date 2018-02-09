@@ -67,8 +67,7 @@
     methods:{
       submit(){
         var formData = JSON.stringify(this.formData);
-        this.$http.post('/api/manage/registering/'+this.pageSize+'/'+this.pageNum,formData).then(res=>{
-          console.log('res:',res)
+        this.$http.post('/api/manage/registering',formData).then(res=>{
           let code = JSON.parse(res.bodyText).code
           let msg = JSON.parse(res.bodyText).msg
           if(code == 0){
