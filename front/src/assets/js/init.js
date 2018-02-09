@@ -28,11 +28,12 @@ export function getProLists(id,page){
         contentType: false, 
         success:function(re){
             // return re
+            console.log(re);
         },
         error:function(re){
             // alert(JSON.stringify(re))
             // window.autoAlert(JSON.stringify(re),'red')
-            // console.log(re);
+            console.log(re);
         }
 
     }); 
@@ -47,13 +48,14 @@ export function getProducts(){
         cache: false,  
         contentType: false, 
         success:function(re){
+            console.log(re);
             // console.log(111,JSON.parse(re.vals))
             // return re
         },
         error:function(re){
             // alert(JSON.stringify(re))
             // window.autoAlert(JSON.stringify(re),'red')
-            // console.log(re);
+            console.log(re);
         }
 
     }); 
@@ -68,11 +70,12 @@ export function getSortsList(){
         cache: false,  
         contentType: false, 
         success:function(re){
+            console.log(re);
         },
         error:function(re){
             // alert(JSON.stringify(re))
             // window.autoAlert(JSON.stringify(re),'red')
-            // console.log(re);
+            console.log(re);
         }
 
     });   

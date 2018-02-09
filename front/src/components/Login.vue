@@ -140,6 +140,7 @@
               
           }, (err) => {
               // error callback
+              this.autoAlert(err.statusText,'red')
           });
           /*$.ajax({
             url:this.actionUrl,

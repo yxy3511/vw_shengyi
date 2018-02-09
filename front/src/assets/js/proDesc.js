@@ -10,12 +10,13 @@ export function getProById(id){
         success:function(re){
             // console.log(111,JSON.parse(re.vals))
             // return re
+            console.log(re);
         },
         error:function(re){
             // alert(JSON.stringify(re))
             // console.log(window)
             // window.autoAlert(JSON.stringify(re),'red')
-            // console.log(re);
+            console.log(re);
         }
 
     }); 
@@ -33,12 +34,13 @@ export function getAtlas(){
         success:function(re){
             // console.log(111,JSON.parse(re.vals))
             // return re
+            console.log(re);
         },
         error:function(re){
             // alert(JSON.stringify(re))
             // console.log(window)
             // window.autoAlert(JSON.stringify(re),'red')
-            // console.log(re);
+            console.log(re);
         }
 
     }); 

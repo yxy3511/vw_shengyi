@@ -388,10 +388,12 @@
             cache: false,  
             contentType: false, 
             success:function(re){
+              console.log(re);
                 // creatImgs(re.imgs)                
                 // $('#allImg').attr('value',re.allImgs)
             },
             error:function(re){
+              console.log(re);
                 // window.autoAlert(JSON.stringify(re),'red')
                 // alert(JSON.stringify(re))
                 // console.log(re);

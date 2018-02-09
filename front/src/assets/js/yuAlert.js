@@ -146,11 +146,11 @@ export function setNaturalImg(className){
     var imgCollect = $(className)
     console.log("imgCollect:",imgCollect)
     for(let i=0;i< imgCollect.length;i++){
-        console.log('ii:',i)
+        // console.log('ii:',i)
         // let imgWidth = imgCollect[i]['width']
         let naturalWidth = imgCollect[i]['naturalWidth']
         let minWidthVal = 274
-        console.log('naturalWidth:',naturalWidth)
+        // console.log('naturalWidth:',naturalWidth)
         // console.log('imgWidth:',imgWidth)
         $(imgCollect[i]).css('display','inline-block')
         if(naturalWidth < minWidthVal && naturalWidth > 0){

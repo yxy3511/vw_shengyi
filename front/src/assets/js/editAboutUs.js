@@ -220,11 +220,12 @@ export function getAboutUs(){
         success:function(re){
             // console.log(111,JSON.parse(re.vals))
             // return re
+            console.log(re);
         },
         error:function(re){
             // alert(JSON.stringify(re))
             
-            // console.log(re);
+            console.log(re);
         }
 
     }); 

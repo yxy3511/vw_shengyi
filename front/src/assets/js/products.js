@@ -11,12 +11,12 @@ export function searchPro(keyVal){
         cache: false,  
         contentType: false, 
         success:function(re){
-            // console.log(111,JSON.parse(re.vals))
+            console.log(111,JSON.parse(re.vals))
             // return re
         },
         error:function(re){
             
-            // console.log(re);
+            console.log(re);
         }
 
     }); 

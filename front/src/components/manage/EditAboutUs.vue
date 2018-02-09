@@ -174,7 +174,7 @@
       },
       getAbout(){
         this.$http.post('/api/manage/editAboutUs',this.params).then(res=>{
-          console.log('haha:',res)
+          // console.log('haha:',res)
           let code = JSON.parse(res.bodyText).code
           let vals = JSON.parse(res.bodyText).vals
           if(code == 0){
@@ -219,13 +219,14 @@
             cache: false,  
             contentType: false, 
             success:function(re){
+              console.log(re);
                 // creatImgs(re.imgs)                
                 // $('#allImg').attr('value',re.allImgs)
             },
             error:function(re){
                 // window.autoAlert(JSON.stringify(re),'red')
                 // alert(JSON.stringify(re))
-                // console.log(re);
+                console.log(re);
             }
 
         });  
