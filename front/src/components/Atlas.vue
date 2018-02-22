@@ -20,7 +20,8 @@
         name: 'aboutUs',
         data(){
             return {
-                imgs:{}
+                imgs:{},
+                length:0,
             }
         },
         mounted(){
@@ -30,14 +31,31 @@
                     // transitionEffect:'fading',
                     autoSlide:true
                 });
+            },error=>{
+                // console.log(error);
+                this.autoAlert(error.statusText,'red')
             })
         },
         methods: {
             getAllProImg(){
                 // getProById(param.id)
                 return getAtlas().then(res=>{
-                  this.imgs = res.imgs
-                  console.log('imgs:',this.imgs)
+                    console.log('res:',res)
+                    if(res.code == 0){
+
+                        this.imgs = res.imgs
+                    }else if(res.length == 0){
+                        this.autoAlert(res.msg,'orange')
+                        this.$router.push({
+                            path:'/page'
+                        })
+                    }
+                    this.length = res.length
+
+                    console.log('imgs:',this.imgs)
+                },error=>{
+                    // console.log(error)
+                    this.autoAlert(error.statusText,'red')
                 })
             }
         },

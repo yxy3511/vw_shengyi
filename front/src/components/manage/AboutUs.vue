@@ -129,6 +129,8 @@
             this.getAboutUs()
           }
           this.setCurPage('compPageNum',this.pageNum)
+        },error=>{
+          this.autoAlert(error.statusText,'red')
         })
       },
       delConfirmAlert(url){

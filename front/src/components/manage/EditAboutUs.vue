@@ -98,7 +98,7 @@
       return {
         pageNum:1,
         pageCount:-1,
-        pageSize:-1,
+        pageSize:this.initPageSize('compPageSize'),
         params:{},
         formData:{
           id:null,
@@ -121,7 +121,7 @@
       'v-pagination': pagination,
     },
     created(){
-      this.pageSize = parseInt(localStorage.getItem('pageSize'))
+      // this.pageSize = parseInt(localStorage.getItem('compPageSize'))
       if(this.$route.query.id){
         let curId = this.$route.query.id
         this.params.id = curId
@@ -162,11 +162,23 @@
               path:'/manage/viewAboutus/'+this.params.id
             })
           }else{
+            let demoLength = JSON.parse(res.bodyText).demoLength
+            let pageNum = 1
+            if(demoLength<this.pageSize){
+              pageNum = 1
+            }else if(demoLength == this.pageSize){
+              pageNum = 2
+            }else if(demoLength > this.pageSize){
+              pageNum = parseInt(demoLength/this.pageSize) + 1
+            }
+            this.setCurPage('compPageNum',pageNum)
             //列表页
             this.$router.push({
               path:'/manage/aboutUs'
             })
           }
+        },error=>{
+          this.autoAlert(error.statusText,'red')
         })
       },
       addContent(){
@@ -188,6 +200,8 @@
             this.pageCount = vals.pageCount ?vals.pageCount : this.pageCount
 
           }
+        },error=>{
+          this.autoAlert(error.statusText,'red')
         })
       },
       fileDel(index) {
@@ -202,14 +216,22 @@
       fileChange(el,index) {
           if (!el.target.files[0].size) return;
           var formData = new FormData(document.forms.namedItem("aboutUsForm"));
-          this.saveImgs(formData).then(res=>{
+          /*this.saveImgs(formData).then(res=>{
             setTimeout(()=>{
               this.formData.content[index].img = res[0]
             },100);
+          })*/
+          this.$http.post('/api/manage/upAboutUs',formData).then(res=>{
+            // console.log('res:',res)
+            setTimeout(()=>{
+              this.formData.content[index].img = JSON.parse(res.bodyText)[0]
+            },100);
+          },error=>{
+            this.autoAlert(error.statusText,'red')
           })
           el.target.value = ''
       },
-      saveImgs(formData){
+      /*saveImgs(formData){
         return $.ajax({
             type : 'post',
             url : '/api/manage/upAboutUs',
@@ -230,7 +252,7 @@
             }
 
         });  
-      },
+      },*/
       cancel(e){
         if ( e && e.preventDefault ){
             e.preventDefault(); 

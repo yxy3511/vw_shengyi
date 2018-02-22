@@ -208,25 +208,25 @@
 // })
 
 
-export function getAboutUs(){
-    //获取介绍
-    return $.ajax({
-        type : 'get',
-        url : '/api/aboutUs',
-        processData:false,
-        async:false,
-        cache: false,  
-        contentType: false, 
-        success:function(re){
-            // console.log(111,JSON.parse(re.vals))
-            // return re
-            console.log(re);
-        },
-        error:function(re){
-            // alert(JSON.stringify(re))
+// export function getAboutUs(){
+//     //获取介绍
+//     return $.ajax({
+//         type : 'get',
+//         url : '/api/aboutUs',
+//         processData:false,
+//         async:false,
+//         cache: false,  
+//         contentType: false, 
+//         success:function(re){
+//             // console.log(111,JSON.parse(re.vals))
+//             // return re
+//             console.log(re);
+//         },
+//         error:function(re){
+//             // alert(JSON.stringify(re))
             
-            console.log(re);
-        }
+//             console.log(re);
+//         }
 
-    }); 
-}
+//     }); 
+// }

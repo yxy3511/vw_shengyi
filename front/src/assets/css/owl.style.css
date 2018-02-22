@@ -35,6 +35,11 @@ h6 {
     color: #232323;
 }
 
+.dropdown-menu .divider{
+    margin: 0px;
+    margin-top:9px;
+}
+
 p,pre {
     font-family: 'Roboto', sans-serif !important;
     font-size: 15px  !important;
@@ -469,10 +474,10 @@ figure.effect-bubba h2 {
 }
 
 figure.effect-bubba p {
-    color: #fff;
+    color: #fff !important;
     font-size: 13px;
     font-weight: 500;
-	padding: 20px 2.5em;
+	/*padding: 20px 2.5em;*/
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
@@ -966,6 +971,7 @@ figure.effect-bubba {
 #aboutMe .row{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-left: 0px;
 }
 #aboutMe .container{

@@ -225,6 +225,8 @@
             vals.imgs = JSON.parse(vals.imgs)
             this.proList = vals
           }
+        },error=>{
+          this.autoAlert(error.statusText,'red')
         })
       },
       isComplate(){
@@ -258,6 +260,8 @@
               break
             }
           }
+        },error=>{
+          this.autoAlert(error.statusText,'red')
         })
       },
       getSortIdByName(name){
@@ -277,11 +281,13 @@
             let code = JSON.parse(res.bodyText).code
             if(code == 0){
               this.autoAlert(msg,'orange')
+              if(this.pid == 0){
+                this.setCurPage('prolistPageNum',1)
+              }
               this.$router.push({path:'/manage/MProducts'})
             }
-          },err=>{
-            console.log(res)
-            this.autoAlert(res.msg,'orange')
+          },error=>{
+            this.autoAlert(error.statusText,'red')
           })
         }
       },
@@ -291,22 +297,27 @@
       fileChange(el) {
           if (!el.target.files[0].size) return;
           var formData = new FormData(document.forms.namedItem("picForm"));
-          this.saveImgs(formData).then(res=>{
-            console.log('res:',res)
-            setTimeout(()=>{
+          // this.saveImgs(formData).then(res=>{
+          //   console.log('res:',res)
+          //   setTimeout(()=>{
 
-              res.forEach(img=>{
+          //     res.forEach(img=>{
+          //       this.proList.imgs.push(img)
+          //     })
+          //   },100);
+          // })
+          this.$http.post('/api/manage/uploading',formData).then(res=>{
+            // console.log('res:',res)
+            let resVal = JSON.parse(res.bodyText)
+            setTimeout(()=>{
+              resVal.forEach(img=>{
+                // console.log('img:',img)
                 this.proList.imgs.push(img)
               })
             },100);
+          },error=>{
+            this.autoAlert(error.statusText,'red')
           })
-          // this.saveImgs(formData).then(res=>{
-          //   console.log('res:',res)
-          //   for(let index in res){
-          //     this.imgSrc.push(res[index])
-          //   }
-          // })
-          // this.fileList(el.target);
           el.target.value = ''
       },
       // fileList(fileList) {
@@ -373,34 +384,34 @@
           this.proList.imgs.splice(index, 1);
 
       },
-      saveImgs(formData){
-        /*this.$http.post('/api/manage/uploading',{
-          data:formData
-        }).then(res=>{
-          console.log('uploading:',res)
-        })*/
-        return $.ajax({
-            type : 'post',
-            url : '/api/manage/uploading',
-            data: formData ,
-            processData:false,
-            async:false,
-            cache: false,  
-            contentType: false, 
-            success:function(re){
-              console.log(re);
-                // creatImgs(re.imgs)                
-                // $('#allImg').attr('value',re.allImgs)
-            },
-            error:function(re){
-              console.log(re);
-                // window.autoAlert(JSON.stringify(re),'red')
-                // alert(JSON.stringify(re))
-                // console.log(re);
-            }
+      // saveImgs(formData){
+      //   /*this.$http.post('/api/manage/uploading',{
+      //     data:formData
+      //   }).then(res=>{
+      //     console.log('uploading:',res)
+      //   })*/
+      //   return $.ajax({
+      //       type : 'post',
+      //       url : '/api/manage/uploading',
+      //       data: formData ,
+      //       processData:false,
+      //       async:false,
+      //       cache: false,  
+      //       contentType: false, 
+      //       success:function(re){
+      //         console.log(re);
+      //           // creatImgs(re.imgs)                
+      //           // $('#allImg').attr('value',re.allImgs)
+      //       },
+      //       error:function(re){
+      //         console.log(re);
+      //           // window.autoAlert(JSON.stringify(re),'red')
+      //           // alert(JSON.stringify(re))
+      //           // console.log(re);
+      //       }
 
-        });  
-      },
+      //   });  
+      // },
       cancel(e){
         if ( e && e.preventDefault ){
             e.preventDefault(); 

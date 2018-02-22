@@ -109,17 +109,18 @@ new Vue({
     // headerPage,
     // footerPage
   },
-  template: '<App/>',
+  template: '<router-view></router-view>',
+  // template: '<App/>',
   created(){
     console.log('enter')
-    if(window.location.pathname.indexOf('/manage') != -1){
-      this.temp = '<Manage/>'
-      // this.$options.template = '<Manage/>'
-    }else{
-      this.temp = '<App/>'
-      // this.$options.template = '<App/>'
-    }
-    this.$options.template = this.temp
+    // if(window.location.pathname.indexOf('/manage') != -1){
+    //   this.temp = '<Manage/>'
+    //   // this.$options.template = '<Manage/>'
+    // }else{
+    //   this.temp = '<App/>'
+    //   // this.$options.template = '<App/>'
+    // }
+    // this.$options.template = this.temp
   },
   mounted(){
     let path = window.location.pathname;
@@ -137,11 +138,11 @@ router.beforeEach((to, from, next) => {　
     //login页刷新
     // let isReload = to.params.code != 1
     // let msg = to.params.msg
-    if((from.path == '/login' || to.path == '/login')){
+    /*if((from.path == '/login' || to.path == '/login')){
       router.go(0)
     }else if(((from.path.indexOf('/manage') != -1 && to.path.indexOf('/manage') == -1) || to.path.indexOf('/manage') != -1 && from.path.indexOf('/manage') == -1)){
       router.go(0)
-    }
+    }*/
 　　next()   // 进行下一个钩子函数  
 
     

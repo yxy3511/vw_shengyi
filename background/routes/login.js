@@ -206,7 +206,7 @@ newRegistering = function(req,res){
                         })*/
                         return res.send(200,{
                             code:0,
-                            msg:'注册成功！'
+                            msg:'添加用户成功！'
                         })
                         // var msg = '注册成功！'
                         // req.session.manageMsg = msg

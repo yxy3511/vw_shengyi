@@ -17,49 +17,49 @@ $(function() {
     
 
 });
-export function getProLists(id,page){
-    //获取商品页
-    return $.ajax({
-        type : 'get',
-        url : '/api/products/'+id+'/?pageSize='+page.pageSize+'&pageNum='+page.pageNum,
-        processData:false,
-        async:false,
-        cache: false,  
-        contentType: false, 
-        success:function(re){
-            // return re
-            console.log(re);
-        },
-        error:function(re){
-            // alert(JSON.stringify(re))
-            // window.autoAlert(JSON.stringify(re),'red')
-            console.log(re);
-        }
+// export function getProLists(id,page){
+//     //获取商品页
+//     return $.ajax({
+//         type : 'get',
+//         url : '/api/products/'+id+'/?pageSize='+page.pageSize+'&pageNum='+page.pageNum,
+//         processData:false,
+//         async:false,
+//         cache: false,  
+//         contentType: false, 
+//         success:function(re){
+//             // return re
+//             console.log(re);
+//         },
+//         error:function(re){
+//             // alert(JSON.stringify(re))
+//             // window.autoAlert(JSON.stringify(re),'red')
+//             console.log(re);
+//         }
 
-    }); 
-}
-export function getProducts(){
-    //获取首页商品
-    return $.ajax({
-        type : 'get',
-        url : '/api/page',
-        processData:false,
-        async:false,
-        cache: false,  
-        contentType: false, 
-        success:function(re){
-            console.log(re);
-            // console.log(111,JSON.parse(re.vals))
-            // return re
-        },
-        error:function(re){
-            // alert(JSON.stringify(re))
-            // window.autoAlert(JSON.stringify(re),'red')
-            console.log(re);
-        }
+//     }); 
+// }
+// export function getProducts(){
+//     //获取首页商品
+//     return $.ajax({
+//         type : 'get',
+//         url : '/api/page',
+//         processData:false,
+//         async:false,
+//         cache: false,  
+//         contentType: false, 
+//         success:function(re){
+//             console.log(re);
+//             // console.log(111,JSON.parse(re.vals))
+//             // return re
+//         },
+//         error:function(re){
+//             // alert(JSON.stringify(re))
+//             // window.autoAlert(JSON.stringify(re),'red')
+//             console.log(re);
+//         }
 
-    }); 
-}
+//     }); 
+// }
 export function getSortsList(){
     //获取分类
     return $.ajax({

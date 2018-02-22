@@ -72,14 +72,15 @@
           let msg = JSON.parse(res.bodyText).msg
           if(code == 0){
             this.autoAlert(msg,'orange')
+            this.setCurPage('userPageNum',1)
             this.$router.push({
               path:'/manage/userList'
             })
           }else{
             this.autoAlert(msg,'orange')
           }
-        },err=>{
-          console.log('err:',err)
+        },error=>{
+          this.autoAlert(error.statusText,'red')
         })
       },
           

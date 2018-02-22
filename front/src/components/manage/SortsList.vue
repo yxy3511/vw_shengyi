@@ -50,7 +50,7 @@
                   td.center
                     .btn.btn-danger(@click='delConfirmAlert("/api/manage/delSort/"+pageSize+"/"+pageNum+"/"+sort.id)')
                       i.halflings-icon.white.trash
-            v-pagination(:total="pageCount" ,:current-page='pageNum' @pagechange="getSortsList")
+            v-pagination(:total="pageCount" ,:current-page='pageNum' @pagechange="getSortsVal")
 </template>
 
 <script>
@@ -75,17 +75,17 @@
     },
     created(){
       // this.pageSize = parseInt(localStorage.getItem('pageSize'))
-      this.getSortsList()
+      this.getSortsVal()
 
     },
     methods:{
       setPageSize(event){
         if(event.code == 'Enter'){
           this.setCurPageSize('sortsPageSize',this.pageSize)
-          this.getSortsList(1)
+          this.getSortsVal(1)
         }
       },
-      getSortsList(curPage){
+      getSortsVal(curPage){
         let curPageNum = curPage || this.pageNum
         if(curPageNum != 1){
           this.isAdd = false
@@ -104,7 +104,7 @@
             }
           }else if(vals.code == -2){
             this.pageNum  = vals.pageNum
-            this.getSortsList()
+            this.getSortsVal()
           }
           this.setCurPage('sortsPageNum',this.pageNum)
         },err=>{
@@ -112,12 +112,12 @@
         })
       },
       delConfirmAlert(url){
-        this.delConfirm(url,this.getSortsList)
+        this.delConfirm(url,this.getSortsVal)
       },
       showInput(event){
         this.isAdd = true
         this.pageNum = 1
-        this.getSortsList()
+        this.getSortsVal()
       },
       addSort(){
         if(this.newSortName.length > 0){
@@ -134,10 +134,12 @@
               this.isAdd = false
               this.newSortName = ''
               this.autoAlert(msg,'orange')
-              this.getSortsList()
+              this.getSortsVal()
             }else{
               this.autoAlert(msg,'orange')
             }
+          },error=>{
+            this.autoAlert(error.statusText,'red')
           })
         }else{
           this.autoAlert('添加内容不可为空！','orange')

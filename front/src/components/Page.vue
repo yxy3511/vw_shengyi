@@ -24,7 +24,8 @@
         .row
           .col-md-6.text-center
             //- a.noLine(href='/atlas')
-            router-link.noLine(to="/atlas")
+            //- router-link.noLine(to="/atlas")
+            .noLine(@click="toAtlas")
               .mz-module-about.fs-7
                 i.fa.fa-photo.ot-circle
                 //- span.glyphicon.glyphicon-screenshot
@@ -54,7 +55,7 @@
               p
                 | There is no perfection in the world, but we are always pursuing perfection.
         |   
-        .imgsList
+        .imgsList(v-if='length>0')
           .centerDiv
             // start portfolio item
             router-link.imgcard(:to="'/proDesc/'+pro['pid']" v-for='pro in proList' ,:key="pro.id")
@@ -95,6 +96,9 @@
             //-         h2 Leather Shoes
             //-         |                 
             //-         p Leather manufacturing
+        .center(v-else)
+            h2.noContent 
+              | 暂无商品
     |     
     p#back-top
       a(href="#top")
@@ -103,21 +107,37 @@
 </template>
 
 <script>
-  import {getProducts} from '../assets/js/init.js'
+  // import {getProducts} from '../assets/js/init.js'
   export default {
     name: 'home',
     data(){
       return {
         proList:{},
+        length:0,
       }
     },
     mounted(){
       this.getPro()
     },
     methods:{
+      toAtlas(){
+        if(this.length > 0){
+          this.$router.push({
+            path:'/atlas'
+          })
+        }else{
+          this.autoAlert('暂无商品！','orange')
+        }
+      },
       getPro(){
-        getProducts().then((res)=>{
-          this.proList = res['vals']
+        this.$http.post('/api/page').then((res)=>{
+          // console.log('res:',res)
+          res = res.body
+          if(res.code == 0){
+
+            this.proList = res['vals']
+          }
+          this.length = res.length
         },error=>{
           this.autoAlert(error.statusText,'red')
         })

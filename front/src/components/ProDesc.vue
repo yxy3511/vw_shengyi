@@ -165,6 +165,9 @@
           // transitionEffect:'fading',
           autoSlide:true
         });
+      },error=>{
+        // console.log(err)
+        this.autoAlert(error.statusText,'red')
       })
     },
     methods: {
@@ -175,6 +178,9 @@
           this.pro = res['vals']
           this.pro.imgs = JSON.parse(res['vals']['imgs'])
           
+        },error=>{
+          // console.log(error)
+          this.autoAlert(error.statusText,'red')
         })
       }
     },

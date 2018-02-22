@@ -1139,30 +1139,52 @@ isNull = function(vals){
     }
     return false
 }
-
+//将/r/n换成<br>保存到数据库
 RemoveSC = function(val){
     var reg=new RegExp("\r\n","g"); 
-    val= val.replace(reg,"<br>"); 
-    /*var str = val.toString()
-    str = str.replace("\n\r", "<br/>");
-    str = str.replace("\r\n", "<br/>");
-    str = str.replace("\n", "<br/>");
-    str = str.replace("\r", "<br/>");
-    str = str.replace("\t", "    ");
-    str = str.replace(" ", " ");
-    str = str.replace("\"", "\\" + "\"");
-    return str*/
-    return val
-}
+    // console.log(1,val[0]['value'])
+    // for(let obj of val){
+    //     console.log(66,obj)
+    // }
+    // val['value']= val[0]['value'].replace(reg,"<br>"); 
+    // // console.log(2,val[0]['value'])
+    // // var str = val.toString()
+    // // str = str.replace("\n\r", "<br/>");
+    // // str = str.replace("\r\n", "<br/>");
+    // // str = str.replace("\n", "<br/>");
+    // // str = str.replace("\r", "<br/>");
+    // // str = str.replace("\t", "    ");
+    // // str = str.replace(" ", " ");
+    // // str = str.replace("\"", "\\" + "\"");
+    // // return str
+    // return JSON.stringify(val)
 
-setSC = function(val){
-    var reg=new RegExp("<br>","g"); 
+
     var res = []
     for(var obj of val){
-        obj['value'] = obj['value'].replace(reg,"\r\n")
+        obj['value'] = obj['value'].replace(reg,"<br>")
         // console.log(99999999,obj)
         res.push(obj)
     }
+    // console.log(2333,res)
+    return res
+}
+//将数据库的<br>换成/r/n展示
+setSC = function(val){
+    var reg=new RegExp("<br>","g"); 
+    var res = []
+    JSON.parse(val).forEach(obj=>{
+        obj['value'] = obj['value'].replace(reg,"\r\n")
+        res.push(obj)
+    })
+    // for(var obj of val){
+    //     console.log('bef:',obj)
+    //     obj = JSON.parse(obj)
+    //     console.log('aft:',obj)
+    //     obj['value'] = obj['value'].replace(reg,"\r\n")
+    //     console.log(99999999,obj)
+    //     res.push(obj)
+    // }
     // console.log(2333,res)
     return JSON.stringify(res)
 }
@@ -1181,7 +1203,9 @@ addAboutUs = function(req,res,next){
         params.title = req.body.data.title || ''
         params.desc_txt = req.body.data.desc_txt || ''
         // params.subTitle = req.body.subTitle || ''
-        params.value = req.body.data.content || ''
+        // console.log(12,req.body.data.content);
+        params.value = RemoveSC(req.body.data.content) || ''
+        // console.log('------',params.value)
         // params.allImg = JSON.parse(req.body.allImg) || ''
 
         // item.id = params.id
@@ -1249,7 +1273,8 @@ addAboutUs = function(req,res,next){
                 }else{
                     return res.send(200,{
                         code: 0,
-                        msg: '公司介绍添加成功！'
+                        msg: '公司介绍添加成功！',
+                        demoLength:demos.length
                     })
                     // req.session.manageMsg = '公司介绍添加成功！'
                     // // res.redirect('/aboutUs')
@@ -1318,7 +1343,7 @@ toAboutUs = function(req,res){
                 })
             }else{
                 //頁數
-                let totalCount = 0
+                let totalCount = demos.length 
                 for(var j in val){
                     totalCount = val[j]['totalCount'] + demos.length 
                 }
@@ -1347,10 +1372,11 @@ toAboutUs = function(req,res){
                     // return res.redirect('/manage/aboutUs/'+page.pageSize+'/'+page.pageNum)
                     return res.send({
                         code: -2,
-                        pageNum: page.pageNum
+                        pageNum: page.pageNum,
+                        length:0,
                     })
                 }
-
+                
                 if(page.pageNum*page.pageSize<demos.length || page.pageNum*page.pageSize == demos.length){
                     //全demos
                     let demoData = demos.slice((page.pageNum-1)*page.pageSize,page.pageNum*page.pageSize)
@@ -1529,7 +1555,8 @@ viewAboutus = function(req,res){
                     })
                 }else{
                     if(vals.length > 0){
-                        vals[0].content = setSC(JSON.parse(vals[0].content))
+                        // console.log(JSON.parse(vals[0].content))
+                        vals[0].content = setSC(vals[0].content)
                         // console.log('getthis:',JSON.stringify(vals[0]))
                         // res.render('newViewAboutus',{
                         //     vals: JSON.stringify(vals[0]),

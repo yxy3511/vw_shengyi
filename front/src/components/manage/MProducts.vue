@@ -144,6 +144,8 @@
           //     break
           //   }
           // }
+        },error=>{
+          this.autoAlert(error.statusText,'red')
         })
       },
       delConfirmAlert(url){

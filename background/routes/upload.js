@@ -23,14 +23,15 @@ router.post('/uploading', function(req, res, next){
         console.log('useFiles:',files)
         images.push(files)
         // var dstPath = {} 
-        var imgInfo = {} 
         var imgArr = []
         if(err){
             console.log('parse error: ' + err);
         }else if(images){
+            // console.log('imgages:',images)
             for(var i in images){
                 var filesTmp = JSON.stringify(images[i],null,2); 
                 for(var j in images[i]['inputFile']){
+                    var imgInfo = {} 
                     // var index =  parseInt(j)+imgArr.length
                     var index =  j
                     var inputFile = images[i]['inputFile'][j];

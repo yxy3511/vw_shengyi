@@ -62,14 +62,19 @@ toPage=function(req,res){
                             msg: msg
                         })*/
                         res.send(200,{
+                            code:0,
+                            length:vals.length,
                             vals: resArr,
-                            msg: msg
-
                         })
                     }
                 }else{
-                    res.render('page',{
-                        msg: msg
+                    // res.render('page',{
+                    //     msg: msg
+                    // })
+                    res.send(200,{
+                        code: -1,
+                        length:0,
+                        msg:'暂无数据！'
                     })
                 }
             }
@@ -79,15 +84,20 @@ toPage=function(req,res){
     }
     
 }
+//将数据库的<br>换成/r/n展示
 setSC = function(val){
     var reg=new RegExp("<br>","g"); 
     var res = []
-    for(var obj of val){
+    JSON.parse(val).forEach(obj=>{
         obj['value'] = obj['value'].replace(reg,"\r\n")
         res.push(obj)
-    }
+    })
+    // for(var obj of val){
+    //     obj['value'] = obj['value'].replace(reg,"\r\n")
+    //     res.push(obj)
+    // }
     return JSON.stringify(res)
-}
+}  
 toAbout=function(req,res){
 	// res.render('aboutUs');
     var id = req.query.id 
@@ -99,12 +109,14 @@ toAbout=function(req,res){
             console.log(err)
         }else{
             if(vals.length > 0){
-                vals[0].content = setSC(JSON.parse(vals[0].content))
+                vals[0].content = setSC(vals[0].content)
                 /*res.render('aboutUs',{
                     vals: JSON.stringify(vals[0]),
                     msg:msg
                 })*/
                 res.send(200,{
+                    code:0,
+                    length:1,
                     vals: vals[0],
                     msg:msg
                 })
@@ -116,6 +128,8 @@ toAbout=function(req,res){
                     vals: JSON.stringify(vals)
                 })*/
                 res.send(200,{
+                    code:-1,
+                    length:0,
                     msg:msg,
                     // vals: vals
                 })
@@ -125,13 +139,13 @@ toAbout=function(req,res){
 }
 toProducts=function(req,res){
     try{
-        var msg = req.session.manageMsg
-        req.session.manageMsg = null
+        // var msg = req.session.manageMsg
+        // req.session.manageMsg = null
         var sid = req.params.sid ? parseInt(req.params.sid) : 0
 
         var page = {}
-        page.pageNum = +req.query.pageNum 
-        page.pageSize = +req.query.pageSize
+        page.pageNum = +req.body.pageNum 
+        page.pageSize = +req.body.pageSize
     
         proListContent.getProList(sid,page,function(err,vals){
             if(err){
@@ -158,14 +172,23 @@ toProducts=function(req,res){
                         pageNum: page.pageNum,
                     })*/
                     res.send(200,{
+                        code:0,
+                        length:totalCount,
                         vals: resArr,
-                        msg: msg,
                         pageCount:pageCount,
                         pageNum: page.pageNum,
                     })
                 }else{
+                    let msg = ''
+                    if(sid == 0){
+                        msg = '暂无商品！'
+                    }else{
+                        msg = '暂无此类商品！'
+                    }
                     res.send(200,{
-                        msg: '暂无此类商品！',
+                        code:-1,
+                        length:0,
+                        msg: msg,
                         pageCount:1,
                         pageNum: 1,
                     })
@@ -224,7 +247,9 @@ toProDesc=function(req,res){
                 //vals是数组
                 // res.render("proDesc",vals[0])
                 res.send(200,{
-                    vals:vals[0]
+                    vals:vals[0],
+                    code:0,
+                    length:1,
                 })
             }
         })
@@ -232,7 +257,7 @@ toProDesc=function(req,res){
         console.log(e)
     }
 }
-getProDesc=function(req,res){
+/*getProDesc=function(req,res){
     try{
         var key = req.query.key
         proListContent.getProId(key,function(err,vals){
@@ -246,10 +271,10 @@ getProDesc=function(req,res){
     }catch(e){
         console.log(e)
     }
-}
-toContact=function(req,res){
-	res.render('contact');
-}
+}*/
+// toContact=function(req,res){
+// 	res.render('contact');
+// }
 getSorts = function(req,res){
     try{
         proListContent.getSorts('name',{pageNum:0,pageSize:0},function(err,vals){
@@ -257,11 +282,15 @@ getSorts = function(req,res){
                 console.log(err)
             }else{
                 var resArr = {}
+                let cnt = 0
                 for(var i in vals){
+                    cnt++
                     resArr[i] = vals[i]
                 }
                 // res.render('layout',{vals:JSON.stringify(resArr)})
                 res.send(200,{
+                    code:0,
+                    length:cnt,
                     vals:resArr
                 })
             }
@@ -274,10 +303,10 @@ getSorts = function(req,res){
 
 searchPro = function(req,res,next){
     try{
-        var key = req.query.key
+        var key = req.body.key
         var page = {}
-        page.pageNum = +req.query.pageNum
-        page.pageSize = +req.query.pageSize
+        page.pageNum = +req.body.pageNum
+        page.pageSize = +req.body.pageSize
         proListContent.searchPro(key,page,function(err,vals){
             if(err){
                 console.log(err)
@@ -298,6 +327,8 @@ searchPro = function(req,res,next){
                 }
 
                 res.send(200,{
+                    code: 0,
+                    length:totalCount,
                     vals: resArr,
                     pageNum: page.pageNum,
                     pageCount: pageCount
@@ -323,6 +354,8 @@ searchPro = function(req,res,next){
                
             }else{
                 res.send(200,{
+                    code:-1,
+                    length:0,
                     msg:'暂无要搜索的商品！'
                 })
                 // req.session.manageMsg = '暂无此类商品！'
@@ -375,11 +408,15 @@ getSortsList = function(req,res,next){
                 console.log(err)
             }else{
                 var resArr = {}
+                let cnt = 0
                 for(var i in vals){
+                    cnt++
                     resArr[vals[i].id] = vals[i].name
                 }
                 var resObj = {}
                 res.send(200,{
+                    code:0,
+                    length: cnt,
                     vals:resArr
                 })
                 // res.render('layout',{vals:JSON.stringify(resArr)})
@@ -400,8 +437,8 @@ toAtlas = function(req,res){
             }else{
                 var imgs = {}
                 var cnt = 0 ;
+                console.log('vvaallss:',vals)
                 if(vals.length > 0){
-                    // console.log('vvaallss:',vals)
                     for(var first in vals){
                         for( var sec in vals[first]){
                             if(sec == 'imgs'){
@@ -417,11 +454,18 @@ toAtlas = function(req,res){
                     }
                     // res.render('atlas',{imgs:JSON.stringify(imgs)})
                     res.send(200,{
+                        code:0,
+                        length:vals.length,
                         imgs:imgs
                     })
                 }else{
-                    req.session.manageMsg = '暂无商品！'
-                    res.redirect('/page')
+                    // req.session.manageMsg = '暂无商品！'
+                    // res.redirect('/page')
+                    res.send(200,{
+                        code:-1,
+                        length:0,
+                        msg:'暂无商品！'
+                    })
                 }
             }
         })
@@ -433,16 +477,16 @@ toAtlas = function(req,res){
 }
 
 router.get('/',rePage);
-router.get('/page',toPage);
-router.get('/aboutUs',toAbout);
-router.get('/products/:sid',toProducts);
+router.post('/page',toPage);
+router.post('/aboutUs',toAbout);
+router.post('/products/:sid',toProducts);
 router.get('/proDesc/:id',toProDesc);
-router.get('/contact',toContact);
+// router.get('/contact',toContact);
 router.get('/getSorts',getSorts);
-router.get('/proSearch',searchPro);
+router.post('/proSearch',searchPro);
 router.get('/getSortsList',getSortsList);
 router.get('/atlas',toAtlas);
-router.get('/getProDesc',getProDesc);
+// router.get('/getProDesc',getProDesc);
 
 module.exports = router
 

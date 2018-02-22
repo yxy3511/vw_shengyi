@@ -71,6 +71,8 @@
               });
             });
           }
+        },error=>{
+          this.autoAlert(error.statusText,'red')
         })
       }
     },
