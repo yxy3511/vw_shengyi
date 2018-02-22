@@ -105,23 +105,26 @@ export default{
   }
 }
 </script>
-<style scoped  lang='sass'>
-  .pagination 
+<style scoped  lang='scss'>
+  .pagination {
     overflow: hidden;
     display: table;
     margin: 0 auto;
     /*width: 100%;*/
     height: 50px;
-    li 
+    li {
+
       float: left;
       height: 30px;
       border-radius: 5px;
       margin: 3px;
       color: #666;
-      &:hover,&:focus
+      &:hover,&:focus{
         background: #000;      
-    a 
-      padding: 0px
+      }
+    }
+    a {
+      padding: 0px;
       display: block;
       width: 30px;
       height: 30px;
@@ -129,21 +132,31 @@ export default{
       line-height: 30px;
       font-size: 12px;
       border-radius: 5px;
-      text-decoration: none
+      text-decoration: none;
       color: #000;   
-    .goPage
-      a
+    }
+    .goPage{
+      a{
         font-size: 20px;
+      }
+    }
+  }
 
-  .active 
+  .active {
+
     background: #000;
-    outline:none
-    a 
+    outline:none;
+    a {
+
       color: #fff;
-      background: #000
-      border-color: #000
-      &:hover,&:focus
+      background: #000;
+      border-color: #000;
+      &:hover,&:focus{
+
         background: #000; 
-        border-color: #000
+        border-color: #000;
+      }
+    }
+  }
 
 </style>

@@ -209,7 +209,7 @@
 
 </script>
 
-<style scoped lang='sass'>
-  @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+<style scoped>
+  @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
   
 </style>

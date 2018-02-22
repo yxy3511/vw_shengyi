@@ -43,6 +43,9 @@ module.exports = {
         loader: 'vue-loader',
         options: vueLoaderConfig
       },{
+        test: /\.scss$/,
+        loader: 'sass-loader',
+      },{
         test: /\.sass$/,
         loader: 'sass-loader',
       },{
