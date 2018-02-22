@@ -127,7 +127,7 @@ import '../../assets/js/lib/custom.js'
 
 </script>
 
-<style lang='css'>
+<style>
 
   @import url("../../assets/css/bootstrap.css");
   @import url("../../assets/css/style.css");

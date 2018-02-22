@@ -77,9 +77,14 @@
       }
     },
     beforeUpdate(){
-      setTimeout(()=>{
-        this.setNaturalImg('.isLittleImg')
-      },100);
+      try{
+        
+        setTimeout(()=>{
+          this.setNaturalImg('.isLittleImg')
+        },100);
+      }catch(err){
+        console.log(err)
+      }
     },
 
 
@@ -101,6 +106,8 @@
             let msg = JSON.parse(res.bodyText).msg
             this.autoAlert(msg,'orange')
           }
+        },error=>{
+          this.autoAlert(error.statusText,'red')
         })
       },
     },

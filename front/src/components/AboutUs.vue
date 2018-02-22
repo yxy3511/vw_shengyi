@@ -57,9 +57,14 @@ export default {
     
   // },
   beforeUpdate(){
-    setTimeout(()=>{
-      this.setNaturalImg('.isLittleImg')
-    },100);
+    try{
+
+      setTimeout(()=>{
+        this.setNaturalImg('.isLittleImg')
+      },100);
+    }catch(err){
+      console.log(err)
+    }
   },
   methods:{
     getInfo(){

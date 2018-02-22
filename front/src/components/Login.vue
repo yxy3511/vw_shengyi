@@ -165,51 +165,53 @@
 <!--     @import url('../assets/css/bootstrap-responsive.min.css');
     @import url('../assets/css/styles.css');
     @import url('../assets/css/style-responsive.css'); -->
-<style scoped lang='scss'>
+<style scoped>
   @import url("../assets/css/bootstrap-responsive.min.css");
   /*@import url("../assets/css/styles.css");*/
   @import url("../assets/css/style-responsive.css");
   .container-fluid-full{
     background: url(../assets/images/bg-login.jpg);
-    .login-box h2{
-      color: #646464;
-      margin-left: 30px;
-      font-family: monaco;
-      font-weight: normal;
-      line-height: 28px !important;
-      font-size: 16px;
-    }
-    input:focus{
-      outline: none;  
-    }
-    input.input-large{
-      height:45px;
-      line-height: 45px;
-      width:80%;
-    }
-    span.add-on{
-      height:45px;
-      line-height: 45px;
-      background-color: transparent;
-      i{
-        margin-top: 10px;
-      }
-    }
-    label.remember{
-      font-size: 14px;
-      font-weight: normal;
-      input#rmbUser{
-        margin-top: 0px;
-      }
-    }
-    .btn:hover,.btn:active{
-      background-color: #585858;
-      border-color: #585858;
-      outline: none;
-    }
-    .bm{
-      margin-bottom: 30px;
-    }
+  }
+
+  .container-fluid-full .login-box h2{
+    color: #646464;
+    margin-left: 30px;
+    font-family: monaco;
+    font-weight: normal;
+    line-height: 28px !important;
+    font-size: 16px;
+  }
+  .container-fluid-full input:focus{
+    outline: none;  
+  }
+  .container-fluid-full input.input-large{
+    height:45px;
+    line-height: 45px;
+    width:80%;
+  }
+  .container-fluid-full span.add-on{
+    height:45px;
+    line-height: 45px;
+    background-color: transparent;
+    
+  }
+  .container-fluid-full span.add-on i{
+    margin-top: 10px;
+  }
+  .container-fluid-full label.remember{
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .container-fluid-full label.remember input#rmbUser{
+    margin-top: 0px;
+  }
+  .container-fluid-full .btn:hover,.btn:active{
+    background-color: #585858;
+    border-color: #585858;
+    outline: none;
+  }
+  .container-fluid-full .bm{
+    margin-bottom: 30px;
   }
   
     

@@ -1,8 +1,8 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App'
-import Manage from './Manage'
+import App from './components/App'
+import Manage from './components/manage/Manage'
 import router from './router'
 import $ from 'jquery'
 import {Menu,defaultPagesize,defaultUserPagesize,manageMenu,baseUrl} from './assets/js/config.js'
@@ -100,7 +100,7 @@ new Vue({
   router,
   data(){
     return{
-      temp:'<App/>'
+      // temp:'<App/>'
     }
   },
   components: { 
