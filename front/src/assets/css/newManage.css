@@ -154,7 +154,7 @@ body{
 }
 
 /*小屏幕菜单*/
-.navbar .btn-navbar: hover{
+.navbar .btn-navbar:hover{
     background-color: transparent !important; 
     background-image: none !important;
 }

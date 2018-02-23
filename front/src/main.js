@@ -135,6 +135,7 @@ router.beforeEach((to, from, next) => {　
     Vue.prototype.preUrl = from.path
     Vue.prototype.isShowTwoMenu = isShowTwoMenu(to.path)
     setUrlAct(to.path)
+    window.scrollTo(0,0);
     //login页刷新
     // let isReload = to.params.code != 1
     // let msg = to.params.msg
