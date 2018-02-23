@@ -4,7 +4,7 @@
         .row-fluid
           .login-box
             .icons
-              router-link(to="/page")
+              //- router-link(to="/page")
                 i.halflings-icon.home
               |                         
               //- a(href="#")
