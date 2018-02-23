@@ -64,7 +64,7 @@ toProList = function(req,res){
                 }else{
                     pageCount = parseInt(totalCount/page.pageSize)
                 }
-                res.send(200,{
+                return res.send(200,{
                     code:0,
                     length:totalCount,
                     vals: resArr,
@@ -147,13 +147,13 @@ getProList = function(req,res,next){
                 if(page.pageNum > pageCount){
                     page.pageNum = page.pageNum - 1
                     // return res.redirect('/manage/proList/'+page.pageSize+'/'+page.pageNum)
-                    res.send(200,{
+                    return res.send(200,{
                         code: -2,
                         pageNum: page.pageNum
                     })
                 }
                 // console.log('rrrreessArr:',resArr)
-                res.send(200,{
+                return res.send(200,{
                     code:0,
                     vals: resArr,
                     length:totalCount,
@@ -291,7 +291,7 @@ savePro = function(req,res,next){
                 // global.imagesArr = []
                 if(err){
                     console.log(err)
-                    res.send(200,{
+                    return res.send(200,{
                         code: 500,
                         msg: err.sqlMessage
                     })
