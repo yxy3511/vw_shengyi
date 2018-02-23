@@ -106,6 +106,8 @@ export function delConfirm(url,callback){
                             if(re.code == 0){
                                 callback()
                                 autoAlert(re.msg,'orange')
+                            }else if(re.code == 1){
+                                window.location.href='#/login'
                             }else{
                                 autoAlert(re.msg,'orange')
                             }
