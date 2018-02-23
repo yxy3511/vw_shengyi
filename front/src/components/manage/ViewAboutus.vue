@@ -116,6 +116,9 @@
 
 
 <style scoped>
+  #content {
+    background-color: #f8f8f8;
+  }
   /*.yu_row{
     display: flex;
     align-items: center;

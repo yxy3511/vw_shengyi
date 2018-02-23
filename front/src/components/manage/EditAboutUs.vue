@@ -40,7 +40,7 @@
 
               .infoBlock.light-bg(v-for='(item,index) in formData.content')
                 .control-group
-                  label.control-label(for="curImg") 介绍图片
+                  label.control-label(for="curImg") 介绍图片{{index}}
                   .controls#imgsBox
                     .upload_warp_img
                       .upload_warp_img_div(v-if='item.img')
@@ -58,13 +58,12 @@
                           .upload_warp_img_div_text
                             | desc
                       #upBox.upload-container.upBox(v-else)
-                        .upTex(@click='addImg')
+                        .upTex(@click='addImg(index)')
                           span.upIcon
                             span.glyphicon.glyphicon-plus
                             //- i.fa.fa-plus
                           span 点击上传
                         //- input(name='inputFile',id='j_imgfile', type='file', multiple='mutiple',class="fileupload" @change="saveImgs")
-                        input#imgFile(name='inputFile', type='file',class="fileupload" @change="fileChange($event,index)")
                         //- input(name='allImg' id='allImg' type='text' style='visibility:hidden' v-model='proList.imgs')
 
                 |     
@@ -80,6 +79,7 @@
                   |                               
                   .controls
                     textarea.info.span66(name='info' class='cleditor' rows='8' v-model.lazy='item.value')            
+              input#imgFile(name='inputFile', type='file',class="fileupload" @change="fileChange($event)")
             .againRow(@click='addContent') 再增加一段
             //- input#allImg(name='allImg' type='text' style='visibility:hidden')
             .form-actions.upBtns
@@ -140,10 +140,28 @@
         }
         return true
       },
+      delNoContent(){
+        this.formData.content.forEach((obj,index)=>{
+          let cnt = 0
+          if(!obj.img){
+            cnt++
+          }
+          if(obj.title.length == 0){
+            cnt++
+          }
+          if(obj.value.length == 0){
+            cnt++
+          }
+          if(cnt == 3 || cnt > 3){
+            this.formData.content.splice(index,1)
+          }
+        })
+      },
       submit(){
         if(!this.isComplate()){
           return
         }
+        this.delNoContent()
         // console.log('formdata:',this.formData)
         this.$http.post('/api/manage/addAboutUs',{
           data:this.formData,
@@ -210,10 +228,12 @@
           this.formData.content[index].img = null
 
       },
-      addImg(){
+      addImg(index){
         $('#imgFile').click()
+        this.index = index
       },
-      fileChange(el,index) {
+      fileChange(el) {
+        let index = this.index
           if (!el.target.files[0].size) return;
           var formData = new FormData(document.forms.namedItem("aboutUsForm"));
           /*this.saveImgs(formData).then(res=>{

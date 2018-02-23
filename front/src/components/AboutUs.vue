@@ -34,7 +34,7 @@
         template(v-else)
           .center
             h2.noContent 
-              | 暂无数据
+              | 暂无介绍
 
       
 </template>

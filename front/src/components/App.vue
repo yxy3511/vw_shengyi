@@ -126,7 +126,7 @@
 <script>
   // require('./assets/js/config.js')
   // require('./assets/js/init.js')
-  // import {getProLists,getSortsList} from './assets/js/init.js'
+  import {setUrlAct} from '../assets/js/init.js'
   import products from './Products.vue'
   export default {
     name: 'layout',
@@ -151,6 +151,7 @@
       }
     },
     beforeUpdate(){
+      setUrlAct(this.$route.path)
       if(this.status == 'page'){
         this.setPrePage()    
         this.isShowTLMenu = this.isShowTwoMenu
@@ -189,6 +190,7 @@
         // this.isPageShow = this.ispage
       },
       getPros(){
+        // console.log(this.$route.path)
         //方法名唯一，并且和products中方法名一致
         if(this.$refs.pros.getPro){
           this.$refs.pros.getPro()

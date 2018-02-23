@@ -245,6 +245,12 @@
       getSort(){
         this.$http.get('/api/manage/uploadImg').then(res=>{
           let val = JSON.parse(res.bodyText)
+          if(val.length == 0){
+            this.autoAlert('请先添加商品分类！','orange')
+            this.$router.push({
+              path:'/manage/sortsList'
+            })
+          }
           this.sorts = val.sorts
           if(this.curSort > 0) return 
           //设置sort初始值
