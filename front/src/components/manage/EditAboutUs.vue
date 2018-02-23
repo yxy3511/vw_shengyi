@@ -39,8 +39,10 @@
                   textarea#desc_txt.span66(name='desc_txt' class='cleditor' rows='8' v-model.lazy='formData.desc_txt')
 
               .infoBlock.light-bg(v-for='(item,index) in formData.content')
+                div.contentDel
+                  img.upload_warp_img_div_del(src="../../assets/images/del.png", @click="contentDel(index)")
                 .control-group
-                  label.control-label(for="curImg") 介绍图片{{index}}
+                  label.control-label(for="curImg") 介绍图片
                   .controls#imgsBox
                     .upload_warp_img
                       .upload_warp_img_div(v-if='item.img')
@@ -139,6 +141,9 @@
             return false
         }
         return true
+      },
+      contentDel(index){
+        this.formData.content.splice(index,1)
       },
       delNoContent(){
         this.formData.content.forEach((obj,index)=>{
@@ -403,10 +408,13 @@
     box-shadow: 0px 1px 0px #ccc;
     border-radius: 4px;
   } */
-
-  .hello {
-    width: 650px;
-    margin-left: 34%;
-    text-align: center;
+  .contentDel{
+    background-color: rgba(0,0,0,0.1);
+    width: 16px;
+    height: 18px;
+    float: right;
+  }
+  .contentDel:hover{
+    cursor: pointer;
   }
 </style>
