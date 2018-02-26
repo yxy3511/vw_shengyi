@@ -94,6 +94,7 @@
         this.$http.post('/api/manage/viewAboutus',{
           id:this.curId
         }).then(res=>{
+          console.log('res:',res)
           let code = JSON.parse(res.bodyText).code
           if(code == 0){
             this.vals = JSON.parse(res.bodyText).vals

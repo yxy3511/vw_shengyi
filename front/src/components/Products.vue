@@ -27,9 +27,9 @@
                   img.img-responsive(class="lazyload", :src='baseUrl+JSON.parse(pro.imgs)[0]["src"]', :data-original='baseUrl+JSON.parse(pro.imgs)[0]["src"]' , alt="商品图片")
                   |               
                   figcaption
-                    h2 {{pro.pname}}
+                    h2.innerLen {{pro.pname}}
                     |                 
-                    p {{pro.desc_txt}}
+                    p.innerLen {{pro.desc_txt}}
     template(v-else)
       .center
           h2.noContent 

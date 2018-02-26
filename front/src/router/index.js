@@ -149,12 +149,13 @@ export default new Router({
           path: '/atlas',
           name: 'atlas',
           component: Atlas,
-        },{
-          path:'/404',
-          name:'404',
-          component: NotFound,
+        },
+        // { 
+        //   path:'*',
+        //   name:'404',
+        //   component: NotFound,
 
-        }
+        // }
       ]
     },{
       path:'/login',
@@ -166,12 +167,13 @@ export default new Router({
       name:'manageLayout',
       component:manageLayout,
       children: [
-        {
-          path:'/manage/404',
-          name:'NotFound',
-          component: NotFound,
+        // {
+        //   path:'/manage/404',
+        //   name:'NotFound',
+        //   component: NotFound,
 
-        },{
+        // },
+        {
           path:'/manage/MProducts',
           name:'MProducts',
           // component: Manage,
@@ -219,6 +221,11 @@ export default new Router({
           component: ViewAboutus,
         }
       ]
+    },{ 
+      path:'*',
+      name:'404',
+      component: NotFound,
+
     }
   ]
 })

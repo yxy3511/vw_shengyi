@@ -31,6 +31,9 @@ body{
     height: 37px;
     color: #000;
 }
+.manageSection .logo_box input.unameText{
+    margin-left: 46px;
+}
 .manageSection .logo_box .act-but{
     background-color: #333;
     opacity: 0.9;
@@ -130,7 +133,8 @@ body{
 
 
 /* 表单样式 */
-.control-group label span.required{
+/*.control-group label span.required{*/
+span.required{
     color: #f46861;
     font-size: 16px;
     display: inline-block;

@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './components/App'
+// import VeeValidate from 'vee-validate';
+
 import Manage from './components/manage/Manage'
 import router from './router'
 import $ from 'jquery'
@@ -46,7 +48,7 @@ import "./assets/js/lib/jquery.imgbox.pack.js"
 import VueResource from 'vue-resource'
 
 Vue.use(VueResource)
-
+// Vue.use(VeeValidate)
 
 
 // Vue.config.productionTip = false
@@ -112,7 +114,6 @@ new Vue({
   template: '<router-view></router-view>',
   // template: '<App/>',
   created(){
-    console.log('enter')
     // if(window.location.pathname.indexOf('/manage') != -1){
     //   this.temp = '<Manage/>'
     //   // this.$options.template = '<Manage/>'
@@ -123,8 +124,7 @@ new Vue({
     // this.$options.template = this.temp
   },
   mounted(){
-    let path = window.location.pathname;
-    setUrlAct(path)
+    setUrlAct(this.$route.path)
   },
   methods:{
 
@@ -135,7 +135,9 @@ router.beforeEach((to, from, next) => {　
     Vue.prototype.preUrl = from.path
     Vue.prototype.isShowTwoMenu = isShowTwoMenu(to.path)
     setUrlAct(to.path)
-    window.scrollTo(0,0);
+    setTimeout(()=>{
+      window.scrollTo(0,0);
+    }, 100);
     //login页刷新
     // let isReload = to.params.code != 1
     // let msg = to.params.msg

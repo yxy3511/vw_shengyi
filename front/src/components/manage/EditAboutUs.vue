@@ -29,19 +29,23 @@
                   span.required * 
                   | 介绍页大标题
                 .controls
-                  input#typeahead.span4.typeahead(type="text" v-model='formData.title' value="title")
+                  input#typeahead.span4.typeahead(type="text" v-model='formData.title' v-verify="formData.title"  value="title" maxlength='20' placeholder='不能大于20个字符')
+                  |  
+                  label(class="errorInfo" v-remind="formData.title")
                   //- p.help-block Start typing to activate auto complete!
-              .control-group.hidden-phone
+              .control-group
                 label.control-label(for="desc_txt") 
                   span.required * 
                   | 介绍页描述
                 .controls
-                  textarea#desc_txt.span66(name='desc_txt' class='cleditor' rows='8' v-model.lazy='formData.desc_txt')
+                  textarea#desc_txt.span66(name='desc_txt' class='cleditor' rows='8' v-model='formData.desc_txt' v-verify="formData.desc_txt" placeholder='不能大于1000个字符' maxlength=1000 )
+                  |  
+                  label(class="errorInfo" v-remind="formData.desc_txt")
 
               .infoBlock.light-bg(v-for='(item,index) in formData.content')
                 div.contentDel
                   img.upload_warp_img_div_del(src="../../assets/images/del.png", @click="contentDel(index)")
-                .control-group
+                .control-group.imgDiv
                   label.control-label(for="curImg") 介绍图片
                   .controls#imgsBox
                     .upload_warp_img
@@ -69,20 +73,20 @@
                         //- input(name='allImg' id='allImg' type='text' style='visibility:hidden' v-model='proList.imgs')
 
                 |     
-                .control-group.hidden-phone
+                .control-group
                   label.control-label(for="subTile") 介绍小标题
                   |                               
                   .controls
-                    input.subTile.span66(name='subTitle' type='text' v-model='item.title') 
+                    input.subTile.span66(name='subTitle' type='text' v-model='item.title' placeholder='不能大于20个字符' maxlength=20) 
                     //- input.subTile.span66(name='subTile' type='text' value="#{subTitle ? subTitle : ''}") 
                 |                        
-                .control-group.hidden-phone
+                .control-group
                   label.control-label(for="info") 介绍详情
                   |                               
                   .controls
-                    textarea.info.span66(name='info' class='cleditor' rows='8' v-model.lazy='item.value')            
+                    textarea.info.span66(name='info' class='cleditor' rows='8' v-model='item.value' placeholder='不能大于1000个字符' maxlength=1000)            
               input#imgFile(name='inputFile', type='file',class="fileupload" @change="fileChange($event)")
-            .againRow(@click='addContent') 再增加一段
+            .againRow(v-show='formData.content.length<6' @click='addContent') 再增加一段
             //- input#allImg(name='allImg' type='text' style='visibility:hidden')
             .form-actions.upBtns
               //- button.btn.btn-primary.subBtn(type='button') Save changes
@@ -93,6 +97,22 @@
 
 <script>
   import pagination from "../common/paging.vue"
+  import Vue from "vue";
+  import verify from "vue-verify-plugin";
+  Vue.use(verify,{
+      blur:true,
+      rules:{
+        need:{
+          test:function(val){
+                if(val.length == 0) {
+                    return false
+                }
+                return true;
+            },
+            message:"此处不可为空"
+        }
+      }
+  });
 
   export default {
     name:'products',
@@ -107,17 +127,32 @@
           title:'',
           desc_txt:'',
           content:[{
-            img:null,
+            img:'',
             title:'',
             value:''
           }]
         },
         contentTemp:{
-          img:null,
+          img:'',
           title:'',
           value:''
         },
       }
+    },
+    verify:{
+        formData:{
+          title:['need',{
+            maxLength:20,
+            message: "不能大于300个字符"
+          }],
+          desc_txt:['need',{
+            maxLength:1000,
+            message: "不能大于1000个字符"
+          }]
+        }
+        // regInfo: {
+        //     phone: ["required","mobile"]
+        // }
     },
     components:{
       'v-pagination': pagination,
@@ -132,16 +167,17 @@
       // /manage/addAboutUs/pageSize/compPageNum
     },
     methods:{
-      isComplate(){
-        if(this.formData.title.length == 0){
-            this.autoAlert('介绍页大标题不能为空！','orange')
-            return false
-        }else if(this.formData.desc_txt.length == 0){
-            this.autoAlert('介绍页描述不能为空！','orange')
-            return false
-        }
-        return true
-      },
+      // isComplate(){
+      //   if(this.formData.title.length == 0){
+      //       this.autoAlert('介绍页大标题不能为空！','orange')
+      //       return false
+      //   }else if(this.formData.desc_txt.length == 0){
+      //       this.autoAlert('介绍页描述不能为空！','orange')
+      //       return false
+      //   }
+      //   return true
+      // },
+      
       contentDel(index){
         this.formData.content.splice(index,1)
       },
@@ -163,8 +199,11 @@
         })
       },
       submit(){
-        if(!this.isComplate()){
-          return
+        // if(!this.isComplate()){
+        //   return
+        // }
+        if(!this.$verify.check()){
+          return false
         }
         this.delNoContent()
         // console.log('formdata:',this.formData)
@@ -230,7 +269,7 @@
       fileDel(index) {
           // this.size = this.size - this.proList.imgs[index].file.size;//总大小
           // delete this.formData.content[index].img
-          this.formData.content[index].img = null
+          this.formData.content[index].img = ''
 
       },
       addImg(index){
@@ -416,5 +455,24 @@
   }
   .contentDel:hover{
     cursor: pointer;
+  }
+  /*input 长度*/
+  .typeahead{
+    width:421px;
+  }
+  .imgDiv{
+    min-width: 421px;
+  }
+  .errorInfo{
+    color: red;
+  }
+  input.err{
+    border-color: red;
+  }
+  input::-webkit-input-placeholder{
+    color:#e5e5e5;
+  }
+  textarea::-webkit-input-placeholder{
+    color:#e5e5e5;
   }
 </style>

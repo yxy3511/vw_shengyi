@@ -22,21 +22,30 @@
           |                       
           form(@submit.prevent="submit", name="registerForm", method="post")
             .input_outer
+              |  
+              span.required * 
+              |  
               span.u_user
               |                               
               //- input.text(name="rename", style="color: #FFFFFF !important", type="text",autofocus placeholder="请输入账户" autocomplete="off")
-              input.text(v-model="formData.rename", type="text",autofocus placeholder="请输入账户" autocomplete="off")
+              input.text.unameText(v-model="formData.rename", type="text",autofocus placeholder="请输入用户名" autocomplete="off")
             |                             
             .input_outer
+              |  
+              span.required * 
+              |  
               span.us_uer
               |                               
               input.text(v-model="formData.repass", style="position:absolute; z-index:100;", value="",onfocus="this.type='password'" type="text", placeholder="请输入密码" autocomplete="off")
               //- input.text(name="repass", style="color: #FFFFFF !important; position:absolute; z-index:100;", value="", type="password", placeholder="请输入密码" autocomplete="off")
             |                             
             .input_outer
+              |  
+              span.required * 
+              |  
               span.us_uer
               |                               
-              input.text(v-model="formData.againpass", style="position:absolute; z-index:100;", value="",onfocus="this.type='password'" type="text", placeholder="请再次输入密码" autocomplete="off")
+              input.text(v-model="formData.againpass", style="position:absolute; z-index:100;", value="",onfocus="this.type='password'" type="text", placeholder="请确认密码" autocomplete="off")
               //- input.text(name="againpass", style="color: #FFFFFF !important; position:absolute; z-index:100;", value="", type="password", placeholder="请再次输入密码" autocomplete="off")
             |           
             .form-actions.upBtns

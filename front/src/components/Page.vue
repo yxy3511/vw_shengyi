@@ -8,7 +8,7 @@
             |             
             .intro-heading It's Nice To Meet You
             |             
-            a#knowMore.page-scroll.btn.btn-xl(href="#about") Know More！
+            span#knowMore.page-scroll.btn.btn-xl(@click='toAbout') Know More！
     |     
     section#about.light-bg
       .container
@@ -31,16 +31,18 @@
                 //- span.glyphicon.glyphicon-screenshot
                 //- i.fa.fa-camera-retro.ot-circle
                 | 
-                h3 随便看看(atlas)
+                h3 
+                  span 随便看看(atlas)
             |               
             p 通过查看图片，了解、选择产品。
 
           .col-md-6.text-center
-            a.noLine(href='#portfolio') 
+            .noLine(@click='toPortfolio') 
               .mz-module-about.fs-7
                 i.fa.fa-crosshairs.ot-circle
                 |        
-                h3 有目标的查看
+                h3 
+                  span 有目标的查看
             |               
             p 看自己感兴趣的产品。
     |     
@@ -66,9 +68,9 @@
                   //- img.img-responsive.lazyload(:src='JSON.parse(pro.imgs)[0]'  alt="img02")
                   |               
                   figcaption
-                    h2 {{pro.pname}}
+                    h2.innerLen {{pro.pname}}
                     |                 
-                    p {{pro.desc_txt}}
+                    p.innerLen {{pro.desc_txt}}
             //- a.imgcard(href="/api/products/0")
             //-   .ot-portfolio-item
             //-     figure.effect-bubba
@@ -101,7 +103,7 @@
               | 暂无商品
     |     
     p#back-top
-      a(href="#top")
+      span(@click='toTop')
         i.fa.fa-angle-up
 
 </template>
@@ -118,8 +120,20 @@
     },
     mounted(){
       this.getPro()
+      // window.addEventListener('scroll', this.handleScroll)
+      
     },
     methods:{
+      toPortfolio(){
+        window.scrollTo(0,1394);
+      },
+      toAbout(){
+        // console.log(window.pageYOffset);
+        window.scrollTo(0,757);
+      },
+      toTop(){
+        window.scrollTo(0,0);
+      },
       toAtlas(){
         if(this.length > 0){
           this.$router.push({

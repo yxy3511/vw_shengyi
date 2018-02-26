@@ -42,8 +42,10 @@
                     | 商品名称
                   |                               
                   .controls
-                    input#typeahead.span4.typeahead(type="text" name='pname' v-model="proList.pname")
-                    |                               
+                    input#typeahead.typeahead.commonInput(type="text" name='pname' v-model="proList.pname" v-verify="proList.pname" placeholder='最多输入20个字符' maxlength=20)
+                    |  
+                    label(class="errorInfo" v-remind="proList.pname")                        
+                    //- span.instructions 最多输入50个字符      
                     //- p.help-block Start typing to activate auto complete!
                 |  
                 //- .control-group
@@ -128,7 +130,7 @@
                         //- .upload_warp_img_div_bottom
                           .upload_warp_img_div_text
                             | desc
-                      #upBox.upload-container.upBox
+                      #upBox.upload-container.upBox(v-show='proList.imgs.length < 5')
                         .upTex(@click='addImg')
                           span.upIcon
                             span.glyphicon.glyphicon-plus
@@ -136,7 +138,13 @@
                           span 点击上传
                         //- input(name='inputFile',id='j_imgfile', type='file', multiple='mutiple',class="fileupload" @change="saveImgs")
                         input(name='inputFile',id='j_imgfile', type='file', multiple='mutiple',class="fileupload" @change="fileChange($event)")
-                        input(name='allImg' id='allImg' type='text' style='visibility:hidden' v-model='proList.imgs')
+                        input(name='allImg' id='allImg' type='text' style='visibility:hidden' v-model='proList.imgs'  v-verify.img='proList.imgs')
+                      |  
+                      label(class="errorInfo" v-remind="proList.imgs")
+                      //- label(class="errorInfo") 哈哈哈
+                      
+                    //- |  
+                    //- div.instructions 最多添加5张图片
                 //- .control-group
                   label.control-label(for="j_imgfile") 
                     span.required * 
@@ -176,13 +184,16 @@
                         input(name='allImg' id='allImg' type='text' style='visibility:hidden' v-model='proList.imgs')
 
                 |                           
-                .control-group.hidden-phone
+                .control-group
                   label.control-label(for="textarea") 
                     span.required * 
                     | 商品描述
                   |                               
                   .controls
-                    textarea#textarea.span66(name='desc' class='cleditor' rows='8' ,v-model.lazy='proList.desc_txt') 
+                    textarea#textarea.span66(name='desc' class='cleditor' rows='8' ,v-model='proList.desc_txt' v-verify='proList.desc_txt' placeholder='最多输入200个字符' maxlength=200 ) 
+                    |  
+                    //- span.instructions 最多输入200个字符   
+                    label(class="errorInfo" v-remind="proList.desc_txt")
                 |                           
                 .form-actions.upBtns
                   //- button.btn.btn-primary.subBtn(type='button') Save changes
@@ -193,11 +204,28 @@
 
 <script>
   import managePro from '../../assets/js/managePro.js'
+  import Vue from "vue";
+  import verify from "vue-verify-plugin";
+  Vue.use(verify,{
+      blur:true,
+      rules:{
+        need:{
+          test:function(val){
+                if(val.length == 0) {
+                    return false
+                }
+                return true;
+            },
+            message:"此处不可为空"
+        }
+      }
+  });
   export default {
     name:'products',
     data(){
       return {
         proList:{
+          pname:'',
           imgs:[],
           sort:-1,
           desc_txt:''
@@ -207,6 +235,28 @@
         baseUrl:'http://localhost:3000',
         pid:0,
       }
+    },
+    verify:{
+        proList:{
+          pname:['need',{
+            maxLength:20,
+            message: "不能大于20个字符"
+          }],
+          imgs:[{
+            maxLength:5,
+            message: "最多上传5张图片"
+          },{
+            minLength:1,
+            message: "此处不可为空"
+          }],
+          desc_txt:['need',{
+            maxLength:200,
+            message: "不能大于200个字符"
+          }]
+        }
+        // regInfo: {
+        //     phone: ["required","mobile"]
+        // }
     },
     mounted(){
       this.proList.imgs = []
@@ -229,19 +279,19 @@
           this.autoAlert(error.statusText,'red')
         })
       },
-      isComplate(){
-        if(!this.proList.pname){
-            this.autoAlert('商品名称不能为空！','red')
-            return false
-        }else if(this.proList.imgs.length == 0){
-            this.autoAlert('商品图片不能为空！','red')
-            return false
-        }else if(!this.proList.desc_txt){
-            this.autoAlert('商品描述不能为空！','red')
-            return false
-        }
-        return true
-      },
+      // isComplate(){
+      //   if(!this.proList.pname){
+      //       this.autoAlert('商品名称不能为空！','red')
+      //       return false
+      //   }else if(this.proList.imgs.length == 0){
+      //       this.autoAlert('商品图片不能为空！','red')
+      //       return false
+      //   }else if(!this.proList.desc_txt){
+      //       this.autoAlert('商品描述不能为空！','red')
+      //       return false
+      //   }
+      //   return true
+      // },
       getSort(){
         this.$http.get('/api/manage/uploadImg').then(res=>{
           let val = JSON.parse(res.bodyText)
@@ -279,23 +329,24 @@
         }
       },
       submit(){
-        if(this.isComplate()){
-          this.proList.sort = this.getSortIdByName(this.curSort)
-          this.$http.post('/api/manage/savePro?id='+this.pid,this.proList).then(res=>{
-            // console.log('保存成功：',res)
-            let msg = JSON.parse(res.bodyText).msg
-            let code = JSON.parse(res.bodyText).code
-            if(code == 0){
-              this.autoAlert(msg,'orange')
-              if(this.pid == 0){
-                this.setCurPage('prolistPageNum',1)
-              }
-              this.$router.push({path:'/manage/MProducts'})
+        this.$verify.check()
+        this.proList.sort = this.getSortIdByName(this.curSort)
+        this.$http.post('/api/manage/savePro?id='+this.pid,this.proList).then(res=>{
+          // console.log('保存成功：',res)
+          let msg = JSON.parse(res.bodyText).msg
+          let code = JSON.parse(res.bodyText).code
+          if(code == 0){
+            this.autoAlert(msg,'orange')
+            if(this.pid == 0){
+              this.setCurPage('prolistPageNum',1)
             }
-          },error=>{
-            this.autoAlert(error.statusText,'red')
-          })
-        }
+            this.$router.push({path:'/manage/MProducts'})
+          }
+        },error=>{
+          this.autoAlert(error.statusText,'red')
+        })
+        // if(this.isComplate()){
+        // }
       },
       addImg(){
         $('#j_imgfile').click()
@@ -321,6 +372,8 @@
                 resVal.forEach(img=>{
                   // console.log('img:',img)
                   this.proList.imgs.push(img)
+                  //校验图片是否为空
+                  this.$verify.check('img')
                 })
               },100);
             }catch(err){
@@ -393,7 +446,8 @@
       fileDel(index) {
           // this.size = this.size - this.proList.imgs[index].file.size;//总大小
           this.proList.imgs.splice(index, 1);
-
+          //校验图片是否为空
+          this.$verify.check('img')
       },
       // saveImgs(formData){
       //   /*this.$http.post('/api/manage/uploading',{
@@ -500,7 +554,7 @@
 
   .upload_warp_img {
     /*border-top: 1px solid #D2D2D2;*/
-    padding: 14px 0 0 14px;
+    padding: 14px 0 0 0px;
     overflow: hidden
   }
 
@@ -549,11 +603,23 @@
     box-shadow: 0px 1px 0px #ccc;
     border-radius: 4px;
   } */
-
-  .hello {
-    width: 650px;
-    margin-left: 34%;
-    text-align: center;
+  .instructions{
+    color: #E5E5E5;
+  }
+  .commonInput{
+    width: 220px;
+  }
+  .errorInfo{
+    color: red;
+  }
+  input.err{
+    border-color: red;
+  }
+  input::-webkit-input-placeholder{
+    color:#e5e5e5;
+  }
+  textarea::-webkit-input-placeholder{
+    color:#e5e5e5;
   }
 </style>
 

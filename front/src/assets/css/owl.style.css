@@ -471,8 +471,14 @@ figure.effect-bubba h2 {
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0,-20px,0);
 	transform: translate3d(0,-20px,0);
+    overflow:hidden !important;
+    text-overflow: ellipsis !important;
 }
-
+.innerLen{
+    width: 300px;
+    white-space: nowrap;
+    margin: 0 auto;
+}
 figure.effect-bubba p {
     color: #fff !important;
     font-size: 13px;
@@ -721,14 +727,16 @@ font-size: 11px;
 
 .btn-xl:hover, .btn-xl:focus, .btn-xl:active, .btn-xl.active, .open .dropdown-toggle.btn-xl {
     color: #fff;
-    background-color: #fec503;
-    border-color: #f6bf01;
+    background-color: #9B95E5;
+    /*background-color: #fec503;*/
+    /*border-color: #f6bf01;*/
 }
 
 .btn:hover, .btn:focus, .btn:active, .btn.active, .open .dropdown-toggle.btn {
     color: #fff !important;
-    background-color: #fec503;
-    border-color: #f6bf01;
+    background-color: #9B95E5;
+    /*background-color: #fec503;*/
+    /*border-color: #f6bf01;*/
 }
 
 .btn {
@@ -773,7 +781,7 @@ font-size: 11px;
     bottom: 40px;
     right: 50px;
 }
-#back-top a {
+#back-top span {
     width: 60px;
     height: 60px;
     display: block;
@@ -788,8 +796,10 @@ font-size: 11px;
     -moz-transition: 1s;
     transition: 1s;
 }
-#back-top a:hover {
-    background: #fed136;
+#back-top span:hover {
+    /*background: #fed136;*/
+    cursor: pointer;
+    opacity: 0.5;
 }
 /* arrow icon (span tag) */
 #back-top i {
@@ -805,7 +815,7 @@ and (max-width : 480px) {
     bottom: 10px;
     right: 30px;
 }
-#back-top a {
+#back-top span {
     width: 40px;
     height: 40px;
 }
@@ -1002,8 +1012,15 @@ figure.effect-bubba {
 a#knowMore:hover{
     color: #fff !important;
 }
-a.noLine:hover{
+.noLine:hover{
     text-decoration: none !important;
+    /*cursor: pointer;*/
+}
+.noLine i:hover{
+    cursor: pointer;
+}
+.noLine h3 span:hover{
+    cursor: pointer;
 }
 /* -------------products---------------- */
 
