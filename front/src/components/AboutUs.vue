@@ -3,11 +3,12 @@
       .container
         template(v-if='length>0')
           .row
-            .col-lg-12.text-center
+            .col-lg-12.text-center.wall
               .section-title
                 h2 {{info.title}}
                 |               
-                p {{info.desc_txt}}
+                p 
+                  span.slevel {{info.desc_txt}}
           .row.yu_center
             .noWidth
               .yu_row(v-for='(val,index) in info.content')

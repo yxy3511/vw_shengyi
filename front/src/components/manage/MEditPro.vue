@@ -329,7 +329,9 @@
         }
       },
       submit(){
-        this.$verify.check()
+        if(!this.$verify.check()){
+          return this.$verify.check()
+        }
         this.proList.sort = this.getSortIdByName(this.curSort)
         this.$http.post('/api/manage/savePro?id='+this.pid,this.proList).then(res=>{
           // console.log('保存成功：',res)

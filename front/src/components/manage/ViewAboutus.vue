@@ -21,11 +21,12 @@
     section.manageSection#aboutMe
       .container(v-if='JSON.stringify(vals) != {}')
         .row
-          .text-center.mc
-            .section-title
+          .mc.wall
+            .section-title.text-center
               h2 {{vals.title}}
-              |                           
-              p {{vals.desc_txt}}
+              |   
+              p                        
+                span.slevel {{vals.desc_txt}}
         .row.yu_center
           .noWidth
             .yu_row(v-for='(val,index) in content')
@@ -134,5 +135,20 @@
   }
   .noWidth{
     float: left;
+  }*/
+ /* .wall{
+    width: 100%;
+  }
+  .slevel{
+    overflow: hidden;
+  }
+  .section-title h2{
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 15px;
+  }
+  p span.slevel{
+    display: inline-block;
+    text-align: left;
   }*/
 </style>

@@ -266,13 +266,30 @@ header .intro-text .intro-heading {
     font-size: 15px;
     font-weight: 300;
     line-height: 25px;
-    margin: 20px 100px 60px 100px;
+    /*margin: 20px 100px 60px 100px;*/
+    margin: 20px 100px 20px 100px;
 }
 
 /*--------------------
 4.1. About
 --------------------*/
+.wall{
+    width: 100%;
+}
 
+p span.slevel{
+    display: inline-block;
+    max-width: 100%;
+    text-align: left;
+    white-space:normal;
+    word-wrap:break-word;
+    overflow: hidden;
+}
+.section-title h2{
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 15px;
+}
 .mz-module-about h3 {
     font-weight: 500;
     font-size: 17px;
@@ -1433,7 +1450,7 @@ ol.carousel-indicators{
 .upBtns .cancelBtn{
     background-color: #a7a9aa !important;
     opacity: 0.8;
-    border: none;
+    /*border: none;*/
     outline: none;
     color: #fff;
 }

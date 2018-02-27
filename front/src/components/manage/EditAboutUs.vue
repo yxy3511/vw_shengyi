@@ -143,7 +143,7 @@
         formData:{
           title:['need',{
             maxLength:20,
-            message: "不能大于300个字符"
+            message: "不能大于20个字符"
           }],
           desc_txt:['need',{
             maxLength:1000,
@@ -181,23 +181,23 @@
       contentDel(index){
         this.formData.content.splice(index,1)
       },
-      delNoContent(){
-        this.formData.content.forEach((obj,index)=>{
-          let cnt = 0
-          if(!obj.img){
-            cnt++
-          }
-          if(obj.title.length == 0){
-            cnt++
-          }
-          if(obj.value.length == 0){
-            cnt++
-          }
-          if(cnt == 3 || cnt > 3){
-            this.formData.content.splice(index,1)
-          }
-        })
-      },
+      // delNoContent(){
+      //   this.formData.content.forEach((obj,index)=>{
+      //     let cnt = 0
+      //     if(!obj.img){
+      //       cnt++
+      //     }
+      //     if(obj.title.length == 0){
+      //       cnt++
+      //     }
+      //     if(obj.value.length == 0){
+      //       cnt++
+      //     }
+      //     if(cnt == 3 || cnt > 3){
+      //       this.formData.content.splice(index,1)
+      //     }
+      //   })
+      // },
       submit(){
         // if(!this.isComplate()){
         //   return
@@ -205,7 +205,7 @@
         if(!this.$verify.check()){
           return false
         }
-        this.delNoContent()
+        // this.delNoContent()
         // console.log('formdata:',this.formData)
         this.$http.post('/api/manage/addAboutUs',{
           data:this.formData,
