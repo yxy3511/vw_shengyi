@@ -52,7 +52,7 @@
       return {
         proList:{},
         keyVal:'',
-        pageNum:1,
+        pageNum:$.session.get('userPageSize')?parseInt($.session.get('userPageSize')) : 1,
         pageCount:-1,
         length:0,
         page:{
@@ -65,11 +65,17 @@
       'v-pagination': pagination,
     },
     created(){
-      this.getPro()
+      this.getPro(this.pageNum)
       let key = this.getQueryVal('key')
       if(key){
         this.keyVal = key
       }      
+    },
+    beforeUpdate(){
+      // console.log($.session.get('userPageSize'))
+      // if(!$.session.get('userPageSize')){
+      //   $.session.set('userPageSize',1)
+      // }
     },
     methods:{
       //这个方法名要唯一，并和app.vue中一致
@@ -77,6 +83,7 @@
         let id = this.$route.params.id || 0
         this.page.pageNum = curNum || 1
         // this.page.pageSize = parseInt(localStorage.getItem('usersPageSize'))
+        // console.log(33,this.page)
         this.$http.post('/api/products/'+id,{
           pageNum:this.page.pageNum,
           pageSize:this.page.pageSize
@@ -85,7 +92,6 @@
           res = res.body
           this.length = res.length
           if(res.code == 0){
-
             this.pageNum = res.pageNum
             this.pageCount = res.pageCount
             if(res['vals']){
@@ -95,9 +101,17 @@
             if(msg){
               this.autoAlert(msg,'orange')
             }
+          }else if(res.code == -2){
+            this.pageNum = res.pageNum
+            this.getPro(this.pageNum)
+          }else{
+            // console.log(res)
+            this.pageNum = res.pageNum
+            this.pageCount = res.pageCount
           }
+          $.session.set('userPageSize',this.pageNum)
         },error=>{
-          this.autoAlert(error.statusText,'red')
+          // this.autoAlert(error.statusText,'red')
         })
       },
       getQueryVal(key){
@@ -122,7 +136,7 @@
               this.autoAlert(msg,'orange')
             }
           },error=>{
-            this.autoAlert(error.statusText,'red')
+            // this.autoAlert(error.statusText,'red')
           })
         }else if(event.key == 'Enter' && this.keyVal.length == 0){
           this.getPro()

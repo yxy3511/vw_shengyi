@@ -80,7 +80,7 @@ export default {
         // console.log(res)
       },error=>{
         // console.log(error)
-        this.autoAlert(error.statusText,'red')
+        // this.autoAlert(error.statusText,'red')
         // this.autoAlert(error.responseText,'red')
       })
     }

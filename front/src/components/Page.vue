@@ -153,7 +153,8 @@
           }
           this.length = res.length
         },error=>{
-          this.autoAlert(error.statusText,'red')
+          console.log(error)
+          // this.autoAlert(error,'red')
         })
       }
     }

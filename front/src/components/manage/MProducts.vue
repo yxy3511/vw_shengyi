@@ -122,7 +122,7 @@
       // var prolistPageNum = $.session.get('curPages') ? JSON.parse($.session.get('curPages'))['prolistPageNum'] : 1
       // console.log('pagenum:',prolistPageNum)
       this.getProList(prolistPageNum)
-      this.getSort()
+      
     },
     methods:{
 
@@ -159,6 +159,7 @@
             let val = JSON.parse(res.bodyText)
             this.length = val.length
             if(code == 0){
+              this.getSort()
               this.pageCount = val.pageCount
               this.pageNum = val.pageNum
               this.products = val.vals

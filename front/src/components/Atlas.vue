@@ -1,5 +1,5 @@
 <template lang="jade">
-    section
+    section.content
         .container
             .row 
                 .htmleaf-container.atlas_current
@@ -54,7 +54,6 @@
 
                     console.log('imgs:',this.imgs)
                 },error=>{
-                    // console.log(error)
                     this.autoAlert(error.statusText,'red')
                 })
             }
@@ -64,5 +63,4 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>
