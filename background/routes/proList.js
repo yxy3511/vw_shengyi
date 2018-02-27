@@ -1188,6 +1188,24 @@ setSC = function(val){
     // console.log(2333,res)
     return JSON.stringify(res)
 }
+delNoContent = function(content){
+    content.forEach((obj,index)=>{
+      let cnt = 0
+      if(!obj.img){
+        cnt++
+      }
+      if(obj.title.length == 0){
+        cnt++
+      }
+      if(obj.value.length == 0){
+        cnt++
+      }
+      if(cnt == 3 || cnt > 3){
+        content.splice(index,1)
+      }
+    })
+    return content
+},
 addAboutUs = function(req,res,next){
     try{
         var item = {}
@@ -1203,8 +1221,9 @@ addAboutUs = function(req,res,next){
         params.title = req.body.data.title || ''
         params.desc_txt = req.body.data.desc_txt || ''
         // params.subTitle = req.body.subTitle || ''
-        // console.log(12,req.body.data.content);
-        params.value = RemoveSC(req.body.data.content) || ''
+        // console.log(11111,req.body.data.content);
+        let tempContent = delNoContent(req.body.data.content)
+        params.value = RemoveSC(tempContent) || ''
         // console.log('------',params.value)
         // params.allImg = JSON.parse(req.body.allImg) || ''
 

@@ -437,7 +437,7 @@ toAtlas = function(req,res){
             }else{
                 var imgs = {}
                 var cnt = 0 ;
-                console.log('vvaallss:',vals)
+                // console.log('vvaallss:',vals)
                 if(vals.length > 0){
                     for(var first in vals){
                         for( var sec in vals[first]){

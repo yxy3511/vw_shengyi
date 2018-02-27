@@ -36,6 +36,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')))
 
+
+app.use(function(req, res, next){
+    req.session._garbage = Date();
+    req.session.touch();
+    next();
+});
+
 app.use('/manage/?',function(req, res, next) {
     var url = req.originalUrl;
     if (!req.session.isLogged) {
