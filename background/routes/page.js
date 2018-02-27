@@ -43,8 +43,8 @@ toPage=function(req,res){
 
         });
 
-        var msg = req.session.manageMsg
-        req.session.manageMsg = null
+        // var msg = req.session.manageMsg
+        // req.session.manageMsg = null
         //获取商品前九个，按时间排
         proListContent.getPros(9,function(err,vals){
             if(err){
@@ -61,7 +61,7 @@ toPage=function(req,res){
                             vals: JSON.stringify(resArr),
                             msg: msg
                         })*/
-                        res.send(200,{
+                        return res.send(200,{
                             code:0,
                             length:vals.length,
                             vals: resArr,
@@ -71,7 +71,7 @@ toPage=function(req,res){
                     // res.render('page',{
                     //     msg: msg
                     // })
-                    res.send(200,{
+                    return res.send(200,{
                         code: -1,
                         length:0,
                         msg:'暂无数据！'
@@ -114,7 +114,7 @@ toAbout=function(req,res){
                     vals: JSON.stringify(vals[0]),
                     msg:msg
                 })*/
-                res.send(200,{
+                return res.send(200,{
                     code:0,
                     length:1,
                     vals: vals[0],
@@ -127,7 +127,7 @@ toAbout=function(req,res){
                     msg:msg,
                     vals: JSON.stringify(vals)
                 })*/
-                res.send(200,{
+                return res.send(200,{
                     code:-1,
                     length:0,
                     msg:msg,
@@ -164,6 +164,14 @@ toProducts=function(req,res){
                 }else{
                     pageCount = parseInt(totalCount/page.pageSize)
                 }
+                if(page.pageNum > pageCount){
+                    page.pageNum = page.pageNum - 1
+                    // return res.redirect('/manage/proList/'+page.pageSize+'/'+page.pageNum)
+                    return res.send(200,{
+                        code: -2,
+                        pageNum: page.pageNum
+                    })
+                }
                 if(vals.length > 0){
                     /*res.render('products',{
                         vals: JSON.stringify(resArr),
@@ -171,7 +179,7 @@ toProducts=function(req,res){
                         pageCount:pageCount,
                         pageNum: page.pageNum,
                     })*/
-                    res.send(200,{
+                    return res.send(200,{
                         code:0,
                         length:totalCount,
                         vals: resArr,
@@ -185,7 +193,7 @@ toProducts=function(req,res){
                     }else{
                         msg = '暂无此类商品！'
                     }
-                    res.send(200,{
+                    return res.send(200,{
                         code:-1,
                         length:0,
                         msg: msg,
@@ -246,7 +254,7 @@ toProDesc=function(req,res){
             }else if(vals.length > 0){
                 //vals是数组
                 // res.render("proDesc",vals[0])
-                res.send(200,{
+                return res.send(200,{
                     vals:vals[0],
                     code:0,
                     length:1,
@@ -288,7 +296,7 @@ getSorts = function(req,res){
                     resArr[i] = vals[i]
                 }
                 // res.render('layout',{vals:JSON.stringify(resArr)})
-                res.send(200,{
+                return res.send(200,{
                     code:0,
                     length:cnt,
                     vals:resArr
@@ -326,7 +334,7 @@ searchPro = function(req,res,next){
                     pageCount = parseInt(totalCount/page.pageSize)
                 }
 
-                res.send(200,{
+                return res.send(200,{
                     code: 0,
                     length:totalCount,
                     vals: resArr,
@@ -353,7 +361,7 @@ searchPro = function(req,res,next){
                 // })
                
             }else{
-                res.send(200,{
+                return res.send(200,{
                     code:-1,
                     length:0,
                     msg:'暂无要搜索的商品！'
@@ -414,7 +422,7 @@ getSortsList = function(req,res,next){
                     resArr[vals[i].id] = vals[i].name
                 }
                 var resObj = {}
-                res.send(200,{
+                return res.send(200,{
                     code:0,
                     length: cnt,
                     vals:resArr
@@ -453,7 +461,7 @@ toAtlas = function(req,res){
                         }
                     }
                     // res.render('atlas',{imgs:JSON.stringify(imgs)})
-                    res.send(200,{
+                    return res.send(200,{
                         code:0,
                         length:vals.length,
                         imgs:imgs
@@ -461,7 +469,7 @@ toAtlas = function(req,res){
                 }else{
                     // req.session.manageMsg = '暂无商品！'
                     // res.redirect('/page')
-                    res.send(200,{
+                    return res.send(200,{
                         code:-1,
                         length:0,
                         msg:'暂无商品！'
