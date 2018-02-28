@@ -20,7 +20,7 @@
                 i.halflings-icon.white.user
                 span.uname.overHid {{userName}}
                 |  
-                span.caret 
+                span.caret.vt 
               |  
               ul.dropdown-menu.manageMenu
                 li
@@ -141,5 +141,16 @@ import '../../assets/js/lib/custom.js'
   .container-fluid-full{
     border-top:1px solid #fff;
   }
-
+  ul.main-menu li a{
+    border:none;
+  }
+  .vt{
+    vertical-align: top;
+  }
+  a.brand{
+    line-height: 55px;
+  }
+  body{
+    font-size: 14px;
+  }
 </style>

@@ -2891,7 +2891,7 @@ table th[class*="span"],
   display: inline-block;
   width: 0;
   height: 0;
-  vertical-align: top !important;
+  vertical-align: top;
   border-top: 4px solid #000000;
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
@@ -4406,7 +4406,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   display: block;
   float: left;
-  padding: 10px 20px 10px;
+  /*padding: 10px 20px 10px;*/
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
