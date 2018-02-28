@@ -24,6 +24,12 @@ import "./assets/css/style-tab.css"
 import "./assets/css/uploadify.css"
 import "./assets/css/style-forms.css"
 
+//manage
+import "./assets/css/bootstrap.css";
+import "./assets/css/bootstrap-responsive.css";
+import "./assets/css/style-responsive.css";
+import "./assets/css/style.css";
+import "./assets/css/newManage.css";
 //登录
 // import "./assets/css/bootstrap-responsive.min.css"
 // import "./assets/css/style.css"

@@ -127,13 +127,7 @@ import '../../assets/js/lib/custom.js'
 
 </script>
 
-<style>
-
-  @import url("../../assets/css/bootstrap.css");
-  @import url("../../assets/css/bootstrap-responsive.css");
-  @import url("../../assets/css/style-responsive.css");
-  @import url("../../assets/css/style.css");
-  @import url("../../assets/css/newManage.css");
+<style scoped>
 
   .manageMenu li:hover{
     cursor: pointer;
