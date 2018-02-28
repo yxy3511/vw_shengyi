@@ -140,8 +140,8 @@
 .progressSlim.blue .ui-progressbar-value,
 .label-info,
 .badge-info {
-	background: #578EBE !important;
-	border-color: #578EBE !important;
+	background: #0B0B0B !important;
+	border-color: #0B0B0B !important;
 	color: #fff;
 }
 
@@ -463,16 +463,16 @@ a.brand span {
 
 .nav-tabs.nav-stacked  > li.active > a,
 .nav-tabs.nav-stacked  > li > ul > li.active > a {
-  	background: #578EBE;
-	border-bottom: 1px solid #578EBE;
+  	background: #0B0B0B;
+	border-bottom: 1px solid #0B0B0B;
 }
 
 .nav-tabs.nav-stacked  > li.active > a:hover,
 .nav-tabs.nav-stacked  > li > ul > li.active > a:hover {
-  	background: #578EBE;
+  	background: #0B0B0B;
 	color: #fff;
 	border: none;
-	border-bottom: 1px solid #578EBE;
+	border-bottom: 1px solid #0B0B0B;
 }
 .header-nav .nav li:hover{
 background: #3A3A3A;
@@ -590,14 +590,14 @@ border-bottom: 1px solid transparent;
 .dropdown-submenu:hover > a {
   	color: #ffffff;
   	text-decoration: none;
-  	background: #578EBE;
+  	background: #0B0B0B;
 }
 
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover {
   	color: #ffffff;
   	text-decoration: none;
-  	background: #578EBE;
+  	background: #0B0B0B;
 }
 
 .dropdown-menu .disabled > a,
@@ -830,7 +830,7 @@ ul.messages li .message {
 }
 
 .box {
-	border: 2px solid #578EBE;
+	border: 2px solid #0B0B0B;
 	background: #fff !important;
 	margin-bottom: 28px;	
 }
@@ -840,7 +840,7 @@ ul.messages li .message {
 	font-size: 16px;
 	line-height: 16px;
   	padding: 10px;
-  	background: #578EBE;
+  	background: #0B0B0B;
 	-webkit-box-shadow: none;
      	-moz-box-shadow: none;
           box-shadow: none;
@@ -1685,8 +1685,8 @@ fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled:active,
 .btn-primary[disabled]:active,
 fieldset[disabled] .btn-primary:active {
-  background-color: #578EBE;
-  border-color: #578EBE;
+  background-color: #0B0B0B;
+  border-color: #0B0B0B;
 }
 
 .btn-warning {
@@ -1808,7 +1808,7 @@ fieldset[disabled] .btn-link {
 
 .btn-link {
   font-weight: normal;
-  color: #578EBE;
+  color: #0B0B0B;
   cursor: pointer;
   border-radius: 0;
 }

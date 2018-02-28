@@ -212,3 +212,7 @@ span.required{
 #setPageSize{
     width: 90px;
 }
+.errorInfo{
+    color:red;
+    display: block;
+}

@@ -203,8 +203,8 @@
       }
     }
     .btn:hover,.btn:focus,.btn:active{
-      background-color: #585858;
-      border-color: #585858;
+      background-color: #357ebd;
+      border-color: #357ebd;
       outline: none;
     }
     .bm{

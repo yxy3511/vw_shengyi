@@ -116,7 +116,8 @@
 <style scoped>
   /*@import url("../../assets/css/style-responsive.css");*/
   .errorInfo{
-    color: red;
+    /*color: red;*/
+    margin-top:-17px;
     margin-left: 60px;
   }
   input.err{

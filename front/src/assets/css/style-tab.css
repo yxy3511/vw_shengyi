@@ -109,8 +109,8 @@
 .progressSlim.blue .ui-progressbar-value,
 .label-info,
 .badge-info {
-	background: #578EBE !important;
-	border-color: #578EBE !important;
+	background: #0B0B0B !important;
+	border-color: #0B0B0B !important;
 	color: #fff;
 }
 
@@ -398,7 +398,7 @@ h6 {
 }
 
 .box {
-	border: 2px solid #578EBE;
+	border: 2px solid #0B0B0B;
 	background: #fff !important;
 	margin-bottom: 28px;	
 }
@@ -406,7 +406,7 @@ h6 {
 .box-header {
 	font-size: 16px;
   	padding: 10px;
-  	background: #578EBE;
+  	background: #0B0B0B;
     box-shadow: none;
 	height: 55px;
 }
@@ -671,8 +671,8 @@ fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled:active,
 .btn-primary[disabled]:active,
 fieldset[disabled] .btn-primary:active {
-  background-color: #578EBE;
-  border-color: #578EBE;
+  background-color: #0B0B0B;
+  border-color: #0B0B0B;
 }
 
 .prolist .btn-warning {
@@ -794,7 +794,7 @@ fieldset[disabled] .btn-link {
 
 .prolist .btn-link {
   font-weight: normal;
-  color: #578EBE;
+  color: #0B0B0B;
   cursor: pointer;
   border-radius: 0;
 }
@@ -2094,7 +2094,7 @@ ul.messagesList li span.date {
 }
 .logoutDiv,.addDiv{
 	background-color: #fff;
-	color: #578EBE;	
+	color: #0B0B0B;	
 	opacity: 1;
 	border: 1px solid #eee;
 	text-align: center;
@@ -2109,7 +2109,7 @@ ul.messagesList li span.date {
 	margin: 0px;
 	padding:0px;
 	background-color: #fff;
-	color: #578EBE;	
+	color: #0B0B0B;	
 	border-bottom: 1px #eee solid;
 	height: 35px;
 	line-height: 35px;

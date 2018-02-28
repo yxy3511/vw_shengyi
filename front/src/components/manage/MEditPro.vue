@@ -611,9 +611,9 @@
   .commonInput{
     width: 220px;
   }
-  .errorInfo{
+  /*.errorInfo{
     color: red;
-  }
+  }*/
   input.err{
     border-color: red;
   }

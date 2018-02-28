@@ -463,9 +463,9 @@
   .imgDiv{
     min-width: 421px;
   }
-  .errorInfo{
+  /*.errorInfo{
     color: red;
-  }
+  }*/
   input.err{
     border-color: red;
   }
