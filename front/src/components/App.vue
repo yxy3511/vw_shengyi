@@ -201,3 +201,8 @@
   @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
   
 </style>
+<style scoped>
+  body{
+    font-size: 1.05em;
+  }
+</style>
