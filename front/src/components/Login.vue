@@ -166,6 +166,7 @@
     @import url('../assets/css/styles.css');
     @import url('../assets/css/style-responsive.css'); -->
 <style scoped lang='scss'>
+  @import "../assets/css/bootstrap.css";
   @import '../assets/css/bootstrap-responsive.min.css';
   /*@import url("../assets/css/styles.css");*/
   @import '../assets/css/style-responsive.css';
@@ -181,11 +182,13 @@
     }
     input:focus{
       outline: none;  
+      box-shadow: none;
     }
     input.input-large{
       height:45px;
       line-height: 45px;
       width:80%;
+      box-shadow: none;
     }
     span.add-on{
       height:45px;
