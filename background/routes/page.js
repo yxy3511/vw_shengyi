@@ -14,7 +14,8 @@ const imageminPngquant = require('imagemin-pngquant');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 
 rePage=function(req,res){
-	res.redirect('/page');
+	// res.redirect('/page');
+    res.render('page')
 }
 toPage=function(req,res){
     try{
