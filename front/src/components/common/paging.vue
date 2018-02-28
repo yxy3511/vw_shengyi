@@ -150,10 +150,10 @@ export default{
     a {
 
       color: #fff;
-      background: #000;
-      border-color: #000;
+      background: #000 !important;
+      background-color: #000 !important;
+      border-color: #000 !important;
       &:hover,&:focus,&:active{
-
         background: #000; 
         background-color: #000 !important;
         border-color: #000 !important;
