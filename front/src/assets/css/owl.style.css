@@ -1358,6 +1358,7 @@ ol.carousel-indicators{
     border-right:0; 
     box-shadow:0 0 0; 
     border-color:#ccc;
+    height: 34px;
 }
 /* .search-input-group{
     width: 40%;
