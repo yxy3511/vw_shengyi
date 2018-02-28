@@ -121,6 +121,7 @@ export default{
       color: #666;
       &:hover,&:focus{
         background: #000;      
+        background-color: #000 !important;      
       }
     }
     a {
@@ -154,7 +155,8 @@ export default{
       &:hover,&:focus{
 
         background: #000; 
-        border-color: #000;
+        background-color: #000 !important;
+        border-color: #000 !important;
       }
     }
   }
