@@ -125,14 +125,15 @@ section .yumain{
 	border-color: rgba(255,255,255,.02);
 }
 .navbar-default .navbar-toggle {
-	background-color: #fed136;
-	border-color: #fed136;
+	background-color: #888;
+	border-color: #888;
 }
 .navbar-default .navbar-toggle .icon-bar {
 	background-color: #fff;
 }
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {
-	background-color: #fed136;
+	background-color: #868686;
+    opacity: 0.8;
 }
 .navbar-default .nav li a{
 	font-family: "Roboto",sans-serif;
@@ -808,7 +809,8 @@ font-size: 11px;
     text-transform: uppercase;
     text-decoration: none;
     color: #FFFFFF;
-    background: #A9A9B1;
+    background: #888;
+    opacity: 0.8;
     /* background color transition */
     -webkit-transition: 1s;
     -moz-transition: 1s;

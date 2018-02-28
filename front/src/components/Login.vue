@@ -202,7 +202,7 @@
         margin-top: 0px;
       }
     }
-    .btn:hover,.btn:active{
+    .btn:hover,.btn:focus,.btn:active{
       background-color: #585858;
       border-color: #585858;
       outline: none;
@@ -211,6 +211,7 @@
       margin-bottom: 30px;
     }
   }
+
   
     
     
