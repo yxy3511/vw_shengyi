@@ -7,7 +7,7 @@
                         ul.pgwSlideshow
                             li(v-for='img in imgs')
                                 //- img(src="#{JSON.parse(imgs)[i]}", alt="San Francisco, USA", data-description="Golden Gate Bridge")
-                                img(:src="baseUrl+img.img.src")
+                                img(:src="baseUrl+img.img.src" ,:alt="img.name" ,:data-description="img.desc")
 
                         div(style="text-align:center;clear:both")
 </template>
