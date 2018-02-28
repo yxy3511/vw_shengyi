@@ -119,7 +119,7 @@ export default{
       border-radius: 5px;
       margin: 3px;
       color: #666;
-      &:hover,&:focus{
+      &:hover,&:focus,&:active{
         background: #000;      
         background-color: #000 !important;      
       }
