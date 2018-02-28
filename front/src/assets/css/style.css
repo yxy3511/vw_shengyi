@@ -296,8 +296,8 @@ h6 {
 /* Header Section
 =================================================================== */
 .navbar {
-	margin-bottom: 0px;
-    border: none;
+	margin-bottom: 0px !important;
+    border: none !important;
     border-bottom: 1px solid transparent;
 }
 
@@ -574,7 +574,7 @@ border-bottom: 1px solid transparent;
 }
 
 .dropdown-menu li {
-	border-bottom: 1px solid #eee;
+	/*border-bottom: 1px solid #eee;*/
 }
 
 .dropdown-menu li:first-child {
@@ -717,7 +717,7 @@ ul.messages li .message {
 }
 
 .breadcrumb {
-	margin: -28px -28px 28px -28px;
+	/*margin: -28px -28px 28px -28px;*/
 	line-height: 34px;
 	background: #F7F7F7;
 	border: 0px;
@@ -734,7 +734,7 @@ ul.messages li .message {
 	text-shadow: 1px 1px 0px #fff;
 }
 .breadcrumb>li+li:before{
-    content:  none;
+    content:  none !important;
 }
 .breadcrumb a {
 	color: #888;
@@ -1647,7 +1647,7 @@ input[type="button"].btn-block {
 .btn:focus,
 .btn:active {
   /*background-color: #9a9c9d;*/
-  background-color: #555 !important;
+  background-color: #555;
   border-color: #8d9091;
 }
 

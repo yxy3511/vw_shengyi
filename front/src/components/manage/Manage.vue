@@ -130,13 +130,16 @@ import '../../assets/js/lib/custom.js'
 <style>
 
   @import url("../../assets/css/bootstrap.css");
-  @import url("../../assets/css/style.css");
   @import url("../../assets/css/bootstrap-responsive.css");
   @import url("../../assets/css/style-responsive.css");
+  @import url("../../assets/css/style.css");
   @import url("../../assets/css/newManage.css");
 
   .manageMenu li:hover{
     cursor: pointer;
+  }
+  .container-fluid-full{
+    border-top:1px solid #fff;
   }
 
 </style>

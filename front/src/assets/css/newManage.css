@@ -201,7 +201,7 @@ span.required{
 }
 
 .inline{
-    display: inline-block;
+    display: inline-block !important;
 }
 
 .pageDesc{
