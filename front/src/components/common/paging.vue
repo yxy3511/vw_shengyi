@@ -152,7 +152,7 @@ export default{
       color: #fff;
       background: #000;
       border-color: #000;
-      &:hover,&:focus{
+      &:hover,&:focus,&:active{
 
         background: #000; 
         background-color: #000 !important;
