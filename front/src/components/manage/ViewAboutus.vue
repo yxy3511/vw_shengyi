@@ -34,7 +34,7 @@
                 .text-center.marginB(v-show='val.img.src')
                   .mz-module-about.aboutImg
                     //- i.fa.fa-briefcase.ot-circle
-                    img.isLittleImg(:src='baseUrl+val.img.src' ,:alt='val.img.name')
+                    img.isLittleImg(:src='baseUrl+val.img.src')
                     |   
                 .aboutLeft         
                   h3 {{val.title}}
@@ -49,7 +49,7 @@
                 .text-center.marginB(v-show='val.img.src')
                   .mz-module-about.aboutImg
                     //- i.fa.fa-briefcase.ot-circle
-                    img.isLittleImg(:src='baseUrl+val.img.src',:alt='val.img.name')
+                    img.isLittleImg(:src='baseUrl+val.img.src')
 
       .center(v-else)
         h1.noContent 

@@ -969,7 +969,7 @@
     padding: 5px;
   }
   .navbar .container {
-    width: auto;
+    /*width: auto;*/
     padding: 0;
   }
   .navbar .brand {
