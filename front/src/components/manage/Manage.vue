@@ -145,7 +145,7 @@ import '../../assets/js/lib/custom.js'
     line-height: 55px;
   }
   body{
-    font-size: 14px;
+    font-size: 14px !important;
   }
 </style>
 <style >

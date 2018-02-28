@@ -140,6 +140,7 @@ section .yumain{
 	font-weight: 400;
 	letter-spacing: 1px;
 	color:#fff;
+    text-shadow:none;
 }
 /*.navbar-default .nav li a:hover,.navbar-default .nav li a:focus {*/
 .navbar-default .nav li a:hover{
