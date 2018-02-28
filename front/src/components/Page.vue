@@ -63,7 +63,7 @@
             router-link.imgcard(:to="'/proDesc/'+pro['pid']" v-for='pro in proList' ,:key="pro.id")
               .ot-portfolio-item
                 figure.effect-bubba
-                  img.img-responsive.lazyload(class="lazyload" ,:src='baseUrl+JSON.parse(pro.imgs)[0]["src"]', :data-original='baseUrl+JSON.parse(pro.imgs)[0]["src"]'  alt="img02")
+                  img.img-responsive.lazyload(class="lazyload" ,:src='baseUrl+JSON.parse(pro.imgs)[0]["src"]', :data-original='baseUrl+JSON.parse(pro.imgs)[0]["src"]' ,:alt="pro.sort")
                   //- img.img-responsive.lazyload(src='../assets/images/addBg.png', :data-original='JSON.parse(pro.imgs)[0]'  alt="img02")
                   //- img.img-responsive.lazyload(:src='JSON.parse(pro.imgs)[0]'  alt="img02")
                   |               
@@ -147,6 +147,7 @@
         this.$http.post('/api/page').then((res)=>{
           // console.log('res:',res)
           res = res.body
+          // console.log('res:',res)
           if(res.code == 0){
 
             this.proList = res['vals']

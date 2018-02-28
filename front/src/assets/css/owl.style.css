@@ -1360,6 +1360,10 @@ ol.carousel-indicators{
     border-color:#ccc;
     height: 34px;
 }
+.search-input-group .form-control:focus{
+    border-color: #ccc;
+    box-shadow: none;
+}
 /* .search-input-group{
     width: 40%;
 } */

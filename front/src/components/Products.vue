@@ -24,7 +24,7 @@
             router-link.imgcard(:to="'/proDesc/'+pro['pid']" v-for='pro in proList' ,:key="pro.id")
               .ot-portfolio-item
                 figure.effect-bubba
-                  img.img-responsive(class="lazyload", :src='baseUrl+JSON.parse(pro.imgs)[0]["src"]', :data-original='baseUrl+JSON.parse(pro.imgs)[0]["src"]' , alt="商品图片")
+                  img.img-responsive(class="lazyload", :src='baseUrl+JSON.parse(pro.imgs)[0]["src"]', :data-original='baseUrl+JSON.parse(pro.imgs)[0]["src"]' , :alt="pro.sort")
                   |               
                   figcaption
                     h2.innerLen {{pro.pname}}
