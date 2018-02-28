@@ -140,7 +140,11 @@
         isShowTLMenu:false,
       }
     },
+    mounted(){
+      this.getSorts()
+    },
     beforeUpdate(){
+
       if(!$.session.get('userPageSize')){
         $.session.set('userPageSize',1)
       }
@@ -193,7 +197,7 @@
 
 </script>
 
-<style scoped>
+<style>
   @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
   
 </style>
