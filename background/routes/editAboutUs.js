@@ -11,7 +11,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 
 global.aboutUsImgsArr = []
 /* 上传*/
-router.post('/upAboutUs', function(req, res, next){
+router.post('/api/manage/upAboutUs', function(req, res, next){
     // global.imagesArr = []
     //写这没有2,1-2问题
     var images = []

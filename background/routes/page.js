@@ -486,15 +486,15 @@ toAtlas = function(req,res){
 }
 
 router.get('/',rePage);
-router.post('/page',toPage);
-router.post('/aboutUs',toAbout);
-router.post('/products/:sid',toProducts);
-router.get('/proDesc/:id',toProDesc);
+router.post('/api/page',toPage);
+router.post('/api/aboutUs',toAbout);
+router.post('/api/products/:sid',toProducts);
+router.get('/api/proDesc/:id',toProDesc);
 // router.get('/contact',toContact);
-router.get('/getSorts',getSorts);
-router.post('/proSearch',searchPro);
-router.get('/getSortsList',getSortsList);
-router.get('/atlas',toAtlas);
+router.get('/api/getSorts',getSorts);
+router.post('/api/proSearch',searchPro);
+router.get('/api/getSortsList',getSortsList);
+router.get('/api/atlas',toAtlas);
 // router.get('/getProDesc',getProDesc);
 
 module.exports = router

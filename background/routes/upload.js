@@ -11,7 +11,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 
 global.imagesArr = []
 /* 上传*/
-router.post('/uploading', function(req, res, next){
+router.post('/api/manage/uploading', function(req, res, next){
     // global.imagesArr = []
     //写这没有2,1-2问题
     var images = []
@@ -126,7 +126,7 @@ router.post('/uploading', function(req, res, next){
 
 
 /* 上传页面 */
-router.get('/uploadImg', function(req, res, next) {
+router.get('/api/manage/uploadImg', function(req, res, next) {
     try{
         //获取类型
         proListContent.getSorts('all',{pageSize:0,pageNum:0},function(err,vals){

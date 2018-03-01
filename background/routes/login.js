@@ -304,11 +304,11 @@ loggingIn = function(req,res){
         console.log(e)
     }
 }
-router.post('/login',toLogin);
-router.get('/manage/register',toRegister);
-router.post('/manage/registering',newRegistering);
+router.post('/api/login',toLogin);
+router.get('/api/manage/register',toRegister);
+router.post('/api/manage/registering',newRegistering);
 // router.post('/registering',registering);
-router.post('/logging',loggingIn);
+router.post('/api/logging',loggingIn);
 
 module.exports = router
 

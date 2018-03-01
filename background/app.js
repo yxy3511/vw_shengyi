@@ -44,6 +44,7 @@ app.use(function(req, res, next){
 });
 
 app.use('/manage/?',function(req, res, next) {
+    console.log('enter manage')
     var url = req.originalUrl;
     if (!req.session.isLogged) {
         // return res.render('login',{msg:'请先登录！'})
@@ -56,10 +57,10 @@ app.use('/manage/?',function(req, res, next) {
     }
 })
 /*--------touter--------------*/
-app.use('/manage',proList)
+app.use('/',proList)
 app.use('/',page)
-app.use('/manage',upload)
-app.use('/manage',aboutUSEdit)
+app.use('/',upload)
+app.use('/',aboutUSEdit)
 app.use('/',login)
 
 // app.set('port', process.env.PORT || 8300);

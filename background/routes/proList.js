@@ -1607,30 +1607,30 @@ viewAboutus = function(req,res){
 }
 
 
-router.post('/proList/:pageSize/:pageNum',getProList);
-router.post('/delPro/:pageSize/:pageNum/:id',delPro);
-router.post('/savePro',savePro);
+router.post('/api/manage/proList/:pageSize/:pageNum',getProList);
+router.post('/api/manage/delPro/:pageSize/:pageNum/:id',delPro);
+router.post('/api/manage/savePro',savePro);
 // router.post('/upPro/:id',upPro);
-router.post('/descPro/:id',descPro);
-router.post('/editPro/:id',editPro);
-router.post('/searchPro/:pageNum/:pageSize',searchPro);
+router.post('/api/manage/descPro/:id',descPro);
+router.post('/api/manage/editPro/:id',editPro);
+router.post('/api/manage/searchPro/:pageNum/:pageSize',searchPro);
 // router.get('/delImg/:mid',delImg);
 // router.get('/toProList/:pageNum/:pageSize/:msg',toProList)
 
-router.post('/editSorts/:pageSize/:pageNum',getSortList)
+router.post('/api/manage/editSorts/:pageSize/:pageNum',getSortList)
 // router.get('/saveSort/:sid/:text',saveSort)
-router.post('/addSort',addSort)
-router.post('/delSort/:pageSize/:pageNum/:sid',delSort)
+router.post('/api/manage/addSort',addSort)
+router.post('/api/manage/delSort/:pageSize/:pageNum/:sid',delSort)
 
-router.post('/editAboutUs',editAboutUs)
-router.post('/addAboutUs',addAboutUs)
-router.post('/aboutUs',toAboutUs)
+router.post('/api/manage/editAboutUs',editAboutUs)
+router.post('/api/manage/addAboutUs',addAboutUs)
+router.post('/api/manage/aboutUs',toAboutUs)
 // router.get('/delAboutus/:pageSize/:pageNum',delAboutUs)
-router.post('/delOneAboutus/:pageSize/:pageNum/:id',delOneAboutus)
-router.post('/viewAboutus',viewAboutus)
+router.post('/api/manage/delOneAboutus/:pageSize/:pageNum/:id',delOneAboutus)
+router.post('/api/manage/viewAboutus',viewAboutus)
 
-router.post('/getUser/:pageSize/:pageNum',getUserList)
-router.post('/delUser/:pageSize/:pageNum/:uid',delUser)
+router.post('/api/manage/getUser/:pageSize/:pageNum',getUserList)
+router.post('/api/manage/delUser/:pageSize/:pageNum/:uid',delUser)
 // router.get('/editUser/:opera/:uid/:text',editUser)
 // router.post('/saveUser/:pageNum/:pageSize',saveUser)
 // router.get('/addUser/:text',addUser)
