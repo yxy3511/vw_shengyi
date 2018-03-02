@@ -121,15 +121,19 @@
       }
       // var prolistPageNum = $.session.get('curPages') ? JSON.parse($.session.get('curPages'))['prolistPageNum'] : 1
       // console.log('pagenum:',prolistPageNum)
-      this.getProList(prolistPageNum)
-      
+      // this.getProList(prolistPageNum)
+      this.getSort(prolistPageNum)
     },
     methods:{
 
-      getSort(){
+      getSort(pageNum){
         this.$http.get('/api/manage/uploadImg').then(res=>{
           let val = JSON.parse(res.bodyText)
-          this.sorts = val.sorts
+          if(val.code == 0){
+
+            this.sorts = val.sorts
+            this.getProList(pageNum)
+          }
           // if(this.curSort > 0) return 
           // //设置sort初始值
 
@@ -159,7 +163,6 @@
             let val = JSON.parse(res.bodyText)
             this.length = val.length
             if(code == 0){
-              this.getSort()
               this.pageCount = val.pageCount
               this.pageNum = val.pageNum
               this.products = val.vals

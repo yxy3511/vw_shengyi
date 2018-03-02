@@ -213,6 +213,6 @@ span.required{
     width: 90px;
 }
 .errorInfo{
-    color:red;
+    color:#f46861;
     display: block;
 }
