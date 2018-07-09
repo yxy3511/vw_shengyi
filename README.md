@@ -6,6 +6,8 @@ node+express+webpack+vue
 
 npm start
 
+npm install
+
 前端
 
 npm install
